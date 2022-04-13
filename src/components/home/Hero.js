@@ -8,6 +8,7 @@ const Hero = () => {
 
         <p className='hero-title'>SOMOS TU MEJOR ELECCION</p>
         <p className='hero-title'>cambio marianela prueba git</p>
+        <p className='hero-title'>cambio ana prueba git</p>
         
 
 
