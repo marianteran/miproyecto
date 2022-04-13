@@ -1,0 +1,308 @@
+.hero-container{
+    height: 600px;
+    width: 100%;
+    background:url('https://ando.mx/wp-content/uploads/2021/10/WebPage-001.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title{
+    font-size: 10vmin;
+    color: white;
+    font-weight:bold ;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    padding-top:8% ;
+}
+
+.homeMain{
+    margin: 8vh 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    
+    
+    
+}
+
+.homeImage{
+    width: 40%;
+ 
+
+}
+.homeImage img{
+    width: 100%;
+}
+
+.homeDescrip{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeDescrip h2{
+    text-align: center;
+}
+
+.homeDescrip p{
+    padding: 40px;
+    text-align: justify;
+
+}
+
+
+#all-need h1{
+ text-align: center;
+ margin-bottom: 6vh;
+
+}
+
+.allNeed{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.allNeedContent{
+    text-align: center;
+    width: 400px;
+    margin: 15px;
+    
+}
+
+.allNeedContent p{
+    padding: 10px 15px;
+}
+
+
+.homeImgFixed{
+    height: 600px;
+    width: 100%;
+    background: url(https://www.jimdo.com/static/1ae56221bdae23b2ccaa521ac9d7a679/bf8c4/big_hero.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+/* hero dos */
+
+#hero-dos{
+    width: 100%;
+    height: 600px;
+}
+.hero-container-dos{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.hero-text{
+   
+    margin: auto auto;
+    padding-left: 10%;
+
+}
+
+.hero-text h1{
+    font-size: 10vmin;
+    margin: 20px 0px;
+}
+
+@media only screen and (max-width:1000px) {
+
+   /*  #hero-dos{
+        visibility: hidden;
+    }
+ */
+    .slider{
+        width: 300px;
+
+    }
+
+   
+}
+
+@media only screen and (max-width:800px) {
+
+    /*  #hero-dos{
+         visibility: hidden;
+     }
+  */
+     .slider{
+         width: 320px !important;
+ 
+     }
+
+     .hero-text h1{
+
+        font-size: 6vmin;
+         
+     }
+ 
+    
+ }
+
+ @media only screen and (max-width:500px) {
+
+    .hero-container-dos{
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .slider{
+       width: 100% ;
+        height: 320px !important;
+        padding: 0 !important;
+        margin: auto !important;
+
+    }
+    
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+/* hero tres */
+
+
+.heroimage {
+    background-image: url(https://images.pexels.com/photos/372098/pexels-photo-372098.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb);
+    background-size: cover;
+    margin: 0px;
+    height: 50vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s all linear;
+    transform: perserve 3d;
+  }
+  
+  @media(max-width:500px){
+    .heroimage{
+      height: 75vw;
+      transition: .25s all linear;
+      transform: perserve 3d;
+    }
+  }
+  
+  .captioncontainer {
+    text-align: center;
+  }
+  
+  h1.captiontitle {
+    font-family: avenir;
+    font-weight: 600;
+    font-size: 7vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    animation-name: headerenter;
+    animation-duration: 5s;
+   
+  }
+  
+  @keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  } 
+  
+  @-webkit-keyframes subheadenter {
+      0%  {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: .5;}
+    100%{opacity: 1;}
+  }
+  
+  @keyframes subheadenter {
+    0%  {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: .75;}
+    100%{opacity: 1;}
+  } 
+ 
+  
+  @media(max-width:500px){
+  h1.captiontitle {
+    font-family: avenir;
+    font-weight: 600;
+    font-size: 8.5vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+  }  
+  }
+  
+  h2.captiontitle {
+    margin-top: -5vw;
+    font-family: avenir;
+    font-weight: 100;
+    letter-spacing: .75vw;
+    font-size: 2.5vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    animation-name: subheadenter;
+    animation-duration: 5s;
+  }
+  
+  @media(max-width:500px){
+  h2.captiontitle {
+    margin-top: -5vw;
+    font-family: avenir;
+    font-weight: 100;
+    letter-spacing: .75vw;
+    font-size: 4.5vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    }
+  }
+  
+  @-webkit-keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  }
+  
+  @keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  } 
+  
+ 
+
+ 
+  
+
+  

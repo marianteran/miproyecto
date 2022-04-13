@@ -1,0 +1,65 @@
+.productHero{
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+
+}
+
+/* MENU CENTRAL */
+
+.productMenuCentral {
+    overflow: auto;
+}
+
+.productMenu {
+    float: left;
+    width: 20%;
+}
+
+.productMenuItem {
+    padding: 8px;
+    margin-top: 7px;
+    border: 1px solid #f3cbcb;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.productMain {
+    float: left;
+    width: 80%;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.productYourPage {
+    border: 1px solid #f3cbcb;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    height: 50vh;
+}
+
+
+@media only screen and (max-width:800px) {
+
+    /* For tablets: */
+    .productMain {
+        width: 80%;
+        padding: 0;
+    }
+
+   
+}
+
+@media only screen and (max-width:500px) {
+
+    /* For mobile phones: */
+    .productMenu,
+    .productMain {
+        width: 100%;
+    }
+}
+
