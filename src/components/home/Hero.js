@@ -7,6 +7,8 @@ const Hero = () => {
       <div className='hero-container'>
 
         <p className='hero-title'>SOMOS TU MEJOR ELECCION</p>
+        <p className='hero-title'>prueba ele</p>
+
         
 
 
