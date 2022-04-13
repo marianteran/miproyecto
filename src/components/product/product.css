@@ -63,3 +63,134 @@
     }
 }
 
+
+/* hero tres */
+
+
+
+
+/* hero tres */
+
+
+.heroimage {
+    background-image: url(https://images.pexels.com/photos/372098/pexels-photo-372098.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb);
+    background-size: cover;
+    margin: 0px;
+    height: 40vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s all linear;
+    transform: perserve 3d;
+  }
+  
+  @media(max-width:500px){
+    .heroimage{
+      height: 75vw;
+      transition: .25s all linear;
+      transform: perserve 3d;
+    }
+  }
+  
+  .captioncontainer {
+    text-align: center;
+  }
+  
+  h1.captiontitle {
+    font-family: avenir;
+    font-weight: 600;
+    font-size: 7vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    animation-name: headerenter;
+    animation-duration: 5s;
+   
+  }
+
+  
+  @keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  } 
+  
+  @-webkit-keyframes subheadenter {
+      0%  {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: .5;}
+    100%{opacity: 1;}
+  }
+  
+  @keyframes subheadenter {
+    0%  {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: .75;}
+    100%{opacity: 1;}
+  } 
+ 
+  
+  @media(max-width:500px){
+  h1.captiontitle {
+    font-family: avenir;
+    font-weight: 600;
+    font-size: 8.5vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+  }  
+  }
+  
+  h2.captiontitle {
+    margin-top: -5vw;
+    font-family: avenir;
+    font-weight: 100;
+    letter-spacing: .75vw;
+    font-size: 2.5vw;
+    color: black;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    animation-name: subheadenter;
+    animation-duration: 5s;
+  }
+  
+  @media(max-width:500px){
+  h2.captiontitle {
+    margin-top: -5vw;
+    font-family: avenir;
+    font-weight: 100;
+    letter-spacing: .75vw;
+    font-size: 4.5vw;
+    color: white;
+    text-shadow: 0px 2px 2px rgba(150, 150, 150, .5);
+    }
+  }
+  
+  @-webkit-keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  }
+  
+  @keyframes headerenter {
+      from {
+        letter-spacing: 20px;
+        opacity: .0;
+      }
+      to {
+        letter-spacing: 0px;
+        opacity: 1;
+      }
+  } 
+  
+ 
