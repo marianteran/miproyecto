@@ -20,7 +20,7 @@ const Home = () => {
                 <div className='homeDescrip'>
 
                     <h2>
-                        HOLA Consigue tu página web fácilmente
+                       NUEVO Consigue tu página web fácilmente
                     </h2>
 =======
                     <h2>Consigue tu página web fácilmente</h2>
