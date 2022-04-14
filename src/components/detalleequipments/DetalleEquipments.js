@@ -22,11 +22,13 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 
+
+// Import Swiper React components
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
-//import "./styles.css";
+import "./styles.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -84,14 +86,22 @@ const DetalleEquipments = () => {
                   image={process.env.PUBLIC_URL + `/img/equipments/${equipment.image}`}
                   //   image="/static/images/cards/paella.jpg"
                   alt="Paella dish"
-                /> */}
-                {equipment.image.map((img) => {
-                  return (
+                /> */}                  
                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                      <SwiperSlide><img src={process.env.PUBLIC_URL + `/img/equipments/${img}`} /></SwiperSlide>
+                      <SwiperSlide>                    
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>                     
+                      </SwiperSlide>
+
+                      <SwiperSlide>
+                      <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img> 
+                      </SwiperSlide>
+
+                      <SwiperSlide>
+                      <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img> 
+                      </SwiperSlide>
                     </Swiper>
-                  )
-                })}
+                  
+                
 
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
