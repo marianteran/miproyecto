@@ -19,6 +19,14 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+//import "./styles.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -53,10 +61,10 @@ const DetalleEquipments = () => {
     <>
       <div style={{ marginTop: "20vh" }}>
         <h1>DETALLE PC</h1>
-        <div style={{display:"flex", flexDirection:"row", flexWrap:"wrap"}}>
+        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
           {equipments?.map(equipment => {
             return (
-              <Card sx={{ width: 345, margin:"30px" }}>
+              <Card sx={{ width: 345, margin: "30px" }}>
                 <CardHeader
                   avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -70,16 +78,24 @@ const DetalleEquipments = () => {
                   }
                   title={equipment.name}
                 />
-                <CardMedia
+                {/* <CardMedia
                   component="img"
                   height="194"
                   image={process.env.PUBLIC_URL + `/img/equipments/${equipment.image}`}
                   //   image="/static/images/cards/paella.jpg"
                   alt="Paella dish"
-                />
+                /> */}
+                {equipment.image.map((img) => {
+                  return (
+                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                      <SwiperSlide><img src={process.env.PUBLIC_URL + `/img/equipments/${img}`} /></SwiperSlide>
+                    </Swiper>
+                  )
+                })}
+
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
-                    {equipment.price}
+                    {equipment.price + " $USD"}
                     <p>
                       {equipment.time}</p>
                   </Typography>
