@@ -8,29 +8,29 @@ const Home = () => {
         <>
             <Hero />
 
-     
+
             <div className='homeMain'>
 
                 <div className='homeImage'>
-               
+
                     <img src='https://www.jimdo.com/static/3e429504c49b797f94016ad1a6709112/b8073/style.webp'></img>
                 </div>
 
 
                 <div className='homeDescrip'>
-<<<<<<< HEAD
+
                     <h2>
                         HOLA Consigue tu página web fácilmente
                     </h2>
 =======
                     <h2>Consigue tu página web fácilmente</h2>
->>>>>>> develop
+
 
                     <p>Al principio te hacemos unas cuantas preguntas para conocerte. A continuación, en función de tu sector profesional, combinamos tu información con los contenidos creados por nuestros profesionales. El resultado es una página web única con textos, fotos y tu propia información, totalmente lista para presentarse y adaptada a tu negocio.</p>
 
-                </div>
+                </div >
 
-            </div>
+            </div >
 
             <div className='homeImgFixed'>
 
