@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "swiper/css/bundle";
+import { StateProvaider } from './context/Stateprovider';
+import reducer, {initialState} from './context/reducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StateProvaider initialState={initialState} reducer = {reducer}>
+    <App/>
+    </StateProvaider>
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
