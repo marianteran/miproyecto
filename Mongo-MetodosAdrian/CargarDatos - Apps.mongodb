@@ -1,0 +1,30 @@
+// MongoDB Playground
+//https://docs.mongodb.com/manual/crud/
+const database = 'SeomaDB';
+
+
+use(database);
+
+// The drop() command destroys all data from a collection.
+db.apps.drop();
+// Inserta los documentos que nosotros le indiquemos.
+db.apps.insertMany([ 
+
+          {"type":"App Web",
+          "name": "Static", 
+  	      "description":"esta es la pagina estatica",
+          "time":"",
+          "image":"",
+          "price":"",
+	        "functions":
+	                    [{
+	                      "title":"",
+	                      "description":"",
+                        "price":"",
+                        "image":"",
+	                      "time":"",
+	                        }]},                        
+
+	
+  ]);
+
