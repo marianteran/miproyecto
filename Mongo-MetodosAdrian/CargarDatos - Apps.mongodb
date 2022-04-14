@@ -12,18 +12,264 @@ db.apps.insertMany([
 
           {"type":"App Web",
           "name": "Static", 
-  	      "description":"esta es la pagina estatica",
-          "time":"",
+  	      "description":"We create your static website. Show the information of your business and reach your customers.",
+          "time":"15 days",
           "image":"",
-          "price":"",
+          "price":"300$",
 	        "functions":
 	                    [{
-	                      "title":"",
-	                      "description":"",
-                        "price":"",
+	                      "title":"Home Page",
+	                      "description":"Home page with the information you want to highlight about your business.",
+                        "price":"100$",
                         "image":"",
-	                      "time":"",
-	                        }]},                        
+	                      "time":"1 day",
+	                        },
+
+
+                        {
+	                      "title":"Information component",
+	                      "description":"Component dedicated to the information you want to show about your company.",
+                        "price":"50$",
+                        "image":"",
+	                      "time":"7 days",
+	                        },
+
+
+                        {
+	                      "title":"Contact component",
+	                      "description":"Contact form for users",
+                        "price":"50$",
+                        "image":"",
+	                      "time":"3 days",
+	                        },
+
+
+                        {
+	                      "title":"Image reel",
+	                      "description":"Upload your photos to a camera roll.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"1 day",
+	                        },
+                          
+                          
+                          ]},
+
+
+
+          {"type":"App Web",
+          "name": "Personalized", 
+  	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
+          "time":"30 days",
+          "image":"",
+          "price":"300$",
+	        "functions":
+	                    [{
+	                      "title":"Shopping cart",
+	                      "description":"We add a shopping cart to your e-commerce.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"7 day",
+	                        },
+
+
+                        {
+	                      "title":"User Comments",
+	                      "description":"User comments section enabled.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"7 days",
+	                        },
+
+
+                        {
+	                      "title":"User Login",
+	                      "description":"User connection section",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 days",
+	                        },
+
+
+                        {
+	                      "title":"User Profile Modification",
+	                      "description":"User profile with option to modify data.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 day",
+	                        },
+
+
+                        {
+	                      "title":"Photography Session",
+	                      "description":"Photo session for the products you want to display on the page.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 day",
+	                        },
+
+
+                        {
+	                      "title":"File Upload",
+	                      "description":"Component that allows uploading new files.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"4 day",
+	                        },
+
+
+                        {
+	                      "title":"Bot",
+	                      "description":"User help bot.",
+                        "price":"200$",
+                        "image":"",
+	                      "time":"2 day",
+	                        },
+
+
+                        {
+	                      "title":"Direct Messages",
+	                      "description":"Internal chat between users.",
+                        "price":"200$",
+                        "image":"",
+	                      "time":"1 day",
+	                      },
+
+
+                          
+                          
+                          ]},  
+
+
+          {"type":"App Mobile",
+          "name": "Static", 
+  	      "description":"We create your static website. Show the information of your business and reach your customers.",
+          "time":"15 days",
+          "image":"",
+          "price":"300$",
+	        "functions":
+	                    [{
+	                      "title":"Home Page",
+	                      "description":"Home page with the information you want to highlight about your business.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"1 day",
+	                        },
+
+
+                        {
+	                      "title":"Information component",
+	                      "description":"Component dedicated to the information you want to show about your company.",
+                        "price":"50$",
+                        "image":"",
+	                      "time":"7 days",
+	                        },
+
+
+                        {
+	                      "title":"Contact component",
+	                      "description":"Contact form for users",
+                        "price":"50$",
+                        "image":"",
+	                      "time":"3 days",
+	                        },
+
+
+                        {
+	                      "title":"Image reel",
+	                      "description":"Upload your photos to a camera roll.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"1 day",
+	                        },
+                          
+                          
+                          ]},
+
+
+
+          {"type":"App Mobile",
+          "name": "Personalized", 
+  	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
+          "time":"30 days",
+          "image":"",
+          "price":"300$",
+	        "functions":
+	                    [{
+	                      "title":"Shopping cart",
+	                      "description":"We add a shopping cart to your e-commerce.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"7 day",
+	                        },
+
+
+                        {
+	                      "title":"User Comments",
+	                      "description":"User comments section enabled.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"7 days",
+	                        },
+
+
+                        {
+	                      "title":"User Login",
+	                      "description":"User connection section",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 days",
+	                        },
+
+
+                        {
+	                      "title":"User Profile Modification",
+	                      "description":"User profile with option to modify data.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 day",
+	                        },
+
+
+                        {
+	                      "title":"Photography Session",
+	                      "description":"Photo session for the products you want to display on the page.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"3 day",
+	                        },
+
+
+                        {
+	                      "title":"File Upload",
+	                      "description":"Component that allows uploading new files.",
+                        "price":"100$",
+                        "image":"",
+	                      "time":"4 day",
+	                        },
+
+
+                        {
+	                      "title":"Bot",
+	                      "description":"User help bot.",
+                        "price":"200$",
+                        "image":"",
+	                      "time":"2 day",
+	                        },
+
+
+                        {
+	                      "title":"Direct Messages",
+	                      "description":"Internal chat between users.",
+                        "price":"200$",
+                        "image":"",
+	                      "time":"1 day",
+	                      },
+
+
+                          
+                          
+                          ]},                             
 
 	
   ]);
