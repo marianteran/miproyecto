@@ -48,7 +48,7 @@ const Home = () => {
                             <p>Puedes registrarte de manera gratuita; no se requiere tarjeta de crédito. Es libre de riesgos..</p>                            
                         </div>
                         <div className='allNeedContent'>
-                            <h5>SOPORTE RÁPIDO Y PERSONALIZADO</h5>
+                            <h5>SOPORTE RÁPIDO PERSONALIZADO</h5>
                             <p>Hemos ayudado a lanzar millones de páginas web y estamos listos para hacer que la tuya también sea un éxito.</p>                            
                         </div>
 
