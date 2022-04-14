@@ -14,8 +14,6 @@ const Hero = () => {
 
           <div className='hero-text'>
             <h6>CREA TU SITIO WEB</h6>
-            <h6>Prueba Sol</h6>
-            <h6>Prueba Orly</h6>
             <h1> El líder en diseño de páginas web</h1>
             <p>Crea una página web profesional, una tienda online o un portafolio y construye tu presencia online. Con nosotros, puedes hacer realidad cualquier idea.</p>
             <button className='btn btn-primary'>Comenzar</button>
