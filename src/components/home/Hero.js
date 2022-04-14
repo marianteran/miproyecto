@@ -4,13 +4,10 @@ import Carousel from './Carousel'
 const Hero = () => {
   return (
     <>
-      <div className='hero-container'>
+     {/*  <div className='hero-container'>
 
         <p className='hero-title'>SOMOS TU MEJOR ELECCION</p>
-        
-
-
-      </div>
+      </div> */}
 
       <section id='hero-dos'>
         <div className='hero-container-dos'>
@@ -27,30 +24,25 @@ const Hero = () => {
             <Carousel/>
           </div>
 
-
-
         </div>
 
       </section>
 
 
-      <section className='hero-tres'>
+    {/*   <section className='hero-tres'>
         <div class='heroimage'>
           <div class="captioncontainer">
             <h1 class="captiontitle">
-              OFF TO WHERE?
-              OFF TO WHERE?
-              OFF TO WHERE?
-              OFF TO WHERE?
+              IMAGINALO
             </h1>
             <h2 class="captiontitle">
-              WHO REALLY KNOWS.
+              HAZLO REALIDAD
             </h2>
           </div>
         </div>
 
 
-      </section >
+      </section > */}
 
 
 
