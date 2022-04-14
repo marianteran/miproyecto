@@ -17,10 +17,10 @@ const Navb = () => {
                                 <LinkRouter className="nav-link active" aria-current="page" to="/">Home</LinkRouter>
                             </li>
                             <li className="nav-item">
-                                <LinkRouter className="nav-link" to="product">Productos</LinkRouter>
+                                <LinkRouter className="nav-link" to="/product">Productos</LinkRouter>
                             </li>
                             <li className="nav-item">
-                                <LinkRouter className="nav-link" to="">Servicios</LinkRouter>
+                                <LinkRouter className="nav-link" to="/servicios">Servicios</LinkRouter>
                             </li>
                       
 
@@ -28,13 +28,13 @@ const Navb = () => {
                         </ul>
 
                         <div className="buttons">
-                            <LinkRouter to='' className="btn btn-outline-light">
+                            <LinkRouter to='/signin' className="btn btn-outline-light">
                                 <i className="fa fa-user-plus me-1"></i> Login
                             </LinkRouter>
                             {/* <LinkRouter to='' className="btn btn-outline-light ms-2">
                                 <i className="fa fa-user-plus me-1"></i> Register
                             </LinkRouter> */}
-                            <LinkRouter to='' className="btn btn-outline-light ms-2">
+                            <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
                                 <i className="fa fa-shopping-cart me-1"></i> Cart(0)
                             </LinkRouter>
 
