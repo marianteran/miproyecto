@@ -128,29 +128,18 @@ const DetalleEquipments = () => {
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Method:</Typography>
+                    <Typography paragraph>Function:</Typography>
                     <Typography paragraph>
-                      Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                      aside for 10 minutes.
+                    {equipment.description}
                     </Typography>
-                    <Typography paragraph>
-                      Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-
+                    <Typography paragraph>                     
                     </Typography>
                     <Typography paragraph>
                       {equipment.description}
-                    </Typography>
-                    <Typography>
-                      Set aside off of the heat to let rest for 10 minutes, and then serve.
-                    </Typography>
+                    </Typography>                   
                   </CardContent>
                 </Collapse>
-              </Card>
-
-
-            )
-
-          })}
+              </Card>)})}
         </div>
 
 
