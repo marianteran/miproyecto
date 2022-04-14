@@ -12,7 +12,7 @@ const Home = () => {
             <div className='homeMain'>
 
                 <div className='homeImage'>
-
+               
                     <img src='https://www.jimdo.com/static/3e429504c49b797f94016ad1a6709112/b8073/style.webp'></img>
                 </div>
 

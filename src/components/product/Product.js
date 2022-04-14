@@ -1,9 +1,13 @@
 import React from 'react'
+
+import HeroProduct from './HeroProduct'
 import './product.css'
 
 const Product = () => {
   return (
     <>
+
+    <HeroProduct/>
       <div className='productHero'>
         <h1 >Crea tu Página Web</h1>
 
