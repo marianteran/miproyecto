@@ -1,15 +1,25 @@
-.color-bg-navbar{
+.color-bg-navbar {
     /* background: rgba(0,0, 0, 0.2); */
     background: whitesmoke;
 
 }
 
-.top-nav-collapse{
+.top-nav-collapse {
     /* background: rgba(0,0, 0, 0.774); */
     background: blue;
 }
 
 #demo-customized-button {
     background: none !important;
+    padding: none !important;
+}
 
+.MuiButton-endIcon {
+    background: yellow !important;
+}
+
+.MuiMenuItem-root {
+    background: yellow !important;
+    padding: 0 !important;
+    justify-content: center !important;
 }
