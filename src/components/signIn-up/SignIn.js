@@ -116,7 +116,7 @@ function Signin() {
                         <div className="helpForm signInUp-LinkSignUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <div className="d-flex textSignUp" >
 
-                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to="/singup"> Click here...</LinkRouter></h3>
+                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter></h3>
                               
                               {/*   <LinkRouter to="/singup" style={{ }}>
                                    <h3> Sign Up </h3>
