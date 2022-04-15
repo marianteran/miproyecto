@@ -16,4 +16,15 @@
 .signInUp-btnIn {
     margin-top: 12px;
     margin-bottom: 12px;
+   
+}
+
+.signInUp-CheckLabel {
+display:flex ;
+justify-content:center;
+align-items:center;
+}
+
+.signInUp-Check {
+    margin: 6px;
 }
