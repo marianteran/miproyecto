@@ -1,6 +1,6 @@
 
 import { Link as LinkRouter } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import { styled } from '@mui/material/styles';
@@ -44,8 +44,12 @@ const ExpandMore = styled((props) => {
 const DetalleEquipments = () => {
   const [{ equipments }, dispatch] = useStateValue()
   const [expanded, setExpanded] = React.useState(false);
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const [checkKey , setCheckKey] =useState("")
+  let cont = 0;
+  const handleExpandClick = (parametro) => {
+    setCheckKey(parametro)
+        setExpanded(!expanded);
+        console.log(checkKey)
   };
 
   useEffect(() => {
@@ -57,7 +61,6 @@ const DetalleEquipments = () => {
         })
       })
   }, [])
-  console.log(equipments)
 
   return (
     <>
@@ -65,6 +68,7 @@ const DetalleEquipments = () => {
         <h1>DETALLE PC</h1>
         <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
           {equipments?.map(equipment => {
+            cont = cont +1
             return (
               <Card sx={{ width: 345, margin: "30px" }}>
                 <CardHeader
@@ -99,10 +103,7 @@ const DetalleEquipments = () => {
                       <SwiperSlide>
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img> 
                       </SwiperSlide>
-                    </Swiper>
-                  
-                
-
+                    </Swiper>               
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
                     {equipment.price + " $USD"}
@@ -117,16 +118,18 @@ const DetalleEquipments = () => {
                   <IconButton aria-label="share">
                     <ShareIcon />
                   </IconButton>
-                  <ExpandMore
+                  <ExpandMore 
                     expand={expanded}
-                    onClick={handleExpandClick}
+                    onClick={()=>handleExpandClick(equipment._id)}
                     aria-expanded={expanded}
                     aria-label="show more"
                   >
                     <ExpandMoreIcon />
                   </ExpandMore>
                 </CardActions>
+               
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
+                {checkKey===equipment._id?                 
                   <CardContent>
                     <Typography paragraph>Function:</Typography>
                     <Typography paragraph>
@@ -138,8 +141,14 @@ const DetalleEquipments = () => {
                       {equipment.description}
                     </Typography>                   
                   </CardContent>
+                   :"" }
                 </Collapse>
-              </Card>)})}
+        
+              </Card>)
+              })
+              
+              
+              }
         </div>
 
 
