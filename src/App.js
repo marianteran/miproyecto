@@ -8,13 +8,15 @@ import Navb from './components/navegation/Navb';
 import Home from './components/home/Home';
 import Footer from './components/footer/Footer';
 import Product from './components/product/Product';
-import DetalleProducto from './components/detalleProducto/DetalleProducto';
+import DetalleAppWeb from './components/detalleProducto/DetalleAppWeb';
+import DetalleAppMobile from './components/detalleProducto/DetalleAppMobile';
 import SignIn from './components/signIn-up/SignIn';
 import SignUp from './components/signIn-up/SignUp';
 import Servicios from './components/servicios/Servicios';
 import Cart from './components/carro/Cart';
 import swal from 'sweetalert'
 import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
+
 
 
 function App() {
@@ -55,8 +57,9 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/detalle" element={<DetalleProducto />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/appWeb" element={<DetalleAppWeb />} />
+          <Route path="/appMobile" element={<DetalleAppMobile />} />
+          <Route path="/signin" element={<SignIn />} />        
           <Route path="/signup" element={<SignUp />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cart" element={<Cart />} />

@@ -41,6 +41,7 @@ function SignUp() {
         let name = event.target[0].value
         let lastName = event.target[1].value
         let iniciales = name.charAt(0) + lastName.charAt(0)
+      
         const NuevoUsuario = {
             img: iniciales.toUpperCase(),
             name: event.target[0].value,
@@ -55,8 +56,7 @@ function SignUp() {
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
                 if (response.data.success === "falseVAL") {
-                    let detailsError = response.data.response.error.details
-                    console.log(detailsError)
+                    let detailsError = response.data.response.error.details            
                     detailsError.map(error =>
                         swal({
                             title: " error",
@@ -87,7 +87,7 @@ function SignUp() {
     return (
         <>            
                 <div className="desespero">
-                    <form onSubmit={newUser} className="container-md form-SignUP">
+                    <form onSubmit={newUser} className="container-md form-SignUP signInUp-Input">
                         <div className="d-flex">
                             <div className="mb-3 container-md">
                                 <label for="exampleInputName" className="form-label">Name</label>
@@ -117,19 +117,19 @@ function SignUp() {
                                 <div id="exampleInputPassword2" className="form-text">Please enter again your password.</div>
                             </div> */}
                         </div>
-                        <div className="mb-3 form-check">
+                        <div className="mb-3 form-check signInUp-CheckLabel">
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                            <label className="form-check-label" for="exampleCheck1">Remember me</label>
+                            <label className="form-check-label signInUp-Check" for="exampleCheck1">Remember me</label>
                         </div>
-                        <div>
-                            <input type="submit" className="btn d-flex btn-signUp" />
+                        <div className="signInUp-btnInUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <input type="submit" className="btn d-flex btn-signUp btn btn-success" value="Sign Up" />
                         </div>
                       <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                          <div style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                                 <div style={{ margin: "4px", backgroundColor: "white", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
                                     <GoogleLogin
                                         clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-                                        buttonText="SignIn with Google Account"
+                                        buttonText="SignUp with Google Account"
                                         onSuccess={responseGoogle}
                                         onFailure={responseGoogle}
                                         cookiePolicy={'single_host_origin'}

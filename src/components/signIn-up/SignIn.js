@@ -7,6 +7,7 @@ import { accionType } from '../../context/reducer'
 import { useStateValue } from '../../context/Stateprovider';
 import { useEffect } from 'react';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import AccountUser from '../User/AccountUser'
 
 
 
@@ -70,8 +71,9 @@ function Signin() {
     }
     return (
         <>
+        {!user?
                 <div className="desespero">
-                    <form className="formSign row" onSubmit={signinUser}>
+                    <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
                             <label for="exampleInputEmail1" className="form-label">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -82,21 +84,15 @@ function Signin() {
                             <input type="password" className="form-control" id="exampleInputPassword1" />
                             <div id="emailHelp" className="form-text">Please enter a password.</div>
                         </div>
-                        <div className="mb-3 form-check col-12">
-                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                        <div className="mb-3 form-check col-12 signInUp-CheckLabel">
+                            <input type="checkbox" className="form-check-input signInUp-Check" id="exampleCheck1" />
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                        <div className="helpForm" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                            <div className="d-flex textSignUp" >
-                                <h3>Don't have an account?</h3>
-                              {/*   <LinkRouter to="/singup" style={{ }}>
-                                   <h3> Sign Up </h3>
-                                </LinkRouter> */}
-                            </div>
+
+                        <div className="signInUp-btnInUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <input type="submit" className="btn d-flex btn-signin btn btn-primary" value="Sign In" />
                         </div>
-                        <div>
-                            <input type="submit" className="btn d-flex btn-signin" value="Sign In" />
-                        </div>
+
                         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             <div style={{ display:"flex", justifyContent:"center", flexDirection:"column"}}>
                                 <div style={{ margin:"4px" , backgroundColor: "white", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
@@ -118,8 +114,23 @@ function Signin() {
                                 </div> */}
                             </div>
                         </div>
+
+                        <div className="helpForm signInUp-LinkSignUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <div className="d-flex textSignUp" >
+
+                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter></h3>
+                              
+                              {/*   <LinkRouter to="/singup" style={{ }}>
+                                   <h3> Sign Up </h3>
+                                </LinkRouter> */}
+                            </div>
+                        </div>
+
                     </form>
-                </div>
+                </div>:
+                <AccountUser/>
+                
+                }
         </>
     )
 }
