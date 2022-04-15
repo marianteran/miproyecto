@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import { Link as LinkRouter } from "react-router-dom";
-
 const AppWeb = () => {
+   
     return (
         <>
 

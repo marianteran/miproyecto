@@ -13,38 +13,41 @@ import SignIn from './components/signIn-up/SignIn';
 import SignUp from './components/signIn-up/SignUp';
 import Servicios from './components/servicios/Servicios';
 import Cart from './components/carro/Cart';
+import swal from 'sweetalert'
+import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
 
 
 function App() {
-  const [{ apps, smedia, equipments }, dispatch] = useStateValue()
-  
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/apps")
-    .then(response => {
-      dispatch({
-        type: accionType.APPSDB,
-        apps: response.data.response.apps
-      })
-    })
+  const [{ apps }, dispatch] = useStateValue()
 
-    axios.get("http://localhost:4000/api/smedia")
-    .then(response => {
-      dispatch({
-        type: accionType.SMEDIADB,
-        smedia: response.data.response.socialMedia
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token")
+      axios.get("http://localhost:4000/api/signinToken", {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
       })
-    })
-    axios.get("http://localhost:4000/api/equipments")
-    .then(response => {   
-      dispatch({
-        type: accionType.EQUIPMENTSDB,
-        equipments: response.data.response.equipments
-      })
-    })
+        .then(user => {
+          if (user.data.success) {
+            swal({
+              title: user.data.response,
+              icon: "success",
+              buttons: "ok"
+            })
+            dispatch({
+              type: accionType.USERDB,
+              user: user.data
+            })
+          }
+          else {
+            localStorage.removeItem("token")
+          }
+        })
+    }
+
   }, [])
-  console.log(apps)
-  console.log(smedia)
-  console.log(equipments)
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -57,11 +60,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cart" element={<Cart />} />
-
-
-  
+          <Route path="/equipments" element={<DetalleEquipments />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>

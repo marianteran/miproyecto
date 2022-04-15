@@ -11,13 +11,11 @@ const Product = () => {
   return (
     <>
 
-    <HeroProduct/>
-    
+    <HeroProduct/>    
     <AppWeb/>
     <AppMobile/>
     <Socialmedia/>
     <Pc/>
-
     </>
   )
 }
