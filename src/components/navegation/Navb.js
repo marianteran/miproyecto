@@ -125,8 +125,8 @@ const Navb = () => {
                                     <Button
                                         id="demo-customized-button"
                                         aria-controls={open ? 'demo-customized-menu' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
+                                        aria-haspopup="false"
+                                        aria-expanded={open ? 'false' : undefined}
                                         variant="contained"
                                         disableElevation
                                         onClick={handleClick}
