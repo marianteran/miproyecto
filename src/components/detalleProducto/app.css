@@ -1,0 +1,36 @@
+
+
+.detalleProduct{
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+}
+
+.detalleProductContent{
+
+    border: 2px solid blue;
+}
+
+.detalleProductImg{
+
+    border: 2px solid red;
+    width: 800px ;
+    /* height: 600px; */
+    padding: 0 !important;
+    margin: 0 !important;
+
+
+}
+
+.detalleProductImg img{
+
+    width: 100%;
+}
+
+
+.xxx{
+    border: 2px solid yellow;
+    text-align: center;
+    padding: 20px;
+
+}

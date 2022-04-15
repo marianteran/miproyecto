@@ -7,6 +7,7 @@ import { accionType } from '../../context/reducer'
 import { useStateValue } from '../../context/Stateprovider';
 import { useEffect } from 'react';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import AccountUser from '../User/AccountUser'
 
 
 
@@ -70,6 +71,7 @@ function Signin() {
     }
     return (
         <>
+        {!user?
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
@@ -125,7 +127,10 @@ function Signin() {
                         </div>
 
                     </form>
-                </div>
+                </div>:
+                <AccountUser/>
+                
+                }
         </>
     )
 }

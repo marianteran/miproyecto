@@ -3,13 +3,15 @@ import HeroProduct from '../product/HeroProduct'
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
-import pcBase from '../compuBase.jpg'
+import mobileBase from './appMobileBase.webp'
 import Checkbox from '@mui/material/Checkbox';
+import StaticPC from '../detalleProducto/AppWeb/Static.PNG'
+
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const DetalleProducto = () => {
+const DetalleAppMobile = () => {
   //BASES DE DATOS:
 const [{ apps}, dispatch] = useStateValue()
   useEffect(() => {
@@ -24,18 +26,21 @@ const [{ apps}, dispatch] = useStateValue()
 
 //CONST SETEABLES:
 const [appPulsada, setAppPulsada] = useState()
-  let appWeb = []  
+  let appMobile = []  
+ 
   apps.map((app)=>{
-    if(app.type ==="App Web")
+    if(app.type ==="App Mobile")
     return(
-     appWeb.push(app)
+     appMobile.push(app)
      ) }) 
+
+
    const tipoDeAppp = (event) =>{
       console.log(event.target.name)
       setAppPulsada(event.target.name)
    }
 
-console.log(appWeb)
+console.log(appMobile)
 return (
     <>
     <div>DetalleProducto</div>    
@@ -43,10 +48,13 @@ return (
     
 
 <div style={{display:"flex", justifyContent:"center"}}>
-      {appWeb.map((app)=>{
+      {appMobile.map((app)=>{
+        
         return(
           <div>
+            {app.name==="Static"?
           <Checkbox {...label} defaultChecked name={app.name} onClick={tipoDeAppp}/> 
+            :<Checkbox {...label}  name={app.name} onClick={tipoDeAppp}/> }
           {app.name}
           </div>       
         )})
@@ -54,7 +62,7 @@ return (
    </div>
       {appPulsada==="Personalized"?
         <div>
-        <img src={pcBase}></img>
+        <img src={StaticPC}></img>
         </div>
         :
           <div>
@@ -69,4 +77,4 @@ return (
   )
 }
 
-export default DetalleProducto
+export default DetalleAppMobile

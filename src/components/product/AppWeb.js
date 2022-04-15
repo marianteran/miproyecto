@@ -24,7 +24,7 @@ const AppWeb = () => {
                             Por ejemplo, podría diseñar una página para que mostrara los resultados del programa de salud y dejara cierta información fuera (como el nombre del empleado y sus resultados) para calcularla cuando la página la solicite un empleado en particular.
                         </p>
 
-                        <LinkRouter to='/detalle' className="btn btn-outline-light ms-2">
+                        <LinkRouter to='/appWeb' className="btn btn-outline-light ms-2">
                             <button className='btn btn-dark'>Info</button>
                         </LinkRouter>
 
