@@ -124,7 +124,7 @@ const Navb = () => {
                                         variant="contained"
                                         disableElevation
                                         onClick={handleClick}
-                                        endIcon={<KeyboardArrowDownIcon />}
+                                        // endIcon={<KeyboardArrowDownIcon />}
                                     >
                                         {user.datosUser.from !== "MyTineray" ?
                                             <img src={user.datosUser.img} className="login" style={{backgroundColor: "transparent", borderRadius: '100px', borderStyle: "solid", borderColor: "green", padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" />
