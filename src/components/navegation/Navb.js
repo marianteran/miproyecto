@@ -106,16 +106,22 @@ const Navb = () => {
                             </li>
                             <li className="nav-item">
                                 <LinkRouter className="nav-link" to="/servicios">Servicios</LinkRouter>
-                            </li>                     
+                            </li>
                         </ul>
 
-                        <div className="buttons">
-                        {!user ?
-                            <LinkRouter to='/signin' className="btn btn-outline-light">
-                                <i className="fa fa-user-plus me-1"></i> Login
+                        <div className='nav-Cart'>
+                            <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
+                                <i className="fa fa-shopping-cart me-1"></i> Cart(0)
                             </LinkRouter>
-                            :
-                            <div>
+                        </div>
+
+                        <div className="buttons">
+                            {!user ?
+                                <LinkRouter to='/signin' className="btn btn-outline-light">
+                                    <i className="fa fa-user-plus me-1"></i> Login
+                                </LinkRouter>
+                                :
+                                <div>
                                     <Button
                                         id="demo-customized-button"
                                         aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -124,10 +130,10 @@ const Navb = () => {
                                         variant="contained"
                                         disableElevation
                                         onClick={handleClick}
-                                        // endIcon={<KeyboardArrowDownIcon />}
+                                    // endIcon={<KeyboardArrowDownIcon />}
                                     >
                                         {user.datosUser.from !== "MyTineray" ?
-                                            <img src={user.datosUser.img} className="login" style={{backgroundColor: "transparent", borderRadius: '100px', borderStyle: "solid", borderColor: "green", padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" />
+                                            <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
                                             <Avatar sx={{ bgcolor: red[500] }} style={{ padding: 2, marginTop: 6, marginLeft: 4 }}>
                                                 {user.datosUser.img}
@@ -149,14 +155,12 @@ const Navb = () => {
                                         </MenuItem>
                                     </StyledMenu>
                                 </div>
-                        
-                        }
+
+                            }
                             {/* <LinkRouter to='' className="btn btn-outline-light ms-2">
                                 <i className="fa fa-user-plus me-1"></i> Register
                             </LinkRouter> */}
-                            <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
-                                <i className="fa fa-shopping-cart me-1"></i> Cart(0)
-                            </LinkRouter>
+
 
                         </div>
                     </div>
