@@ -1,3 +1,19 @@
-.desespero{
-    margin-top: 10vh;
+.desespero {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    justify-content: center;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.signInUp-Input {
+    width: 500px;
+    text-align: center;
+    display: block;
+}
+
+.signInUp-btnIn {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }

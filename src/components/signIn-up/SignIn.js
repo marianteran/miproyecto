@@ -71,7 +71,7 @@ function Signin() {
     return (
         <>
                 <div className="desespero">
-                    <form className="formSign row" onSubmit={signinUser}>
+                    <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
                             <label for="exampleInputEmail1" className="form-label">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -94,9 +94,11 @@ function Signin() {
                                 </LinkRouter> */}
                             </div>
                         </div>
-                        <div>
-                            <input type="submit" className="btn d-flex btn-signin" value="Sign In" />
+
+                        <div className="signInUp-btnIn" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <input type="submit" className="btn d-flex btn-signin btn btn-primary" value="Sign In" />
                         </div>
+
                         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             <div style={{ display:"flex", justifyContent:"center", flexDirection:"column"}}>
                                 <div style={{ margin:"4px" , backgroundColor: "white", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
