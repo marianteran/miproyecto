@@ -28,3 +28,16 @@ align-items:center;
 .signInUp-Check {
     margin: 6px;
 }
+
+.signInUp-LinkSignUp {
+ margin-top: 5vh;
+}
+
+.signInUp-toSignUp {
+    text-decoration: none;
+    color: black;
+}
+
+.signInUp-toSignUp:hover {
+    color: gray;
+}

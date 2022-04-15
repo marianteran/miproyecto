@@ -86,14 +86,6 @@ function Signin() {
                             <input type="checkbox" className="form-check-input signInUp-Check" id="exampleCheck1" />
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                        <div className="helpForm" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                            <div className="d-flex textSignUp" >
-                                <h3>Don't have an account?</h3>
-                              {/*   <LinkRouter to="/singup" style={{ }}>
-                                   <h3> Sign Up </h3>
-                                </LinkRouter> */}
-                            </div>
-                        </div>
 
                         <div className="signInUp-btnInUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <input type="submit" className="btn d-flex btn-signin btn btn-primary" value="Sign In" />
@@ -120,6 +112,18 @@ function Signin() {
                                 </div> */}
                             </div>
                         </div>
+
+                        <div className="helpForm signInUp-LinkSignUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <div className="d-flex textSignUp" >
+
+                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to="/singup"> Click here...</LinkRouter></h3>
+                              
+                              {/*   <LinkRouter to="/singup" style={{ }}>
+                                   <h3> Sign Up </h3>
+                                </LinkRouter> */}
+                            </div>
+                        </div>
+
                     </form>
                 </div>
         </>
