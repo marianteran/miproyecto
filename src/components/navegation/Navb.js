@@ -127,7 +127,7 @@ const Navb = () => {
                                         endIcon={<KeyboardArrowDownIcon />}
                                     >
                                         {user.datosUser.from !== "MyTineray" ?
-                                            <img src={user.datosUser.img} className="login" style={{ backgroundColor: "transparent", borderRadius: '100px', borderStyle: "solid", borderColor: "#ff4b4b", padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" />
+                                            <img src={user.datosUser.img} className="login" style={{backgroundColor: "transparent", borderRadius: '100px', borderStyle: "solid", borderColor: "green", padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" />
                                             :
                                             <Avatar sx={{ bgcolor: red[500] }} style={{ padding: 2, marginTop: 6, marginLeft: 4 }}>
                                                 {user.datosUser.img}

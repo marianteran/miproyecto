@@ -8,3 +8,8 @@
     /* background: rgba(0,0, 0, 0.774); */
     background: blue;
 }
+
+#demo-customized-button {
+    background: none !important;
+
+}
