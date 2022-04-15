@@ -135,7 +135,7 @@ const Navb = () => {
                                         {user.datosUser.from !== "MyTineray" ?
                                             <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
-                                            <Avatar sx={{ bgcolor: red[500] }} style={{ padding: 2, marginTop: 6, marginLeft: 4 }}>
+                                            <Avatar sx={{ bgcolor: red[500] }} style={{ width: 50, height: 50, padding: 2, marginTop: 6, marginLeft: 4 }}>
                                                 {user.datosUser.img}
                                             </Avatar>
                                         }
