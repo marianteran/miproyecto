@@ -4,12 +4,12 @@ const HeroProduct = () => {
     return (
         <div>
             <section className='hero-tres'>
-                <div class='heroimage'>
-                    <div class="captioncontainer">
-                        <h1 class="captiontitle">
+                <div className='heroimage'>
+                    <div className="captioncontainer">
+                        <h1 className="captiontitle">
                             IMAGINALO
                         </h1>
-                        <h2 class="captiontitle">
+                        <h2 className="captiontitle">
                             HAZLO REALIDAD
                         </h2>
                     </div>

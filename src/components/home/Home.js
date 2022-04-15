@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <Hero />
 
-     
+
             <div className='homeMain'>
 
                 <div className='homeImage'>
@@ -18,15 +18,15 @@ const Home = () => {
 
 
                 <div className='homeDescrip'>
-                    <h2>
-                        Consigue tu página web fácilmente
-                    </h2>
+
+                    <h2>Consigue tu página web fácilmente</h2>
+                    
 
                     <p>Al principio te hacemos unas cuantas preguntas para conocerte. A continuación, en función de tu sector profesional, combinamos tu información con los contenidos creados por nuestros profesionales. El resultado es una página web única con textos, fotos y tu propia información, totalmente lista para presentarse y adaptada a tu negocio.</p>
 
-                </div>
+                </div >
 
-            </div>
+            </div >
 
             <div className='homeImgFixed'>
 
@@ -50,7 +50,7 @@ const Home = () => {
                             <p>Puedes registrarte de manera gratuita; no se requiere tarjeta de crédito. Es libre de riesgos..</p>                            
                         </div>
                         <div className='allNeedContent'>
-                            <h5>SOPORTE RÁPIDO Y PERSONALIZADO</h5>
+                            <h5>SOPORTE RÁPIDO PERSONALIZADO</h5>
                             <p>Hemos ayudado a lanzar millones de páginas web y estamos listos para hacer que la tuya también sea un éxito.</p>                            
                         </div>
 
