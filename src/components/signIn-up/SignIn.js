@@ -95,7 +95,7 @@ function Signin() {
                             </div>
                         </div>
 
-                        <div className="signInUp-btnIn" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <div className="signInUp-btnInUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <input type="submit" className="btn d-flex btn-signin btn btn-primary" value="Sign In" />
                         </div>
 
