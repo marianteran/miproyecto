@@ -1,67 +1,73 @@
 swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .colorLike{
-    color: red;
-  }
-
-
-
-  .encabezado {
-    background-color:#f3cbcb;
-    padding-left:20px;
+  width: 100%;
+  height: 100%;
 }
 
-.namePage {
-    text-align: left;
-    font-weight: bolder;
-    font-size: 100px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: italic;
-    margin: 0;
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.colorLike {
+  color: red;
+}
+
+
+
+/* EQUIPOS READ MORE */
+
+.equipments-Container {
+  margin: 12px;
+}
+
+.equipments-ContTittle {
+  background-color: black;
+  margin-top: 15vh;
+  border-radius: 4px;
+}
+
+.equipments-Tittle {
+  color: white;
+  text-align: center;
+  font-size: 50px;
 }
 
 .menuCentral {
   overflow: auto;
 }
 
-.menu {
+.equipments-menu {
+  margin-top: 2vh;
   float: left;
   width: 20%;
 }
 
-.menuItem {
+.equipments-menuItem {
   padding: 8px;
   margin-top: 7px;
-  border: 1px solid #f3cbcb;
+  border: 1px solid black;
   border-radius: 6px;
   text-align: center;
 }
@@ -73,10 +79,21 @@ swiper {
   overflow: hidden;
 }
 
-.yourPage {
-  border: 1px solid #f3cbcb;
+.equipments-image {
+  border: 1px solid black;
   border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+  /* width: 100%;
+  height: 50vh; */
+}
+
+.equipments-likes {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 100%;
   padding: 10px;
-  width: 100%;
-  height: 50vh;
+  width: 60px;
+  height: 60px;
 }
