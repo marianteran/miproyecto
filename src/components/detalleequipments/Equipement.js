@@ -11,15 +11,43 @@ const Equipment = () => {
     console.log(equipment)
     return (
         <>
-        {equipment.length > 0 ?
-        equipment.map((item)=>{
-            return(
-                <div>
-                        <h1 style={{marginTop:"30vh"}}>{item.name}</h1>
+            {equipment.length > 0 ?
+                equipment.map((item) => {
+                    return (
+                        <div>
+                            {/* <h6 style={{ marginTop: "30vh" }}>{item.name}</h6> */}
 
-                </div>
-            )
-        }):""}          
+                            <div class="encabezado">
+                                <h1 class="namePage">{item.name}</h1>
+                            </div>
+
+                            <div class="menuCentral">
+
+                                <div class="main">
+                                    <div class="yourPage">{item.likes}</div>
+                                </div>
+
+                                <div class="menu">
+                                    <div class="menuItem">{item.price}</div>
+                                    <div class="menuItem">{item.time}</div>
+                                    <div class="menuItem">{item.shippingPrice}</div>
+                                    <div class="menuItem">{item.brand}</div>
+                                </div>
+
+                                <div class="main">
+                                    <div class="yourPage">{item.image}</div>
+                                </div>
+
+                                <div class="main">
+                                    <h3>{item.descrption}</h3>
+                                    <h4>{item.function}</h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    )
+                }) : ""}
         </>
     )
 }
