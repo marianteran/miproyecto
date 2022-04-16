@@ -54,42 +54,43 @@ const datosController = {
     },
 
 
-   /*  obtenerItineraries: async (req, resp) => {
-        let itinerary;
+   equipment: async (req, resp) => {
+        let equipment; //ITINERARIES
         console.log(req.params);
-        const city = req.params.city
+        const selecEquipment = req.params.city
         let error = null
         try {
-            itinerary = await Itinerary.find({ city: city })
+            equipment = await Equipments.find({ name: selecEquipment })
         } catch (err) {
             error = err
             console.log(error);
         }
         resp.json({
-            response: error ? 'ERROR' : { itinerary },
+            response: error ? 'ERROR' : { equipment },
             success: error ? false : true,
             error: error
         })
-    }, */
-    likeDisLike: async (req, resp) => {
-        const id = req.params.id
-        const user = req.user.id
-        let itinerary
-        try {
-            itinerary = await Itinerary.findOne({ _id: id })
+    },
 
-            if (itinerary.likes.includes(user)) {                
-                Itinerary.findByIdAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
+    favorite: async (req, resp) => {
+        const idEquip = req.params.id //equipo selec
+        const idUser = req.user.id // usuario
+        let usuarioFav
+        try {
+            usuarioFav = await User.findOne({ _id: idUser })
+
+            if (usuarioFav.favorite.includes(idEquip)) {                
+                User.findByIdAndUpdate({ _id: idUser }, { $pull: { favorite: idEquip } }, { new: true })
                     .then(response => {
-                        resp.json({ success: true, response: response.likes })
+                        resp.json({ success: true, response: response.favorite })
                     })
 
                     .catch(error => console.log(error))
             }
             else {                
-                Itinerary.findByIdAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
+                User.findByIdAndUpdate({ _id: idUser }, { $push: { favorite: idEquip } }, { new: true })
                     .then(response => {
-                        resp.json({ success: true, response: response.likes })
+                        resp.json({ success: true, response: response.favorite })
                     })
                     .catch(error => console.log(error))
             }

@@ -14,8 +14,13 @@ db.apps.insertMany([
           "name": "Static", 
   	      "description":"We create your static website. Show the information of your business and reach your customers.",
           "time":"15 days",
+<<<<<<< HEAD
           "image":"",
           "price":"300",
+=======
+          "image":"Static.png",
+          "price":"300$",
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	        "functions":
 	                    [{
 	                      "title":"Home Page",
@@ -61,26 +66,67 @@ db.apps.insertMany([
           "name": "Personalized", 
   	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
           "time":"30 days",
+<<<<<<< HEAD
           "image":"",
           "price":"300",
+=======
+          "image":"pStaticSinLogo.png",
+          "price":"300$",
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	        "functions":
-	                    [{
+	                    [
+						{
+	                    "title":"User Login",
+	                    "description":"User connection section",
+                        "price":"100$",
+                        "image":"pLogin.png",
+	                      "time":"3 days",
+	                        },
+							
+							
+							{
 	                      "title":"Shopping cart",
 	                      "description":"We add a shopping cart to your e-commerce.",
+<<<<<<< HEAD
                         "price":"100",
                         "image":"",
+=======
+                        "price":"100$",
+                        "image":"pCart.png",
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	                      "time":"7 day",
 	                        },
 
 
+							   {
+	                      "title":"Direct Messages",
+	                      "description":"Internal chat between users.",
+                        "price":"200$",
+                        "image":"pChat.png",
+	                      "time":"1 day",
+	                      },
+
+						    {
+	                      "title":"File Upload",
+	                      "description":"Component that allows uploading new files.",
+                        "price":"100$",
+                        "image":"pDetail.png",
+	                      "time":"4 day",
+	                        },
                         {
 	                      "title":"User Comments",
 	                      "description":"User comments section enabled.",
+<<<<<<< HEAD
                         "price":"100",
                         "image":"",
+=======
+                        "price":"100$",
+                        "image":"pComment.png",
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	                      "time":"7 days",
-	                        },
+	                        },  
 
+<<<<<<< HEAD
 
                         {
 	                      "title":"User Login",
@@ -88,7 +134,23 @@ db.apps.insertMany([
                         "price":"100",
                         "image":"",
 	                      "time":"3 days",
+=======
+							       {
+	                      "title":"Photography Session",
+	                      "description":"Photo session for the products you want to display on the page.",
+                        "price":"100$",
+                        "image":"pCard.png",
+	                      "time":"3 day",
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	                        },
+
+									       {
+	                      "title":"Bot",
+	                      "description":"User help bot.",
+                        "price":"200$",
+                        "image":"pBot.png",
+	                      "time":"2 day",
+	                        },  			
 
 
                         {
@@ -97,8 +159,9 @@ db.apps.insertMany([
                         "price":"100",
                         "image":"",
 	                      "time":"3 day",
-	                        },
+	                        }, 		
 
+<<<<<<< HEAD
 
                         {
 	                      "title":"Photography Session",
@@ -139,6 +202,9 @@ db.apps.insertMany([
                           
                           
                           ]},  
+=======
+                        ]},  
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 
 
           {"type":"App Mobile",

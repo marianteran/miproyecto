@@ -18,13 +18,13 @@ app.use(express.json());
 app.use('/api',Router)
 
 
-app.listen('4000',()=>console.log('servidor inicializado en puerto 4000'))
+app.listen("4000", () => console.log("Servidor Inicializado en Puerto 4000"))
 
-/* if(process.env.NODE_ENV === "production") {
+/* f(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
     app.get("*", (req,res)=>{
         res.sendFile(path.join(__dirname+"/client/build/index.html"))
-    })} */
+    })}
 
-//app.listen(PORT, HOST,()=>console.log('servidor inicializado en puerto 4000'))
+app.listen(PORT, HOST,()=>console.log('servidor inicializado en puerto 4000')) */
 //.sta

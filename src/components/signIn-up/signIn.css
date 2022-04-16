@@ -1,0 +1,43 @@
+.desespero {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    justify-content: center;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.signInUp-Input {
+    width: 500px;
+    text-align: center;
+    display: block;
+}
+
+.signInUp-btnInUp {
+    margin-top: 12px;
+    margin-bottom: 12px;
+   
+}
+
+.signInUp-CheckLabel {
+display:flex ;
+justify-content:center;
+align-items:center;
+}
+
+.signInUp-Check {
+    margin: 6px;
+}
+
+.signInUp-LinkSignUp {
+ margin-top: 5vh;
+}
+
+.signInUp-toSignUp {
+    text-decoration: none;
+    color: black;
+}
+
+.signInUp-toSignUp:hover {
+    color: gray;
+}
