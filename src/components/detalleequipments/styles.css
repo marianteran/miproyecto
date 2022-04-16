@@ -44,6 +44,7 @@ swiper {
 
 .equipments-ContTittle {
   background-color: black;
+  padding-bottom: 2px;
   margin-top: 15vh;
   border-radius: 4px;
 }
@@ -61,39 +62,81 @@ swiper {
 .equipments-menu {
   margin-top: 2vh;
   float: left;
-  width: 20%;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 36%;
+
 }
 
 .equipments-menuItem {
   padding: 8px;
-  margin-top: 7px;
-  border: 1px solid black;
+  margin: 20px;
+  border: 1px solid grey;
   border-radius: 6px;
   text-align: center;
-}
-
-.main {
-  float: left;
-  width: 80%;
-  padding: 0 20px;
-  overflow: hidden;
+  font-weight: bold;
+  background-color: rgba(199, 201, 197, 0.062);
 }
 
 .equipments-image {
-  border: 1px solid black;
+  float: right;
   border-radius: 6px;
   justify-content: center;
   align-items: center;
-  /* padding: 10px; */
-  /* width: 100%;
-  height: 50vh; */
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 40%;
+ 
 }
 
 .equipments-likes {
-  text-align: center;
-  border: 1px solid black;
+  font-size:xx-large;
+  color: red;
   border-radius: 100%;
   padding: 10px;
+  margin: 20px;
   width: 60px;
   height: 60px;
+}
+
+.equipments-main {
+  float: left;
+  width: 40%;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: justify;
+  font-size: larger;
+  font-weight: bold;
+
+}
+
+
+.equipments-Comment {
+  width: 100%;
+  padding: 0 20px;
+  overflow: hidden;
+  border: 4px solid grey;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: justify;
+}
+
+@media only screen and (max-width:800px) {
+
+  /* For tablets: */
+  .equipments-menu,
+  .equipments-image,
+  .equipments-main {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width:500px) {
+
+  /* For mobile phones: */
+  .equipments-menu,
+  .equipments-image,
+  .equipments-main {
+      width: 100%;
+  }
 }
