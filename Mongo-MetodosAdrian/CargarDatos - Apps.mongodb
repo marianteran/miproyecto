@@ -14,7 +14,7 @@ db.apps.insertMany([
           "name": "Static", 
   	      "description":"We create your static website. Show the information of your business and reach your customers.",
           "time":"15 days",
-          "image":"",
+          "image":"Static.png",
           "price":"300$",
 	        "functions":
 	                    [{
@@ -61,34 +61,66 @@ db.apps.insertMany([
           "name": "Personalized", 
   	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
           "time":"30 days",
-          "image":"",
+          "image":"pStaticSinLogo.png",
           "price":"300$",
 	        "functions":
-	                    [{
+	                    [
+						{
+	                    "title":"User Login",
+	                    "description":"User connection section",
+                        "price":"100$",
+                        "image":"pLogin.png",
+	                      "time":"3 days",
+	                        },
+							
+							
+							{
 	                      "title":"Shopping cart",
 	                      "description":"We add a shopping cart to your e-commerce.",
                         "price":"100$",
-                        "image":"",
+                        "image":"pCart.png",
 	                      "time":"7 day",
 	                        },
 
 
+							   {
+	                      "title":"Direct Messages",
+	                      "description":"Internal chat between users.",
+                        "price":"200$",
+                        "image":"pChat.png",
+	                      "time":"1 day",
+	                      },
+
+						    {
+	                      "title":"File Upload",
+	                      "description":"Component that allows uploading new files.",
+                        "price":"100$",
+                        "image":"pDetail.png",
+	                      "time":"4 day",
+	                        },
                         {
 	                      "title":"User Comments",
 	                      "description":"User comments section enabled.",
                         "price":"100$",
-                        "image":"",
+                        "image":"pComment.png",
 	                      "time":"7 days",
-	                        },
+	                        },  
 
-
-                        {
-	                      "title":"User Login",
-	                      "description":"User connection section",
+							       {
+	                      "title":"Photography Session",
+	                      "description":"Photo session for the products you want to display on the page.",
                         "price":"100$",
-                        "image":"",
-	                      "time":"3 days",
+                        "image":"pCard.png",
+	                      "time":"3 day",
 	                        },
+
+									       {
+	                      "title":"Bot",
+	                      "description":"User help bot.",
+                        "price":"200$",
+                        "image":"pBot.png",
+	                      "time":"2 day",
+	                        },  			
 
 
                         {
@@ -97,48 +129,9 @@ db.apps.insertMany([
                         "price":"100$",
                         "image":"",
 	                      "time":"3 day",
-	                        },
+	                        }, 		
 
-
-                        {
-	                      "title":"Photography Session",
-	                      "description":"Photo session for the products you want to display on the page.",
-                        "price":"100$",
-                        "image":"",
-	                      "time":"3 day",
-	                        },
-
-
-                        {
-	                      "title":"File Upload",
-	                      "description":"Component that allows uploading new files.",
-                        "price":"100$",
-                        "image":"",
-	                      "time":"4 day",
-	                        },
-
-
-                        {
-	                      "title":"Bot",
-	                      "description":"User help bot.",
-                        "price":"200$",
-                        "image":"",
-	                      "time":"2 day",
-	                        },
-
-
-                        {
-	                      "title":"Direct Messages",
-	                      "description":"Internal chat between users.",
-                        "price":"200$",
-                        "image":"",
-	                      "time":"1 day",
-	                      },
-
-
-                          
-                          
-                          ]},  
+                        ]},  
 
 
           {"type":"App Mobile",

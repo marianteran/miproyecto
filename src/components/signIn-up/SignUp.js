@@ -41,6 +41,7 @@ function SignUp() {
         let name = event.target[0].value
         let lastName = event.target[1].value
         let iniciales = name.charAt(0) + lastName.charAt(0)
+      
         const NuevoUsuario = {
             img: iniciales.toUpperCase(),
             name: event.target[0].value,
@@ -55,8 +56,7 @@ function SignUp() {
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
                 if (response.data.success === "falseVAL") {
-                    let detailsError = response.data.response.error.details
-                    console.log(detailsError)
+                    let detailsError = response.data.response.error.details            
                     detailsError.map(error =>
                         swal({
                             title: " error",

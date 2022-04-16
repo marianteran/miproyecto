@@ -6,8 +6,10 @@ const equipmentsSchema = new mongoose.Schema ({
         time: {type:String,require:true},
         image:{type:Array,require:true},  
         price:{type:String,require:true}, 
+        brand:{type:String,require:true},
         function: {type:String,require:true},
-        shippingPrice:{type:Array,require:true}
+        shippingPrice:{type:Object,require:true},
+        likes:{type:Array,require:true}
     })
 const Equipments = mongoose.model("equipments", equipmentsSchema)
 

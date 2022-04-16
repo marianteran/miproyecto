@@ -5,19 +5,7 @@ import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
 
 const AppMobile = () => {
-    const [{ apps}, dispatch] = useStateValue()
-    
-    useEffect(() => {
-        axios.get("http://localhost:4000/api/apps")
-        .then(response => {
-          dispatch({
-            type: accionType.APPSDB,
-            apps: response.data.response.apps
-          })
-        })
-    }, [])
-    
-    console.log(apps)
+   
   return (
     <div>
          <section id="appWeb">
@@ -39,7 +27,7 @@ const AppMobile = () => {
                             Por ejemplo, podría diseñar una página para que mostrara los resultados del programa de salud y dejara cierta información fuera (como el nombre del empleado y sus resultados) para calcularla cuando la página la solicite un empleado en particular.
                         </p>
 
-                        <LinkRouter to='/detalle' className="btn btn-outline-light ms-2">
+                        <LinkRouter to='/appMobile' className="btn btn-outline-light ms-2">
                             <button className='btn btn-dark'>Info</button>
                         </LinkRouter>
 
