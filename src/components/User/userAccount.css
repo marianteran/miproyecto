@@ -53,13 +53,13 @@
     width: 8rem;
 }
 
-.nav-link{
+.custom-nav-link{
     font-weight: bold;
     color:  rgba(48, 47, 47, 0.6) !important;
 }
 
 .custom-image{
-    margin-bottom: 3rem;
+    margin-bottom: rem;
    border-radius: 50%;
    height: 10rem;
 }

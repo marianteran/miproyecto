@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStateValue } from "../../context/Stateprovider";
-import userAccount from "./userAccount.png";
 import "./userAccount.css";
+
 
 const Home = () => {
   const [{ user, equipments }, dispatch] = useStateValue();
@@ -76,17 +76,17 @@ const Home = () => {
           <div className="card-header background-card">
             <ul className="nav nav-tabs card-header-tabs">
               <li className="nav-item">
-                <a className="nav-link custom-link active background-card-click" aria-current="true" href="#">
+                <a className="nav-link custom-nav-link custom-link active background-card-click" aria-current="true" href="#">
                   Favorites
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link background-card-click" href="#">
+                <a className="nav-link custom-nav-link background-card-click" href="#">
                   Notifications
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link background-card-click" href="#">
+                <a className="nav-link custom-nav-link background-card-click" href="#">
                   Your shoping
                 </a>
               </li>
@@ -107,7 +107,7 @@ const Home = () => {
             className="btn btn-primary logout-button"
            
           >
-            Log-out
+            Log Out
           </button>
         </div>
       </div>
