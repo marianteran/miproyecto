@@ -9,6 +9,10 @@ use(database);
 db.equipments.drop();
 // Inserta los documentos que nosotros le indiquemos.
 db.equipments.insertMany([
+<<<<<<< HEAD
+	 
+=======
+>>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 {
 "name": "All-in-One HP 21-b0002la Intel Celeron J4025 4GB 1TB HDD 20.7",
 "description": "Your all-in-one PC. It has been designed for you to enjoy an incredible multimedia experience and work with it all day long. Combining its Intel Celeron processor and 4GB of RAM, with the style and design of HP, you can experience in your home or office the ultimate desktop PC. Plus, it features a Windows 10Home operating system, making it efficient and easy to use.",
