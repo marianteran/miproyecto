@@ -43,11 +43,11 @@ const Home = () => {
           <div className="card-body data">
             <p className="card-text justify-content-between d-flex p-2">
               <div className="d-inline">User</div>
-              <div className="d-inline text-secondary">prueba2022</div>
+              <div className="d-inline text-secondary">PRUEBA</div>
             </p>
             <p className="card-text d-flex p-2 justify-content-between">
               <div className="d-inline">Email</div>
-              <div className="d-inline text-secondary">prueba@gmail.com</div>
+              <div className="d-inline text-secondary">{user.datosUser.email}</div>
             </p>
           </div>
         </div>
@@ -55,20 +55,20 @@ const Home = () => {
           <h5 className="card-header">Personal Details</h5>
           <div className="card-body data">
             <p className="card-text d-flex p-2 justify-content-between">
-              <div className="d-inline">Name on your ID card</div>
-              <div className="d-inline text-secondary">Prueba</div>
+              <div className="d-inline">Name</div>
+              <div className="d-inline text-secondary">{user.datosUser.name}</div>
             </p>
             <p className="card-text justify-content-between d-flex p-2 ">
-              <div className="d-inline">Selected Name</div>
-              <div className="d-inline text-secondary">Prueba</div>
+              <div className="d-inline">Last Name</div>
+              <div className="d-inline text-secondary">{user.datosUser.lastName}</div>
             </p>
             <p className="card-text justify-content-between d-flex p-2">
               <div className="d-inline">ID card</div>
-              <div className="d-inline text-secondary">2121211</div>
+              <div className="d-inline text-secondary">PRUEBA</div>
             </p>
             <p className="card-text justify-content-between d-flex p-2">
               <div className="d-inline">Phone Number</div>
-              <div className="d-inline text-secondary">1212121</div>
+              <div className="d-inline text-secondary">PRUEBA</div>
             </p>
           </div>
         </div>
