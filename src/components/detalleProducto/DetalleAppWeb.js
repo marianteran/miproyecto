@@ -139,9 +139,10 @@ const DetalleAppWeb = () => {
                     />
                   </ListItem>
                 </div>
-                )})};
+                )})}
 
             </List>
+            <h3>Total:{}</h3>
           </div>
         </div>
         :
