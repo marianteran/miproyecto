@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
     emailVerified:{type:Boolean,require:true},
     connected: {type:Boolean, require:true},
     from:{type:String, require:true},
+    favorite:{type:Array,require:true}
     
 })
 const User = mongoose.model("user", userSchema)

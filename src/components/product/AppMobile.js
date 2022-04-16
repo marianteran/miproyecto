@@ -5,19 +5,7 @@ import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
 
 const AppMobile = () => {
-    const [{ apps}, dispatch] = useStateValue()
-    
-    useEffect(() => {
-        axios.get("http://localhost:4000/api/apps")
-        .then(response => {
-          dispatch({
-            type: accionType.APPSDB,
-            apps: response.data.response.apps
-          })
-        })
-    }, [])
-    
-    console.log(apps)
+   
   return (
     <div>
          <section id="appWeb">
