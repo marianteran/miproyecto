@@ -59,6 +59,8 @@ const Equipment = () => {
                                     <p>{item.function}</p>
                                 </div>
 
+                                <div className="equipments-AddToCart">Add to cart</div>
+
                                 <div className="equipments-Comment">
                                     <p>acá va el comentario del producto?</p>
                                 </div>
