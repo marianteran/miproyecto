@@ -32,7 +32,16 @@ const Equipment = () => {
                                     <div className="equipments-menuItem">Price: U$D {item.price}</div>
                                     <div className="equipments-menuItem">Lead time: {item.time}</div>
                                     <div className="equipments-menuItem">Shipping price: </div>
-                                    <div className="equipments-likes">{item.likes}♥</div>
+
+                                    <div className="equiments-LikAdd">
+
+                                        <div className="equipments-Likes">♥</div>
+
+                                        {/* <div className="equipments-likes">{item.likes}♥</div> */}
+
+                                        <div className="equipments-AddToCart">Add to cart</div>
+
+                                    </div>
 
                                 </div>
 
@@ -58,6 +67,8 @@ const Equipment = () => {
                                     <p>{item.description}</p>
                                     <p>{item.function}</p>
                                 </div>
+
+
 
                                 <div className="equipments-Comment">
                                     <p>acá va el comentario del producto?</p>

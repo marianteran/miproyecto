@@ -36,7 +36,7 @@ swiper {
 
 
 
-/* EQUIPOS READ MORE */
+/* EQUIPMENTS READ MORE */
 
 .equipments-Container {
   margin: 12px;
@@ -60,7 +60,6 @@ swiper {
 
 .equipments-menuCentral {
   overflow: auto;
-  border: 1px solid red;
 }
 
 .equipments-menu {
@@ -91,17 +90,92 @@ swiper {
   /* margin-right: 10%;
   margin-left: 10%; */
   width: 50%;
- 
+
 }
 
-.equipments-likes {
-  font-size:xx-large;
+.equiments-LikAdd {
+  display: flex;
+  justify-content: center;
+}
+
+/* .equipments-likes {
+  font-size: xx-large;
+  font-size: 100px;
   color: red;
   border-radius: 100%;
   padding: 10px;
   margin: 20px;
   width: 60px;
   height: 60px;
+  border: 1px solid red;
+} */
+
+
+.equipments-Likes {
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 100%;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+
+}
+
+.equipments-Likes:hover {
+  background-color: white;
+  color: black;
+}
+
+.equipments-Likes:active {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  box-shadow: 0 5px rgb(182, 181, 181);
+  transform: translateY(4px);
+}
+
+.equipments-AddToCart {
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 40%;
+
+}
+
+.equipments-AddToCart:hover {
+  background-color: white;
+  color: black;
+}
+
+.equipments-AddToCart:active {
+  background-color: white;
+  box-shadow: 0 5px rgb(182, 181, 181);
+  transform: translateY(4px);
 }
 
 .equipments-main {
@@ -126,13 +200,18 @@ swiper {
   text-align: justify;
 }
 
+
 @media only screen and (max-width:800px) {
 
   /* For tablets: */
   .equipments-menu,
   .equipments-image,
   .equipments-main {
-      width: 100%;
+    width: 100%;
+  }
+
+  .equipments-AddToCart {
+    width: 80%;
   }
 }
 
@@ -141,7 +220,13 @@ swiper {
   /* For mobile phones: */
   .equipments-menu,
   .equipments-image,
-  .equipments-main {
-      width: 100%;
+  .equipments-main,
+  .equipments-AddToCart {
+    width: 100%;
   }
+
+  .equipments-AddToCart {
+    width: 50%;
+  }
+
 }
