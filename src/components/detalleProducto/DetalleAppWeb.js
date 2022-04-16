@@ -36,7 +36,7 @@ const DetalleAppWeb = () => {
       })
   }, [])
   // funciones materia UI
-  const [checked, setChecked] = React.useState(['']);
+  const [checked, setChecked] = React.useState([]);
   const [imgenPc, setImagenPc] = useState()
 
   const handleToggle = (value) => () => {
@@ -51,18 +51,18 @@ const DetalleAppWeb = () => {
     setChecked(newChecked);
     console.log(checked)
 
-    if(checked.includes("User Login")&&checked.length===1){
+    /* if(checked.includes("User Login")&&checked.length===1){
         setImagenPc("pStaticSinLogo.png")
     }
-    else if(checked.includes("User Login")&&checked.length===2){
+    else if(checked.includes("Shopping cart")&&checked.length===2){
       setImagenPc("pStatic.png")
     }
-    else if(checked.includes("User Login")&&checked.length===3){
+    else if(checked.includes("Direct Messages")&&checked.length===3){
       setImagenPc("pStatic.png")
     }
-    else if(checked.includes("User Login")&&checked.length===4){
+    else if(checked.includes("File Upload")&&checked.length===4){
       setImagenPc("pLogin.png")
-    }
+    } */
   };
 
   //CONST SETEABLES:
@@ -112,8 +112,8 @@ const DetalleAppWeb = () => {
         <div className="" style={{ display: "flex", flexDirection: "row" }}>
           <div className="detalleProductImg">
             
-            <img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>          
-            {/* <img src={StaticPC} alt="" /> */}
+           {/*  <img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>       */}    
+             <img src={StaticPC} alt="" />
               
           </div>
           <div>

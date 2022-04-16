@@ -8,9 +8,7 @@ import axios from 'axios'
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -21,8 +19,6 @@ import TextField from '@mui/material/TextField';
 import Switch from '@mui/material/Switch';
 import { pink } from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
-import MapsUgcIcon from '@mui/icons-material/MapsUgc';
-import StarPurple500Icon from '@mui/icons-material/StarPurple500';
 import swal from 'sweetalert'
 
 // Import Swiper React components
@@ -44,26 +40,19 @@ const GreenSwitch = styled(Switch)(({ theme }) => ({
 }));
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-const DetalleEquipments = () => { 
+const DetalleEquipments = () => {
+
 
   const [{ equipments, equipmentsNew, user }, dispatch] = useStateValue()
   const [reload, setReload] = useState(false)
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch({
-      type: accionType.FILTER,
-      equipmentsNew: equipments
-    })
-  }, [reload])
-  console.log(equipments)
+  
+ 
+
+
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
  
-  let cont = 0;
-
-  
-
   const handleExpandClick = (parametro) => {
     setCheckKey(parametro)
     setExpanded(!expanded);
@@ -147,15 +136,18 @@ const DetalleEquipments = () => {
         { headers: { 'Authorization': 'Bearer ' + token } })
         .then(response => {
           console.log(response.data.response);
-          if (response.data.response.includes(user.datosUser.id)) {
-            //   setColorLike("colorLike")
-          }
           setReload(!reload)
         })
     }
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch({
+      type: accionType.FILTER,
+      equipmentsNew: equipments
+    })
+  }, [reload]) 
 
-  console.log(user)
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -201,8 +193,7 @@ const DetalleEquipments = () => {
         {/* AQUI COMIENZAN LAS CARDS */}
         <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
           {equipmentsNew.length > 0 ?
-            equipmentsNew?.map(equipment => {
-              cont = cont + 1
+            equipmentsNew?.map(equipment => {             
               return (
                 <Card sx={{ width: 345, margin: "30px" }}>
                   <CardHeader
@@ -255,7 +246,6 @@ const DetalleEquipments = () => {
             <h1 style={{ color: "", display: "flex", justifyContent: "center", marginTop: "2%" }}>Sorry, no matches, please try again..</h1>}
 
         </div>
-
 
       </div>
     </>

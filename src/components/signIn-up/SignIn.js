@@ -72,7 +72,7 @@ function Signin() {
     }
     return (
         <>
-      
+      {!user?
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
@@ -128,8 +128,8 @@ function Signin() {
                         </div>
 
                     </form>
-                </div>
-            <AccountUser/>
+                </div>:
+            <AccountUser/>}
                 
                 
         </>
