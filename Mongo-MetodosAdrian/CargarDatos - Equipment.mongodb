@@ -6,9 +6,9 @@ const database = 'SeomaDB';
 use(database);
 
 // The drop() command destroys all data from a collection.
-db.equiments.drop();
+db.equipments.drop();
 // Inserta los documentos que nosotros le indiquemos.
-db.equiments.insertMany([
+db.equipments.insertMany([
 	 
 {
 "name": "All-in-One HP 21-b0002la Intel Celeron J4025 4GB 1TB HDD 20.7",
