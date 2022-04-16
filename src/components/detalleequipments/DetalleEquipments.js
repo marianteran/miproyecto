@@ -165,24 +165,24 @@ const DetalleEquipments = () => {
             focused />
         </Box>
 
-
+<div style={{display:"flex"}}>
         {/* CHECK DE MARCAS DE BUSQUEDA */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column"}}>
           {brands.length > 1 ?
             brands?.map((brand) => {
               return (
-                <div>
+                <div style={{display:"flex"}}>
                   <Switch {...label} defaultChecked onChange={selectBrand} name={brand} />
                   {brand}
                 </div>
               )
             })
             :
-            <div>
+            <div style={{display:"flex"}}>
               <GreenSwitch {...label} onChange={selectBrand} name={"All Brand"} />
               Press to see all brands
               <div>
-                <h1 style={{ display: "flex", justifyContent: "center", marginTop: "2%" }}>
+                <h1 style={{ display: "flex", justifyContent: "left", marginTop: "2%" }}>
                   {brandValue === "All Brand" ? "" : brandValue}
                 </h1>
               </div>
@@ -195,7 +195,7 @@ const DetalleEquipments = () => {
           {equipmentsNew.length > 0 ?
             equipmentsNew?.map(equipment => {             
               return (
-                <Card sx={{ width: 345, margin: "30px" }}>
+                <Card sx={{ width: 345, margin: "20px" }}>
                   <CardHeader
                     avatar={
                       <FavoriteIcon 
@@ -245,6 +245,7 @@ const DetalleEquipments = () => {
             }) :
             <h1 style={{ color: "", display: "flex", justifyContent: "center", marginTop: "2%" }}>Sorry, no matches, please try again..</h1>}
 
+        </div>
         </div>
 
       </div>

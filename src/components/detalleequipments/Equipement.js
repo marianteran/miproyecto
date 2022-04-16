@@ -3,20 +3,61 @@ import React, { useEffect, useState } from "react";
 import { useStateValue } from "../../context/Stateprovider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import axios from 'axios'
 import "swiper/css";
 import "swiper/css/navigation";
+import swal from 'sweetalert'
 
 
 const Equipment = () => {
     const { id } = useParams()
-    const [{ equipments }, dispatch] = useStateValue()
+    const [equipment, setEquipment] = useState()
+    const [{ user }, dispatch] = useStateValue()
+    const [reload, setReload] = useState(false)
+    
+    
+    useEffect(() => { 
+        
+        axios.get(`http://localhost:4000/api/detailEquipment/${id}`)
+            .then(response => {
+                console.log(response.data.response)
+                setEquipment(response.data.response.equipment)
+            })
 
-    let equipment = equipments.filter(item => item._id === id)
+    }, [reload])  
+
+    const favorite = async (id) => {
+        const token = localStorage.getItem("token")
+        if (!token) {
+          swal({
+            title: "Go to sign in to post your opinions",
+            icon: "error",
+            buttons: "ok"
+          })
+        }
+        else {
+          axios.put(`http://localhost:4000/api/favorite/${id}`, {},
+            { headers: { 'Authorization': 'Bearer ' + token } })
+            .then(response => {
+              console.log(response.data.response);
+              setReload(!reload)
+            })
+        }
+      }
+
+
+
+
+
+    
+    
+    //let equipment = equipments.filter(item => item._id === id)
     console.log(equipment)
+
     return (
-        <>
-            {equipment.length > 0 ?
-                equipment.map((item) => {
+        <>        
+            {equipment?.length > 0 ?
+                equipment?.map((item) => {
                     return (
                         <div className="equipments-Container">
 
@@ -32,7 +73,11 @@ const Equipment = () => {
                                     <div className="equipments-menuItem">Price: U$D {item.price}</div>
                                     <div className="equipments-menuItem">Lead time: {item.time}</div>
                                     <div className="equipments-menuItem">Shipping price: </div>
-                                    <div className="equipments-likes">{item.likes}♥</div>
+            {/* <div className={user && user.datosUser.favorite.includes(item._id)?"equipments-likes" : ""}>
+                {item.likes}♥</div>
+ */}
+
+
 
                                 </div>
 
