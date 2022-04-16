@@ -8,43 +8,57 @@ import Navb from './components/navegation/Navb';
 import Home from './components/home/Home';
 import Footer from './components/footer/Footer';
 import Product from './components/product/Product';
-import DetalleProducto from './components/detalleProducto/DetalleProducto';
+import DetalleAppWeb from './components/detalleProducto/DetalleAppWeb';
+import DetalleAppMobile from './components/detalleProducto/DetalleAppMobile';
 import SignIn from './components/signIn-up/SignIn';
 import SignUp from './components/signIn-up/SignUp';
 import Servicios from './components/servicios/Servicios';
 import Cart from './components/carro/Cart';
+import swal from 'sweetalert'
+import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
+import Equipment from './components/detalleequipments/Equipement';
+
 
 
 function App() {
-  const [{ apps, smedia, equipments }, dispatch] = useStateValue()
-  
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/apps")
-    .then(response => {
-      dispatch({
-        type: accionType.APPSDB,
-        apps: response.data.response.apps
-      })
-    })
+  const [{ equipments }, dispatch] = useStateValue() 
 
-    axios.get("http://localhost:4000/api/smedia")
-    .then(response => {
-      dispatch({
-        type: accionType.SMEDIADB,
-        smedia: response.data.response.socialMedia
-      })
-    })
+  useEffect(() => {
     axios.get("http://localhost:4000/api/equipments")
-    .then(response => {   
+    .then(response => {    
       dispatch({
         type: accionType.EQUIPMENTSDB,
         equipments: response.data.response.equipments
       })
     })
+
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token")
+      axios.get("http://localhost:4000/api/signinToken", {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      })
+        .then(user => {
+          if (user.data.success) {
+            swal({
+              title: user.data.response,
+              icon: "success",
+              buttons: "ok"
+            })
+            dispatch({
+              type: accionType.USERDB,
+              user: user.data
+            })
+          }
+          else {
+            localStorage.removeItem("token")
+          }
+        })
+    }
+
   }, [])
-  console.log(apps)
-  console.log(smedia)
-  console.log(equipments)
+console.log(equipments)
   return (
     <div className="App">
       <BrowserRouter>
@@ -52,16 +66,16 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/detalle" element={<DetalleProducto />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/appWeb" element={<DetalleAppWeb />} />
+          <Route path="/appMobile" element={<DetalleAppMobile />} />
+          <Route path="/signin" element={<SignIn />} />        
           <Route path="/signup" element={<SignUp />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/equipments" element={<DetalleEquipments />} />
+          <Route path="/equipment/:id" element={<Equipment/>} />
 
-
-  
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>

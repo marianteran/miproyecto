@@ -3,6 +3,7 @@ const bcryptjs = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
 const jwt = require("jsonwebtoken")
+const { favorite } = require("./datosControlles.js")
 
 
 async function sendEmail(email, uniqueString) {
@@ -11,11 +12,11 @@ async function sendEmail(email, uniqueString) {
         port: 465,
         secure: true,
         auth: {
-            user: "elena.study2022@gmail.com",
+            user: "seomaadm2022@gmail.com",
             pass: process.env.NODEMAILER
         }
     })
-    const sender = "elena.study2022@gmail.com"
+    const sender = "seomaadm2022@gmail.com"
     const mailOptions = {
         from: sender,
         to: email,
@@ -24,14 +25,10 @@ async function sendEmail(email, uniqueString) {
             <div style="width: 100%; height:100%; background-color: #fff5ee;">
                   <h2 style="font-size: 30px;text-align: center;  color: #ff4b4b; font-weight: 800;">EMAIL VALIDATION</h2>
                   <h2 style="font-size: 20px;text-align: center;  color: rgb(99, 99, 99); font-weight: 100;">Let's travel The World</h2>
-                  <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString} style=" color: rgb(255, 85, 0); font-size: 20px;text-align: center; text-decoration: none;margin-left: 35%; font-weight: 700;">Click Here</a>
+                  <a href=http://localhost:4000/api/verify/${uniqueString} style=" color: rgb(255, 85, 0); font-size: 20px;text-align: center; text-decoration: none;margin-left: 35%; font-weight: 700;">Click Here</a>
                  <h1 style="font-size: 10px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">My Tinerary</h1>
             </div>
-            </div>`
-        /* 
-        html: `<div style"background-color:"red">Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>
-        here</a>Para validar tu email
-        </div>` */
+            </div>`  
     }
     await transporter.sendMail(mailOptions, function (error, response) {
         if (error) {
@@ -52,7 +49,7 @@ const userControllers = {
         if (user) {
             user.emailVerified = true
             await user.save()
-            res.redirect("https://mytinerary-elena.herokuapp.com/api/signin")
+            res.redirect("hhttp://localhost:4000/api/signin")
         }
         else {
             res.json({ success: false, response: "your email couldn't be verified" })
@@ -64,7 +61,7 @@ const userControllers = {
         try {
             const usuarioExiste = await User.findOne({ email })
             if (usuarioExiste) {                
-                if (from!=="MyTineray" ) {
+                if (from!=="Seoma" ) {
                     const passwordHash = bcryptjs.hashSync(password, 10)
                     usuarioExiste.img= img
                     usuarioExiste.password = passwordHash;
@@ -98,7 +95,7 @@ const userControllers = {
 
                 console.log(newUser);
 
-                if (from!=="MyTineray") {
+                if (from!=="Seoma") {
                     newUser.emailVerified = true
                         newUser.google = true
                         newUser.connected = false
@@ -140,7 +137,8 @@ const userControllers = {
                             email: user.email,
                             connected: user.connected,
                             id: user._id,
-                            from:user.from
+                            from:user.from,
+                            favorite:user.favorite,
                         }
                         user.connected = true
                         await user.save()
@@ -176,7 +174,8 @@ const userControllers = {
                 lastName: req.user.lastName,
                 email: req.user.email, 
                 connected:req.user.connected , 
-                id:req.user.id},
+                id:req.user.id,
+                favorite:req.user.favorite},
                 response:"Welcome Back Again "+req.user.name})
         }
         else{

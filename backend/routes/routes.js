@@ -3,7 +3,7 @@ const datosController = require('../controller/datosControlles')
 const commentsControllers = require('../controller/commentsControlles')
 const passport = require('../config/passport')
 
-const {obtenerApp , obtenerSocialMedia, obtenerEquipments, /* obtenerItineraries, */ likeDisLike} = datosController //desestructuracion
+const {obtenerApp , obtenerSocialMedia, obtenerEquipments, equipment, favorite} = datosController //desestructuracion
 
 const userController = require("../controller/userControlles.js")
 const validator = require("../controller/validador")
@@ -19,9 +19,9 @@ Router.route('/smedia')
 Router.route('/equipments')
 .get(obtenerEquipments)
 
-/* Router.route('/infoitinerary/:city')
-.get(obtenerItineraries)
- */
+Router.route('/detailEquipment/:equipment')
+.get(equipment)
+
 Router.route("/signup")
 .post(validator, nuevoUsuario)
 
@@ -45,7 +45,7 @@ Router.route("/comments/:id")
 Router.route("/signinToken")
 .get(passport.authenticate("jwt",{session:false}),verifyToken)
 
-Router.route("/likeDislike/:id")
-.put(passport.authenticate("jwt",{session:false}),likeDisLike)
+Router.route("/favorite/:id")
+.put(passport.authenticate("jwt",{session:false}),favorite)
 
 module.exports = Router
