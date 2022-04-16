@@ -20,13 +20,13 @@ const Equipment = () => {
                     return (
                         <div className="equipments-Container">
 
-                            <div className="equipments-ContTittle">
-                                <h2 className="equipments-Tittle">{item.name}</h2>
-                            </div>
-
-                            <div className="menuCentral">
+                            <div className="equipments-menuCentral">
 
                                 <div className="equipments-menu">
+
+                                    <div className="equipments-ContTittle">
+                                        <h2 className="equipments-Tittle">{item.name}</h2>
+                                    </div>
 
                                     <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
                                     <div className="equipments-menuItem">Price: U$D {item.price}</div>
@@ -38,9 +38,6 @@ const Equipment = () => {
 
 
                                 <div className="equipments-image">
-
-                    
-
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                                         <SwiperSlide>
                                             <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>

@@ -45,7 +45,9 @@ swiper {
 .equipments-ContTittle {
   background-color: black;
   padding-bottom: 2px;
-  margin-top: 15vh;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 10vh;
   border-radius: 4px;
 }
 
@@ -53,18 +55,20 @@ swiper {
   color: white;
   text-align: center;
   font-size: 50px;
+
 }
 
-.menuCentral {
+.equipments-menuCentral {
   overflow: auto;
+  border: 1px solid red;
 }
 
 .equipments-menu {
   margin-top: 2vh;
   float: left;
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 36%;
+  /* margin-left: 2%;
+  margin-right: 2%; */
+  width: 40%;
 
 }
 
@@ -79,13 +83,14 @@ swiper {
 }
 
 .equipments-image {
+  margin-top: 10vh;
   float: right;
   border-radius: 6px;
   justify-content: center;
   align-items: center;
-  margin-right: 10%;
-  margin-left: 10%;
-  width: 40%;
+  /* margin-right: 10%;
+  margin-left: 10%; */
+  width: 50%;
  
 }
 
