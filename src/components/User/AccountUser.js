@@ -9,6 +9,7 @@ const Home = () => {
   console.log(user); 
   console.log(equipments);
 
+
   let idFavorite = [];
   let myFavorite = [];
 
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <>
       <div>
-        <div className="banner d-flex justify-content-between align-items-center col-lg-6 col-sm-7 col-md-7  m-auto mb-6">
+        <div className="banner d-flex justify-content-between align-items-center col-lg-5 col-sm-7 col-md-7  m-auto mb-5">
           <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 ">
             <h1 className="">Your account</h1>
             <h4 className="custom-header-subtitle">Find your activity history here</h4>
@@ -39,7 +40,7 @@ const Home = () => {
 
         {/* Datos */}
         <div className="card  col-lg-4 col-sm-5 col-md-5  m-auto mb-4">
-          <h5 className="card-header">Account details</h5>
+          <h5 className="card-header background-card">Account details</h5>
           <div className="card-body data">
             <p className="card-text justify-content-between d-flex p-2">
               <div className="d-inline">User</div>
@@ -52,7 +53,7 @@ const Home = () => {
           </div>
         </div>
         <div className="card custom-card col-lg-4 col-sm-5 col-md-5  m-auto mb-4">
-          <h5 className="card-header">Personal Details</h5>
+          <h5 className="card-header background-card ">Personal Details</h5>
           <div className="card-body data">
             <p className="card-text d-flex p-2 justify-content-between">
               <div className="d-inline">Name</div>
