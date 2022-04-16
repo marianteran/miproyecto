@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStateValue } from "../../context/Stateprovider";
 import "./userAccount.css";
+import userImage from "./userImage.png"
 
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
           </div>
           <div>
             <img
-              src={user.datosUser.img}
+              src={user.datosUser.img ? user.datosUser.img : userImage}
               className="custom-image d-block w-100 col-sm-12 col-md-6 col-lg-6 col-lg-5"
               alt="User Image"
             />
