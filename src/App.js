@@ -16,13 +16,22 @@ import Servicios from './components/servicios/Servicios';
 import Cart from './components/carro/Cart';
 import swal from 'sweetalert'
 import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
+import Equipment from './components/detalleequipments/Equipement';
 
 
 
 function App() {
-  const [{ apps }, dispatch] = useStateValue()
+  const [{ equipments }, dispatch] = useStateValue() 
 
   useEffect(() => {
+    axios.get("http://localhost:4000/api/equipments")
+    .then(response => {    
+      dispatch({
+        type: accionType.EQUIPMENTSDB,
+        equipments: response.data.response.equipments
+      })
+    })
+
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token")
       axios.get("http://localhost:4000/api/signinToken", {
@@ -49,7 +58,7 @@ function App() {
     }
 
   }, [])
-
+console.log(equipments)
   return (
     <div className="App">
       <BrowserRouter>
@@ -64,6 +73,8 @@ function App() {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/equipments" element={<DetalleEquipments />} />
+          <Route path="/equipment/:id" element={<Equipment/>} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

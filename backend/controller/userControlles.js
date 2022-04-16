@@ -3,6 +3,7 @@ const bcryptjs = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
 const jwt = require("jsonwebtoken")
+const { favorite } = require("./datosControlles.js")
 
 
 async function sendEmail(email, uniqueString) {
@@ -136,7 +137,8 @@ const userControllers = {
                             email: user.email,
                             connected: user.connected,
                             id: user._id,
-                            from:user.from
+                            from:user.from,
+                            favorite:user.favorite,
                         }
                         user.connected = true
                         await user.save()
@@ -172,7 +174,8 @@ const userControllers = {
                 lastName: req.user.lastName,
                 email: req.user.email, 
                 connected:req.user.connected , 
-                id:req.user.id},
+                id:req.user.id,
+                favorite:req.user.favorite},
                 response:"Welcome Back Again "+req.user.name})
         }
         else{

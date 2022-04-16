@@ -6,20 +6,8 @@ import axios from 'axios'
 
 
 const Socialmedia = () => {
-    const [{ smedia }, dispatch] = useStateValue()
-  
-    useEffect(() => {
-        axios.get("http://localhost:4000/api/smedia")
-        .then(response => {
-        
-          dispatch({
-            type: accionType.SMEDIADB,
-            smedia: response.data.response.socialMedia
-          })
-        })
-        
-      }, [])
-      console.log(smedia)
+    const [{ smedia }, dispatch] = useStateValue()  
+   
   return (
     <section id="appWeb">
                 <h5>Socialmedia</h5>

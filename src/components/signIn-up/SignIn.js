@@ -42,6 +42,7 @@ function Signin() {
         }
         detectFrom(UserData)
     }
+    console.log(user)
 
     async function detectFrom(UserData) {
         await axios.post("http://localhost:4000/api/signin", { UserData })
@@ -71,7 +72,7 @@ function Signin() {
     }
     return (
         <>
-        {!user?
+      
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
@@ -127,10 +128,10 @@ function Signin() {
                         </div>
 
                     </form>
-                </div>:
-                <AccountUser/>
+                </div>
+            <AccountUser/>
                 
-                }
+                
         </>
     )
 }

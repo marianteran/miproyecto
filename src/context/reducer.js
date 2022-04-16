@@ -2,7 +2,7 @@ export const initialState = { // crear estados
     apps: [], //estado inicial de products
     smedia:[],
     equipments:[],
-    //productsNew: [],
+    equipmentsNew: [],
     user: null,   
 }
 
@@ -40,7 +40,7 @@ const reducer = (state, action) => {
                 case "FILTER":
                     return {
                         ...state,
-                        productsNew: action.productsNew
+                        equipmentsNew: action.equipmentsNew
                     }
                                     
         default: return state

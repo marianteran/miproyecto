@@ -36,11 +36,9 @@ const [appPulsada, setAppPulsada] = useState()
 
 
    const tipoDeAppp = (event) =>{
-      console.log(event.target.name)
       setAppPulsada(event.target.name)
    }
 
-console.log(appMobile)
 return (
     <>
     <div>DetalleProducto</div>    
