@@ -9,10 +9,8 @@ use(database);
 db.equipments.drop();
 // Inserta los documentos que nosotros le indiquemos.
 db.equipments.insertMany([
-<<<<<<< HEAD
-	 
-=======
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
+
+
 {
 "name": "All-in-One HP 21-b0002la Intel Celeron J4025 4GB 1TB HDD 20.7",
 "description": "Your all-in-one PC. It has been designed for you to enjoy an incredible multimedia experience and work with it all day long. Combining its Intel Celeron processor and 4GB of RAM, with the style and design of HP, you can experience in your home or office the ultimate desktop PC. Plus, it features a Windows 10Home operating system, making it efficient and easy to use.",
@@ -122,7 +120,7 @@ db.equipments.insertMany([
 "time": "within 5 business days of purchase", 
 "image": ["imgPcEscritorio_7.png","imgPcEscritorio_7a.png","imgPcEscritorio_7b.png"],
 "price":"342",
-"brand":"Aio Iqual",
+"brand":"Iqual",
 "function": "Procesador: Intel Core i3-1005G1 1.2 - 3.4 GHz, 4 MB caché - Sistema operativo: Windows 10 Home - Memora RAM: 4 GB DDR4 - Almacenamiento: 1 TB HDD - Pantalla: 21,5 LED IPS Full HD 1920 x 1080 px - Conectividad: -- LAN GbE 10/100/1000 -- WiFi 802.11ac Dual Band 2.4 GHz + 5 GHz -- Bluetooth 4.0 - Puertos: -- 1 x miniHDMI -- 1 x USB 3.0 -- 1 x USB 2.0 -- 1 x RJ-45 LAN -- 1 x conector de audio miniplug -- Lector de memorias SD - Cámara web: Integrada 2 MPx con micrófono - Contenido de la caja: -- AIO Q213 -- Teclado USB -- Mouse USB -- Fuente de alimentación 19V 3A",
 "shippingPrice": {"CABA": "300" , "Greater Buenos Aires": "600" , "Interior": "800"},
 },
@@ -166,7 +164,7 @@ db.equipments.insertMany([
 "time": "within 5 business days of purchase", 
 "image": ["imgNotebook_5.png","imgNotebook_5a.png","imgNotebook_5b.png"],
 "price":"1842",
-"brand":"Levono",
+"brand":"Lenovo",
 "function": "Con la plataforma Intel® Evo™, la computadora portátil ThinkPad T14s de 2da generación ofrece una potente combinación de rendimiento, capacidad de respuesta, autonomía de la batería y elementos visuales impactantes. Tendrás una experiencia excepcional en cualquier parte gracias a su procesador Intel® Core™ i7 de 11va generación.",
 "shippingPrice": {"CABA": "300" , "Greater Buenos Aires": "600" , "Interior": "800"},
 },
