@@ -132,6 +132,13 @@ swiper {
   height: 80px;
 
 }
+
+.equipments-ButtonOnClick {
+  background: none;
+}
+
+
+
 .equipments-LikesUser {
   padding: 15px 25px;
   cursor: pointer;

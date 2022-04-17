@@ -71,7 +71,7 @@ const Equipment = () => {
 
                                 <div className="equiments-LikAdd">
 
-                                    <button onClick={() => favorite(item._id)}>
+                                    <button className="equipments-ButtonOnClick" onClick={() => favorite(item._id)}>
 
                                    <div className={user && user.datosUser.favorite.includes(item._id)?"equipments-LikesUser" : "equipments-Likes"}>
                                     ♥</div> 
