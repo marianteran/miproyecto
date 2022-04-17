@@ -48,6 +48,7 @@ const DetalleEquipments = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
+ 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch({
