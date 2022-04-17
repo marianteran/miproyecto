@@ -18,8 +18,6 @@ import swal from 'sweetalert'
 import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
 import Equipment from './components/detalleequipments/Equipement';
 
-
-
 function App() {
   const [{ equipments }, dispatch] = useStateValue() 
 
@@ -58,7 +56,6 @@ function App() {
     }
 
   }, [])
-console.log(equipments)
   return (
     <div className="App">
       <BrowserRouter>
@@ -68,7 +65,7 @@ console.log(equipments)
           <Route path="/product" element={<Product />} />
           <Route path="/appWeb" element={<DetalleAppWeb />} />
           <Route path="/appMobile" element={<DetalleAppMobile />} />
-          <Route path="/signin" element={<SignIn />} />        
+          <Route path="/signin" element={<SignIn />} /> 
           <Route path="/signup" element={<SignUp />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cart" element={<Cart />} />

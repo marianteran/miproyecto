@@ -132,6 +132,27 @@ swiper {
   height: 80px;
 
 }
+.equipments-LikesUser {
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: red;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  border: 3px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+
+}
 
 .equipments-Likes:hover {
   background-color: white;
