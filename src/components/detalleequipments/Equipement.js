@@ -7,12 +7,14 @@ import axios from 'axios'
 import "swiper/css";
 import "swiper/css/navigation";
 import swal from 'sweetalert'
+import { accionType } from "../../context/reducer";
+
 
 
 const Equipment = () => {
     const { id } = useParams()
     const [equipment, setEquipment] = useState()
-    const [{ user }, dispatch] = useStateValue()
+    const [{ user, favorites }, dispatch] = useStateValue()
     const [reload, setReload] = useState(false)
     
     
@@ -43,13 +45,7 @@ const Equipment = () => {
               setReload(!reload)
             })
         }
-      }
-
-
-
-
-
-    
+      }    
     
     //let equipment = equipments.filter(item => item._id === id)
     console.log(equipment)
@@ -103,6 +99,8 @@ const Equipment = () => {
                                     <p>{item.description}</p>
                                     <p>{item.function}</p>
                                 </div>
+
+
 
                                 <div className="equipments-Comment">
                                     <p>acá va el comentario del producto?</p>
