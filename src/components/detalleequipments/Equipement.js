@@ -18,8 +18,7 @@ const Equipment = () => {
     const [reload, setReload] = useState(false)
     
     
-    useEffect(() => { 
-        
+    useEffect(() => {         
         axios.get(`http://localhost:4000/api/detailEquipment/${id}`)
             .then(response => {
                 console.log(response.data.response)
@@ -51,67 +50,77 @@ const Equipment = () => {
     console.log(equipment)
 
     return (
-        <>        
-            {equipment?.length > 0 ?
-                equipment?.map((item) => {
-                    return (
-                        <div className="equipments-Container">
+        <>
+        {equipment ?
+            equipment.map((item) => {
+                return (
+                    <div className="equipments-Container">
 
-                            <div className="equipments-menuCentral">
+                        <div className="equipments-menuCentral">
 
-                                <div className="equipments-menu">
+                            <div className="equipments-menu">
 
-                                    <div className="equipments-ContTittle">
-                                        <h2 className="equipments-Tittle">{item.name}</h2>
-                                    </div>
-
-                                    <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
-                                    <div className="equipments-menuItem">Price: U$D {item.price}</div>
-                                    <div className="equipments-menuItem">Lead time: {item.time}</div>
-                                    <div className="equipments-menuItem">Shipping price: </div>
-            {/* <div className={user && user.datosUser.favorite.includes(item._id)?"equipments-likes" : ""}>
-                {item.likes}♥</div>
- */}
-
-
-
+                                <div className="equipments-ContTittle">
+                                    <h2 className="equipments-Tittle">{item.name}</h2>
                                 </div>
 
+                                <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
+                                <div className="equipments-menuItem">Price: U$D {item.price}</div>
+                                <div className="equipments-menuItem">Lead time: {item.time}</div>
+                                <div className="equipments-menuItem">Shipping price: </div>
 
-                                <div className="equipments-image">
-                                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                        <SwiperSlide>
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
-                                        </SwiperSlide>
+                                <div className="equiments-LikAdd">
 
-                                        <SwiperSlide>
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
-                                        </SwiperSlide>
+                                    <button onClick={() => favorite(item._id)}>
 
-                                        <SwiperSlide>
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
-                                        </SwiperSlide>
-                                    </Swiper>
-                                </div>
+                                   <div className={user && user.datosUser.favorite.includes(item._id)?"equipments-LikesUser" : "equipments-Likes"}>
+                                    ♥</div> 
+                                    </button>
+                                    
 
+                                    {/* <div className="equipments-likes">{item.likes}♥</div> */}
 
-                                <div className="equipments-main">
-                                    <p>{item.description}</p>
-                                    <p>{item.function}</p>
-                                </div>
+                                    <div className="equipments-AddToCart">Add to cart</div>
 
-
-
-                                <div className="equipments-Comment">
-                                    <p>acá va el comentario del producto?</p>
                                 </div>
 
                             </div>
 
+
+                            <div className="equipments-image">
+                                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                                    <SwiperSlide>
+                                        <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
+                                    </SwiperSlide>
+
+                                    <SwiperSlide>
+                                        <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
+                                    </SwiperSlide>
+
+                                    <SwiperSlide>
+                                        <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+
+
+                            <div className="equipments-main">
+                                <p>{item.description}</p>
+                                <p>{item.function}</p>
+                            </div>
+
+
+
+                            <div className="equipments-Comment">
+                                <p>acá va el comentario del producto?</p>
+                            </div>
+
                         </div>
-                    )
-                }) : ""}
-        </>
-    )
+
+                    </div>
+                )
+            }) : ""}
+    </>
+)
 }
 export default Equipment 
