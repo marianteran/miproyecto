@@ -42,7 +42,6 @@ function Signin() {
         }
         detectFrom(UserData)
     }
-    console.log(user)
 
     async function detectFrom(UserData) {
         await axios.post("http://localhost:4000/api/signin", { UserData })
@@ -68,6 +67,7 @@ function Signin() {
                     type: accionType.USERDB,
                     user: response.data.response
                 })
+                
             })
     }
     return (

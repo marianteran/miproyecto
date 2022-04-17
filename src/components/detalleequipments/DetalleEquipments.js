@@ -42,16 +42,20 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const DetalleEquipments = () => {
 
-
   const [{ equipments, equipmentsNew, user }, dispatch] = useStateValue()
   const [reload, setReload] = useState(false)
-  
- 
-
 
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch({
+      type: accionType.FILTER,
+      equipmentsNew: equipments
+    })
+  }, [reload]) 
+
  
   const handleExpandClick = (parametro) => {
     setCheckKey(parametro)
@@ -64,9 +68,7 @@ const DetalleEquipments = () => {
     if (!brands.includes(equipment.brand)) {
       return (
         brands.push(equipment.brand)
-      )
-    }
-  })
+      )}})
 
   function filterEquipments(event) {
     let textEquipment = event.target.value.toLowerCase()
@@ -140,14 +142,7 @@ const DetalleEquipments = () => {
         })
     }
   }
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch({
-      type: accionType.FILTER,
-      equipmentsNew: equipments
-    })
-  }, [reload]) 
-
+ 
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -168,7 +163,7 @@ const DetalleEquipments = () => {
 <div style={{display:"flex"}}>
         {/* CHECK DE MARCAS DE BUSQUEDA */}
         <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column"}}>
-          {brands.length > 1 ?
+          {brands.length > 0 ?
             brands?.map((brand) => {
               return (
                 <div style={{display:"flex"}}>
