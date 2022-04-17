@@ -218,7 +218,7 @@ swiper {
 }
 
 
-.equipments-Comment {
+.equipments-questions {
   width: 100%;
   padding: 0 20px;
   overflow: hidden;
@@ -227,6 +227,38 @@ swiper {
   padding: 20px;
   text-align: justify;
 }
+
+.questions {
+  background-color: white;
+  border-style: solid; 
+  padding: 8px;
+  overflow-y: auto;
+  height: 500px;
+}
+.questionsA {
+  background-color: white;
+  border-style: none;
+  padding: 8px;
+  overflow-y: auto;
+
+}
+.questions::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.questions::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.questions::-webkit-scrollbar-thumb {
+  background-color: #4CAF50;
+  border-radius: 20px;
+  border-right: 2px solid rgba(250, 230, 223, 0.9);
+}
+
+
+
+
 
 
 @media only screen and (max-width:800px) {

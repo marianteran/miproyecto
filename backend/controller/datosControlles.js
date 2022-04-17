@@ -2,8 +2,6 @@
 const Apps = require('../models/apps')
 const Smedia = require('../models/smedia.js')
 const Equipments = require('../models/equipments.js')
-
-const Itinerary = require('../models/itinerary')
 const User = require("../models/user")
 
 const datosController = {
@@ -55,7 +53,7 @@ const datosController = {
 
 
    equipment: async (req, resp) => {
-        let equipment; //ITINERARIES
+        let equipment; 
         console.log(req.params);
         const selecEquipment = req.params.equipment
         console.log(selecEquipment)

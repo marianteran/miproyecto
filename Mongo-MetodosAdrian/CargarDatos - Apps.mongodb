@@ -131,7 +131,7 @@ db.apps.insertMany([
 	                      "title":"User Profile Modification",
 	                      "description":"User profile with option to modify data.",
                         "price":100,
-                        "image":"",
+                        "image":"pComplete.png",
 	                      "time":"3 day",
 	                        }, 		
 
@@ -263,7 +263,7 @@ db.apps.insertMany([
 	                      "title":"User Profile Modification",
 	                      "description":"User profile with option to modify data.",
                         "price":100,
-                        "image":"",
+                        "image":"pmComplete.png",
 	                      "time":"3 day",
 	                        }, 		
 

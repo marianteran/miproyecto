@@ -53,7 +53,7 @@ const Home = () => {
     //Orly al array My Favorite le puedes hacer el map de las cards
     return (
         <>
-        
+        {user.datosUser.email!=="seomadesign@gmail.com"?
             <div>
                 <div className="banner d-flex justify-content-between align-items-center col-lg-5 col-sm-7 col-md-7  m-auto mb-5">
                     <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 ">
@@ -201,6 +201,8 @@ const Home = () => {
                     </button>
                 </div>
             </div>
+            :          
+            <h1 style={{marginTop:"10vh"}}>PERFIL ADMINISTRADOR</h1>}
         </>
     );
 };
