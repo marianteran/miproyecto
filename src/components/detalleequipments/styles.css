@@ -1,31 +1,260 @@
 swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.colorLike {
+  color: red;
+}
+
+
+
+/* EQUIPMENTS READ MORE */
+
+.equipments-Container {
+  margin: 12px;
+}
+
+.equipments-ContTittle {
+  background-color: black;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 10vh;
+  border-radius: 4px;
+}
+
+.equipments-Tittle {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+
+}
+
+.equipments-menuCentral {
+  overflow: auto;
+}
+
+.equipments-menu {
+  margin-top: 2vh;
+  float: left;
+  /* margin-left: 2%;
+  margin-right: 2%; */
+  width: 40%;
+
+}
+
+.equipments-menuItem {
+  padding: 8px;
+  margin: 20px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(199, 201, 197, 0.062);
+}
+
+.equipments-image {
+  margin-top: 10vh;
+  float: right;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 10%;
+  margin-left: 10%; */
+  width: 50%;
+
+}
+
+.equiments-LikAdd {
+  display: flex;
+  justify-content: center;
+}
+
+/* .equipments-likes {
+  font-size: xx-large;
+  font-size: 100px;
+  color: red;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 20px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid red;
+} */
+
+
+.equipments-Likes {
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 100%;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+
+}
+
+.equipments-ButtonOnClick {
+  background: none;
+}
+
+
+
+.equipments-LikesUser {
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: red;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  border: 3px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  margin-right: 12px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+
+}
+
+.equipments-Likes:hover {
+  background-color: white;
+  color: black;
+}
+
+.equipments-Likes:active {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  box-shadow: 0 5px rgb(182, 181, 181);
+  transform: translateY(4px);
+}
+
+.equipments-AddToCart {
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 9px rgb(231, 228, 228);
+  margin-top: 12px;
+  margin-bottom: 36px;
+  font-weight: bold;
+  font-size: 30px;
+  width: 40%;
+
+}
+
+.equipments-AddToCart:hover {
+  background-color: white;
+  color: black;
+}
+
+.equipments-AddToCart:active {
+  background-color: white;
+  box-shadow: 0 5px rgb(182, 181, 181);
+  transform: translateY(4px);
+}
+
+.equipments-main {
+  float: left;
+  width: 40%;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: justify;
+  font-size: larger;
+  font-weight: bold;
+
+}
+
+
+.equipments-Comment {
+  width: 100%;
+  padding: 0 20px;
+  overflow: hidden;
+  border: 4px solid grey;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: justify;
+}
+
+
+@media only screen and (max-width:800px) {
+
+  /* For tablets: */
+  .equipments-menu,
+  .equipments-image,
+  .equipments-main {
     width: 100%;
-    height: 100%;
   }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+
+  .equipments-AddToCart {
+    width: 80%;
   }
-  
-  .swiper-slide img {
-    display: block;
+}
+
+@media only screen and (max-width:500px) {
+
+  /* For mobile phones: */
+  .equipments-menu,
+  .equipments-image,
+  .equipments-main,
+  .equipments-AddToCart {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
+
+  .equipments-AddToCart {
+    width: 50%;
+  }
+
+}

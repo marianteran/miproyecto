@@ -67,11 +67,12 @@ function Signin() {
                     type: accionType.USERDB,
                     user: response.data.response
                 })
+                
             })
     }
     return (
         <>
-        {!user?
+      {!user?
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
@@ -128,9 +129,9 @@ function Signin() {
 
                     </form>
                 </div>:
-                <AccountUser/>
+            <AccountUser/>}
                 
-                }
+                
         </>
     )
 }

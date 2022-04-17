@@ -2,7 +2,6 @@ import React from 'react'
 import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
-import { useEffect } from 'react';
 import swal from 'sweetalert'
 import axios from 'axios'
 import './navb.css'
@@ -13,8 +12,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PersonOffIcon from '@mui/icons-material/PersonOff';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import FaceIcon from '@mui/icons-material/Face';
+import PersonIcon from '@mui/icons-material/Person';
 
 const StyledMenu = styled((props) => (
     <Menu
@@ -133,7 +131,7 @@ const Navb = () => {
                                         onClick={handleClick}
                                     // endIcon={<KeyboardArrowDownIcon />}
                                     >
-                                        {user.datosUser.from !== "MyTineray" ?
+                                        {user.datosUser.from !== "Seoma" ?
                                             <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
                                             <Avatar sx={{ bgcolor: red[500] }} style={{ width: 50, height: 50, padding: 2, marginTop: 6, marginLeft: 4 }}>
@@ -154,7 +152,12 @@ const Navb = () => {
                                             <PersonOffIcon />
                                             Sign Out
                                         </MenuItem>
-
+                                        <LinkRouter to='/SignIn'>
+                                        <MenuItem >
+                                            <PersonIcon />
+                                            Account User
+                                        </MenuItem>
+                                        </LinkRouter>
                                    {/*   <MenuItem  disableRipple>
                                         <LinkRouter to='/yourAccount'>
                                             <FaceIcon/>                                           
