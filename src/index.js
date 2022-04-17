@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import "swiper/css/bundle";
 import { StateProvaider } from './context/Stateprovider';
 import reducer, {initialState} from './context/reducer'
-
 ReactDOM.render(
   <React.StrictMode>
     <StateProvaider initialState={initialState} reducer = {reducer}>
