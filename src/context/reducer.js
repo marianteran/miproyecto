@@ -4,6 +4,7 @@ export const initialState = { // crear estados
     equipments:[],
     equipmentsNew: [],
     user: null,   
+    favorites:[]
 }
 
 export const accionType = { // mis accioness
@@ -11,7 +12,8 @@ export const accionType = { // mis accioness
     SMEDIADB: "SMEDIADB",
     EQUIPMENTSDB: "EQUIPMENTSDB",
     USERDB: "USERDB",
-    FILTER: "FILTER"
+    FILTER: "FILTER",
+    
 }
 
 const reducer = (state, action) => {
@@ -42,6 +44,7 @@ const reducer = (state, action) => {
                         ...state,
                         equipmentsNew: action.equipmentsNew
                     }
+                   
                                     
         default: return state
     }

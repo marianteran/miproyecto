@@ -57,10 +57,12 @@ const datosController = {
    equipment: async (req, resp) => {
         let equipment; //ITINERARIES
         console.log(req.params);
-        const selecEquipment = req.params.city
+        const selecEquipment = req.params.equipment
+        console.log(selecEquipment)
         let error = null
         try {
-            equipment = await Equipments.find({ name: selecEquipment })
+            equipment = await Equipments.find({ _id: selecEquipment })
+            console.log(equipment);
         } catch (err) {
             error = err
             console.log(error);

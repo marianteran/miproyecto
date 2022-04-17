@@ -42,16 +42,20 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const DetalleEquipments = () => {
 
-
   const [{ equipments, equipmentsNew, user }, dispatch] = useStateValue()
   const [reload, setReload] = useState(false)
-  
- 
-
 
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch({
+      type: accionType.FILTER,
+      equipmentsNew: equipments
+    })
+  }, [reload]) 
+
  
   const handleExpandClick = (parametro) => {
     setCheckKey(parametro)
@@ -64,9 +68,7 @@ const DetalleEquipments = () => {
     if (!brands.includes(equipment.brand)) {
       return (
         brands.push(equipment.brand)
-      )
-    }
-  })
+      )}})
 
   function filterEquipments(event) {
     let textEquipment = event.target.value.toLowerCase()
@@ -140,14 +142,7 @@ const DetalleEquipments = () => {
         })
     }
   }
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch({
-      type: accionType.FILTER,
-      equipmentsNew: equipments
-    })
-  }, [reload]) 
-
+ 
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -165,24 +160,24 @@ const DetalleEquipments = () => {
             focused />
         </Box>
 
-
+<div style={{display:"flex"}}>
         {/* CHECK DE MARCAS DE BUSQUEDA */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          {brands.length > 1 ?
+        <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column"}}>
+          {brands.length > 0 ?
             brands?.map((brand) => {
               return (
-                <div>
+                <div style={{display:"flex"}}>
                   <Switch {...label} defaultChecked onChange={selectBrand} name={brand} />
                   {brand}
                 </div>
               )
             })
             :
-            <div>
+            <div style={{display:"flex"}}>
               <GreenSwitch {...label} onChange={selectBrand} name={"All Brand"} />
               Press to see all brands
               <div>
-                <h1 style={{ display: "flex", justifyContent: "center", marginTop: "2%" }}>
+                <h1 style={{ display: "flex", justifyContent: "left", marginTop: "2%" }}>
                   {brandValue === "All Brand" ? "" : brandValue}
                 </h1>
               </div>
@@ -195,7 +190,7 @@ const DetalleEquipments = () => {
           {equipmentsNew.length > 0 ?
             equipmentsNew?.map(equipment => {             
               return (
-                <Card sx={{ width: 345, margin: "30px" }}>
+                <Card sx={{ width: 345, margin: "20px" }}>
                   <CardHeader
                     avatar={
                       <FavoriteIcon 
@@ -245,6 +240,7 @@ const DetalleEquipments = () => {
             }) :
             <h1 style={{ color: "", display: "flex", justifyContent: "center", marginTop: "2%" }}>Sorry, no matches, please try again..</h1>}
 
+        </div>
         </div>
 
       </div>
