@@ -6,32 +6,42 @@ import axios from 'axios'
 
 
 const Socialmedia = () => {
-    const [{ smedia }, dispatch] = useStateValue()  
-   
-  return (
-    <section id="appWeb">
-                <h5>Socialmedia</h5>
-                <div className="container appwebContainer">
-                    <div className="appWebImage">
-                        <div className="container__vector">
-                            <img src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2020/06/Screenshot-5-1024x478.png" alt="" />
-                        </div>
-                    </div>
-                    <div className="appWebContent">
-                        <p>
-                            Una aplicación Web es un conjunto de páginas Web estáticas y dinámicas. Una página Web estática es aquélla que no cambia cuando un usuario la solicita: el servidor Web envía la página al navegador Web solicitante sin modificarla. Por el contrario, el servidor modifica las páginas Web dinámicas antes de enviarlas al navegador solicitante. La naturaleza cambiante de este tipo de página es la que le da el nombre de dinámica.
+    const [{ smedia }, dispatch] = useStateValue()
 
-                            Por ejemplo, podría diseñar una página para que mostrara los resultados del programa de salud y dejara cierta información fuera (como el nombre del empleado y sus resultados) para calcularla cuando la página la solicite un empleado en particular.
-                        </p>
-                        <LinkRouter to='/detalle' className="btn btn-outline-light ms-2">
-                            <button className='btn btn-dark'>Info</button>
-                        </LinkRouter>
+    return (
+        <section id="socialMedia">
+            <h5>Socialmedia</h5>
+
+            <div className="socialMediaContainer">
+
+                <div className="socialMediaContent">
+
+                    <div className="socialMediaInfo">
+                        <h5>Generación y diseño de tiendas online para que aumentes tus ventas</h5>
+
+                        <p>Realizar ventas web no tiene que ser tan complicado. ¿Cómo conseguirlo? Nosotros hacemos la parte difícil . Te diseñamos y generamos tu tienda web para que puedas aumentar tus canales de venta y tu exposición.</p>
+                   
+                       
                     </div>
+
+                    <LinkRouter to='/appMobile' className="container botonSocialMedia">
+                            <div className="btnfluormedia">
+                                <a href="">info</a>
+                            </div>
+                        </LinkRouter>
+
+                  
+
+
+
                 </div>
 
 
-            </section>
-  )
+            </div>
+
+
+        </section>
+    )
 }
 
 export default Socialmedia

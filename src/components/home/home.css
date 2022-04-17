@@ -1,3 +1,10 @@
+
+#home{
+    background: rgb(239, 239, 239);
+
+}
+
+
 .hero-container{
     height: 600px;
     width: 100%;
@@ -18,19 +25,19 @@
 }
 
 .homeMain{
-    margin: 20vh 2vh;
+    margin: 10% 2% 0% 2%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
     padding: 10px 20px;
-    
-    
-    
     
 }
 
 .homeImage{
-    width: 40%;
+    width: 500px;
  
 
 }
@@ -39,7 +46,7 @@
 }
 
 .homeDescrip{
-    width: 60%;
+    width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +59,25 @@
 .homeDescrip p{
     padding: 40px;
     text-align: justify;
+
+}
+
+
+/*home imagen fixed */
+
+.homeImgFixeContenedor{
+    padding: 40px 40px;
+
+}
+
+.homeImgFixed{
+    height: 500px;
+    width: 100%;
+    background: url(https://www.jimdo.com/static/1ae56221bdae23b2ccaa521ac9d7a679/bf8c4/big_hero.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 
 }
 
@@ -82,15 +108,6 @@
 }
 
 
-.homeImgFixed{
-    height: 600px;
-    width: 100%;
-    background: url(https://www.jimdo.com/static/1ae56221bdae23b2ccaa521ac9d7a679/bf8c4/big_hero.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-}
 
 
 /* hero dos */
