@@ -164,65 +164,74 @@ const Equipment = () => {
             {equipment ?
                 equipment.map((item) => {
                     return (
-                        <div className="equipments-Container">
 
-                            <div className="equipments-menuCentral">
+                        <div>
+                            <div className="equipments-Container">
 
-                                <div className="equipments-menu">
+                                <div className="equipments-menuCentral">
 
-                                    <div className="equipments-ContTittle">
-                                        <h2 className="equipments-Tittle">{item.name}</h2>
+                                    <div className="equipments-menu">
+
+                                        <div className="equipments-ContTittle">
+                                            <h2 className="equipments-Tittle">{item.name}</h2>
+                                        </div>
+
+                                        <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
+                                        <div className="equipments-menuItem">Price: U$D {item.price}</div>
+                                        <div className="equipments-menuItem">Lead time: {item.time}</div>
+                                        <div className="equipments-menuItem">Shipping price: </div>
+
+                                        <div className="equiments-LikAdd">
+
+                                            <button className="equipments-ButtonOnClick" onClick={() => favorite(item._id)}>
+
+                                                <div className={user && user.datosUser.favorite.includes(item._id) ? "equipments-LikesUser" : "equipments-Likes"}>
+                                                    ♥</div>
+                                            </button>
+
+
+                                            {/* <div className="equipments-likes">{item.likes}♥</div> */}
+
+                                            <div className="equipments-AddToCart">Add to cart</div>
+
+                                        </div>
+
+                                        <div className="equipments-main">
+                                            <p>{item.description}</p>
+                                            <p>{item.function}</p>
+                                        </div>
+
                                     </div>
 
-                                    <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
-                                    <div className="equipments-menuItem">Price: U$D {item.price}</div>
-                                    <div className="equipments-menuItem">Lead time: {item.time}</div>
-                                    <div className="equipments-menuItem">Shipping price: </div>
 
-                                    <div className="equiments-LikAdd">
+                                    <div className="equipments-image">
+                                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
+                                            </SwiperSlide>
 
-                                        <button className="equipments-ButtonOnClick" onClick={() => favorite(item._id)}>
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
+                                            </SwiperSlide>
 
-                                            <div className={user && user.datosUser.favorite.includes(item._id) ? "equipments-LikesUser" : "equipments-Likes"}>
-                                                ♥</div>
-                                        </button>
-
-
-                                        {/* <div className="equipments-likes">{item.likes}♥</div> */}
-
-                                        <div className="equipments-AddToCart">Add to cart</div>
-
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
+                                            </SwiperSlide>
+                                        </Swiper>
                                     </div>
 
-                                    <div className="equipments-main">
-                                        <p>{item.description}</p>
-                                        <p>{item.function}</p>
-                                    </div>
+
+
 
                                 </div>
 
-
-                                <div className="equipments-image">
-                                    <Swiper navigation={true} modules={[Navigation]}  className="mySwiper">
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
-                                        </SwiperSlide>
-
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
-                                        </SwiperSlide>
-
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
-                                        </SwiperSlide>
-                                    </Swiper>
-                                </div>
 
 
 
 
                             </div>
 
+                            <div className="contenedor-questions"> 
                             <div className="equipments-questions">
                                 <>
                                     <h3 style={{ textDecoration: "none", color: "#4CAF50", textAlign: "center" }}>
@@ -372,7 +381,7 @@ const Equipment = () => {
                                 </>
                             </div>
 
-
+                            </div>
 
                         </div>
                     )

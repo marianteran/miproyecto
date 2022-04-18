@@ -47,12 +47,14 @@
 
 .equipments-Container {
   margin: auto;
-  width: 80%;
+  width: 70%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  padding: 0 50px;
+
   
 }
 
@@ -60,6 +62,7 @@
   margin-top: 20vh;
   display: flex;
   flex-direction: row;
+  
  
 }
  .equipments-ContTittle {
@@ -68,7 +71,7 @@
 } 
 
 .equipments-Tittle {
-  font-size: 5vmin;
+  font-size: 4vmin;
   color: #707279;
    font-family: "Cinzel",serif;
    text-align: center;
@@ -82,40 +85,36 @@
   display: flex;
   flex-direction:column;
   justify-content: space-around;
-  width: 600px;
+  width: 450px;
+  padding: 20px;
   
   
 }
 
 .equipments-menuItem {
-  padding: 4px;
-  margin: 8px;
+  padding: 2px;
+  margin: 6px;
   border: 1px solid grey;
   border-radius: 6px;
   text-align: center;
   font-weight: bold;
   background-color: rgba(199, 201, 197, 0.062);
+ 
 }
 
 
 .equipments-main {
   float: left;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   overflow: hidden;
   text-align: justify;
   font-size: small;
-  line-height: 30px;
+  line-height: 25px;
 
 }
 
 
-.equipments-image {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 600px;
 
-}
 
 .equiments-LikAdd {
   display: flex;
@@ -140,8 +139,11 @@
   margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -165,8 +167,8 @@
   margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 
 }
 
@@ -187,7 +189,7 @@
   display: flex;
   align-items: center;
   padding: 2px 8px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -218,8 +220,17 @@
 
 /* swiper detalle product */
 
+.equipments-image {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 500px;
+
+}
+
 .mySwiper{
   height: 60%;
+
 }
 
 .swiperSlidedetalle{
@@ -229,7 +240,7 @@
 
 .swiperSlidedetalle img {
   width: 100%;
-  height: 100%;
+  
   object-fit: cover;
  
 }
@@ -237,7 +248,16 @@
 
 /* questions */
 
+.contenedor-questions{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto ;
+  
 
+}
 .equipments-questions {
   display: flex;
   justify-content: center;
@@ -249,8 +269,7 @@
   border-radius: 10px;
   padding: 10px;
   text-align: justify;
-  margin-bottom: 20px;
-  margin-top: 20px;
+
 }
 
 .linkrouterquestion{
@@ -302,12 +321,12 @@
 
   @media screen and (min-width: 992px) and (max-width: 1280px) {
 
-    .mySwiper{
+  /*   .mySwiper{
       width: 450px;
       display: flex;
       align-items: center !important;
       justify-content: center !important;
-    }
+    } */
   
   }
   
@@ -319,11 +338,16 @@
       justify-content: center;
       align-items: center;
     }
+    .equipments-menu{
+      width: 100% !important;
 
-    .equipments-menu, .equipments-image{
+    }
 
-      width: 100%;
+    .contenedor-questions{
+      padding: 0 20px;
 
+      width: 100% !important;
+    
     }
 
   
@@ -337,85 +361,90 @@
       align-items: center;
     }
 
-    .equipments-menu, .equipments-image{
 
-      width: 100%;
+    .equipments-menu{
+      width: 100% !important;
 
     }
 
-  
+    .contenedor-questions{
+      padding: 0 20px;
+
+      width: 100% !important;
+    
+    }
   
   }
   
   
   @media screen and (max-width: 575px) {
-    .equipments-menuCentral{
+  .equipments-menuCentral{
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
 
-    .equipments-menu, .equipments-image{
-
-      width: 100%;
+    .equipments-menu{
+      width: 100% !important;
 
     }
+
+    .contenedor-questions{
+      padding: 0 20px;
+
+      width: 100% !important;
+    
+    }
+
 
 
   }
   
   
   @media screen and (min-width: 421px) and (max-width: 574px) {
-    .equipments-menuCentral{
+   .equipments-menuCentral{
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
 
-    .mySwiper{
-      width: 100%;
-      display: flex;
-      align-items: center !important;
-      justify-content: center !important;
+    .equipments-menu{
+      width: 100% !important;
 
     }
 
-    .equipments-menu, .equipments-image{
 
-      width: 100%;
-
+    .equipments-image {
+      width: 300px;
+      
     }
 
     .equipments-main {
-
       font-size: smaller;
       line-height: 20px;
 
     }
 
+    .contenedor-questions{
+      padding: 0 20px;
+
+      width: 100% !important;
+    
+    }
  
   
   }
   
   
   @media screen and (max-width: 420px) {
-    .equipments-menuCentral{
+  .equipments-menuCentral{
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
 
-    .mySwiper{
-      width: 100%;
-      display: flex;
-      align-items: center !important;
-      justify-content: center !important;
-
-    }
-
-    .equipments-menu, .equipments-image{
-
-      width: 100%;
+    .equipments-menu{
+      width: 100% !important;
 
     }
 
@@ -425,6 +454,27 @@
       line-height: 20px;
 
     }
+
+    .equipments-image {
+      width: 250px;
+      
+    }
+
+    .contenedor-questions{
+      padding: 0 20px;
+
+      width: 100% !important;
+    
+    }
+
+    .equipments-menuItem {
+
+      padding: 1px 2px;
+      font-weight: 200;
+
+    }
+   
+   
    
   
   }
