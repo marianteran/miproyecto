@@ -51,6 +51,7 @@ const DetalleEquipments = () => {
  
   useEffect(() => {
     window.scrollTo(0, 0);
+    
     dispatch({
       type: accionType.FILTER,
       equipmentsNew: equipments

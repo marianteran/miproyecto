@@ -1,42 +1,62 @@
-import React, { useState } from "react";
-import { useStateValue } from "../../context/Stateprovider";
+import React, { useEffect, useState } from "react";import { useStateValue } from "../../context/Stateprovider";
 import "../Administrador/administrador.css";
 import swal from "sweetalert";
 import axios from "axios";
+import { accionType } from '../../context/reducer';
+
 
 
 const Notificaciones = () => {
-  const [{ user, equipments }, dispatch] = useStateValue();
+  const [{ user, equipments, notifica }, dispatch] = useStateValue();
   const [reload, setReload] = useState(false);
+  const [questions, setQuestions] = useState() 
+  const [changeQuestions, setChangeQuestions] = useState()
+  
+  let date = ""
 
-  let idFavorite = [];
-  let myFavorite = [];
+  useEffect(() => {
+      axios.get("http://localhost:4000/api/questions/")
+          .then(response => {
+            let temporal = []
+              response.data.response.questions.map((item)=>{
+                if(!item.answer){
+                  return(
+                    temporal.push(item)
+                  )
+                }} )              
+              
+              setQuestions(temporal)
+              dispatch({
+                type: accionType.NOTIFICA,
+                notifica: questions.length
+              })
+              setReload(!reload)
+          })
+  }, [reload])
 
-  equipments.map((item) => {
-    if (user.datosUser.favorite.includes(item._id)) {
-      myFavorite.push(item);
-    }
-  });
-  const favorite = async (id) => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      swal({
-        title: "Go to sign in to post your opinions",
-        icon: "error",
-        buttons: "ok",
-      });
-    } else {
-      axios
-        .put(
-          `http://localhost:4000/api/favorite/${id}`,
-          {},
-          { headers: { Authorization: "Bearer " + token } }
-        )
-        .then((response) => {
-          setReload(!reload);
-        });
-    }
-  };
+  const inputText = (event) => {  
+     setChangeQuestions(event.target.value)
+  }
+
+
+  const answerQuestions = async (id) => {
+      fecha()     
+      let data = changeQuestions
+      let newDate = date  
+          await axios.put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
+              .then(response => {
+                  setReload(!reload)                  
+              })}
+
+  function fecha() {
+      var registro = new Date()
+      var dia = registro.getDate()
+      var mes = registro.getMonth() + 1
+      var time = registro.getHours() + ":" + registro.getMinutes()
+      var year = registro.getYear()
+      date = dia + "/" + mes + "/" + year + " " + time
+  }
+
 
   //Orly al array My Favorite le puedes hacer el map de las cards
   return (
@@ -49,79 +69,84 @@ const Notificaciones = () => {
         }}
       >
         {/*NOTIFICACIONES*/}
-        <div
-          style={{
-            marginLeft: "5vw",
-            borderStyle: "solid",
-            borderWidth: "0.5px",
-            borderColor: "rgb(217, 217, 217)",
-            borderRadius: "10px",
-            width: "38vw",
-            height:"100%",
-            maxHeight: "50vh",
-          }}
-        >
-          <h3 style={{ marginTop: "1vh", marginLeft: "1vw" }}>
-            <strong>Notification #747848484</strong>
-          </h3>
-          <div
+
+        {questions?.map((item)=>{
+          return(
+            <div
             style={{
-              display: "flex",
-              flexDirection: "row",
-              marginLeft: "1vw",
-              marginBottom: "2vw",
-              marginTop: "2vw",
+              marginLeft: "5vw",
               borderStyle: "solid",
               borderWidth: "0.5px",
               borderColor: "rgb(217, 217, 217)",
               borderRadius: "10px",
-              width: "35vw",
+              width: "38vw",
               height:"100%",
-              maxHeight: "18vh",
+              maxHeight: "50vh",
             }}
           >
-            <div style={{ margin: "10px" }}>
-              <h6>
-                <strong>User:</strong>
-              </h6>
+            <h3 style={{ marginTop: "1vh", marginLeft: "1vw" }}>
+              <strong>Notification #{item._id}</strong>
+            </h3>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginLeft: "1vw",
+                marginBottom: "2vw",
+                marginTop: "2vw",
+                borderStyle: "solid",
+                borderWidth: "0.5px",
+                borderColor: "rgb(217, 217, 217)",
+                borderRadius: "10px",
+                width: "35vw",
+                height:"100%",
+                maxHeight: "18vh",
+              }}
+            >
+              <div style={{ margin: "10px" }}>
+                <h6>
+                  <strong>User:</strong>
+                </h6>
+              </div>
+  
+              <div style={{ margin: "8px" }}>
+                <p>{item.user.name + " " + item.user.lastName + " update: " + item.date}</p>
+              </div>
+  
+              <div style={{ margin: "10px" }}>
+                <h6>
+                  <strong>Message:</strong>
+                </h6>
+              </div>
+  
+              <div style={{ margin: "8px" }}>
+                <p>
+                {item.questions}
+                </p>
+              </div>
             </div>
-
-            <div style={{ margin: "8px" }}>
-              <p>9483498349</p>
-            </div>
-
-            <div style={{ margin: "10px" }}>
-              <h6>
-                <strong>Message:</strong>
-              </h6>
-            </div>
-
-            <div style={{ margin: "8px" }}>
-              <p>
-                good morning, I want to know the price of a new web app for my
-                business
-              </p>
+  
+            <div style={{ marginLeft: "1vw", marginRight: "2vw" }}>
+              <form>
+                <input
+                  type="textarea"
+                  className="form-control"
+                  aria-describedby="reply"
+                  onChange={inputText}                 
+                />
+                <button
+                  type="submit"
+                  className="btn btn-dark"
+                  style={{ marginTop: "3vh", marginBottom: "2vh" }}
+                  onClick={()=>answerQuestions(item._id)}
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
-
-          <div style={{ marginLeft: "1vw", marginRight: "2vw" }}>
-            <form>
-              <input
-                type="textarea"
-                className="form-control"
-                aria-describedby="reply"
-              />
-              <button
-                type="submit"
-                className="btn btn-dark"
-                style={{ marginTop: "3vh", marginBottom: "2vh" }}
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-        
+          )
+        })}        
       </div>
     </>
   );
