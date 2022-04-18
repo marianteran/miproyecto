@@ -28,9 +28,7 @@ const Home = () => {
         buttons: "ok",
       });
     } else {
-      axios
-        .put(
-          `http://localhost:4000/api/favorite/${id}`,
+      axios.put(`http://localhost:4000/api/favorite/${id}`,
           {},
           { headers: { Authorization: "Bearer " + token } }
         )
@@ -64,8 +62,7 @@ const Home = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
               style={{ width: "160px" }}
-            >
-              Notifications
+            >           
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 {notifica}
                 <span class="visually-hidden">unread messages</span>

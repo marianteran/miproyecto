@@ -58,7 +58,7 @@ const StyledMenu = styled((props) => (
 const Navb = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const [{ user }, dispatch] = useStateValue()
+    const [{ user, notifica }, dispatch] = useStateValue()
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -131,6 +131,9 @@ const Navb = () => {
                                         onClick={handleClick}
                                     // endIcon={<KeyboardArrowDownIcon />}
                                     >
+                                        <span className="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                            {notifica}                                       
+                                        </span>
                                         {user.datosUser.from !== "Seoma" ?
                                             <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
@@ -153,12 +156,12 @@ const Navb = () => {
                                             Sign Out
                                         </MenuItem>
                                         <LinkRouter to='/SignIn'>
-                                        <MenuItem >
-                                            <PersonIcon />
-                                            Account User
-                                        </MenuItem>
+                                            <MenuItem >
+                                                <PersonIcon />
+                                                Account User
+                                            </MenuItem>
                                         </LinkRouter>
-                                   {/*   <MenuItem  disableRipple>
+                                        {/*   <MenuItem  disableRipple>
                                         <LinkRouter to='/yourAccount'>
                                             <FaceIcon/>                                           
                                             Account User
