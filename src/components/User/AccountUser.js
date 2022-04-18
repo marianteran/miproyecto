@@ -89,7 +89,7 @@ const Home = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link custom-nav-link background-card-click" href="#">
-                  Your shoping
+                  Your orders
                 </a>
               </li>
             </ul>
