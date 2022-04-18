@@ -164,67 +164,81 @@ const Equipment = () => {
             {equipment ?
                 equipment.map((item) => {
                     return (
-                        <div className="equipments-Container">
 
-                            <div className="equipments-menuCentral">
+                        <div>
 
-                                <div className="equipments-menu">
+                            <div className="equipments-Container">
 
-                                    <div className="equipments-ContTittle">
-                                        <h2 className="equipments-Tittle">{item.name}</h2>
+                                <div className="equipments-menuCentral">
+
+                                    <div className="equipments-menu">
+
+                                        <div className="equipments-ContTittle">
+                                            <h2 className="equipments-Tittle">{item.name}</h2>
+                                        </div>
+
+                                        <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
+                                        <div className="equipments-menuItem">Price: U$D {item.price}</div>
+                                        <div className="equipments-menuItem">Lead time: {item.time}</div>
+                                        <div className="equipments-menuItem">Shipping price: </div>
+
+                                        <div className="equiments-LikAdd">
+
+                                            <button className="equipments-ButtonOnClick" onClick={() => favorite(item._id)}>
+
+                                                <div className={user && user.datosUser.favorite.includes(item._id) ? "equipments-LikesUser" : "equipments-Likes"}>
+                                                    ♥</div>
+                                            </button>
+
+
+                                            {/* <div className="equipments-likes">{item.likes}♥</div> */}
+
+                                            <div className="equipments-AddToCart">Add to cart</div>
+
+                                        </div>
+
+                                        <div className="equipments-main">
+                                            <p>{item.description}</p>
+                                            <p>{item.function}</p>
+                                        </div>
+
                                     </div>
 
-                                    <div className="equipments-menuItem">Brand: {item.brand.toUpperCase()}</div>
-                                    <div className="equipments-menuItem">Price: U$D {item.price}</div>
-                                    <div className="equipments-menuItem">Lead time: {item.time}</div>
-                                    <div className="equipments-menuItem">Shipping price: </div>
 
-                                    <div className="equiments-LikAdd">
-
-                                        <button className="equipments-ButtonOnClick" onClick={() => favorite(item._id)}>
-
-                                            <div className={user && user.datosUser.favorite.includes(item._id) ? "equipments-LikesUser" : "equipments-Likes"}>
-                                                ♥</div>
-                                        </button>
-
-
-                                        {/* <div className="equipments-likes">{item.likes}♥</div> */}
-
-                                        <div className="equipments-AddToCart">Add to cart</div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div className="equipments-image">
+                                    <div className="equipments-image">
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                        <SwiperSlide>
+                                        <SwiperSlide className="swiperSlidedetalle">
                                             <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
                                         </SwiperSlide>
 
-                                        <SwiperSlide>
+                                        <SwiperSlide className="swiperSlidedetalle">
                                             <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
                                         </SwiperSlide>
 
-                                        <SwiperSlide>
+                                        <SwiperSlide className="swiperSlidedetalle">
                                             <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
                                         </SwiperSlide>
                                     </Swiper>
                                 </div>
 
 
-                                <div className="equipments-main">
-                                    <p>{item.description}</p>
-                                    <p>{item.function}</p>
+                             
+
+
+
                                 </div>
+
+                            </div>
+
+
+                            <div className="contenedor-questions">
 
                                 <div className="equipments-questions">
                                     <>
-                                        <Collapse in={expanded} timeout="auto" unmountOnExit>
+                                        <Collapse in={expanded} timeout="auto" unmountOnExit >
                                             {user ?
-                                                <CardContent>
-                                                    <form onSubmit={submitQuestions}>
+                                                <CardContent >
+                                                    <form onSubmit={submitQuestions} >
                                                         <div>
                                                             <label for="exampleFormControlTextarea1" className="form-label"></label>
                                                             <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
@@ -260,7 +274,7 @@ const Equipment = () => {
                                         <div className={questions?.length > 0 ? "questions shadow" : "questionsA"}>
                                             {questions?.map((item) => {
                                                 return (
-                                                    <Card sx={{ maxWidth: 390, margin: "6px" }}>
+                                                    <Card sx={{ maxWidth: "100%", margin: "6px" }}>
                                                         <CardHeader
                                                             avatar={
                                                                 <Avatar sx={{ bgcolor: red[500] }} /* aria-label="recipe" */>
@@ -292,9 +306,9 @@ const Equipment = () => {
 
                                                         </CardContent>
                                                         <CardContent>
-                                                        <Typography variant="body2" color="text.secondary">
-                                                          <SubdirectoryArrowRightIcon/>  {item.answer}
-                                                        </Typography>
+                                                            <Typography variant="body2" color="text.secondary">
+                                                                <SubdirectoryArrowRightIcon />  {item.answer}
+                                                            </Typography>
                                                         </CardContent>
 
 
@@ -318,13 +332,11 @@ const Equipment = () => {
 
                                     </>
                                 </div>
-
                             </div>
-
                         </div>
                     )
                 }) : ""}
         </>
     )
 }
-export default Equipment 
+export default Equipment
