@@ -10,7 +10,11 @@ const AppMobile = () => {
     return (
         <div>
             <section id="appMobile">
-                <h5>App Mobile</h5>
+            <div className="container">
+                    <div className='subtitle-principal-mobile '>
+                        <h2>Aplicaciones Mobile</h2>
+                    </div>
+                </div>
 
 
                 <div className="container appMobileContainer">

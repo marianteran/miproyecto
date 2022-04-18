@@ -1,23 +1,22 @@
 
 
-.detalleProduct{
-    display: grid;
-    grid-template-columns: 40% 60%;
+.detalleAppWebContainer{
+    padding: 50px;
+
 
 }
 
-.detalleProductContent{
-
-    border: 2px solid blue;
-}
 
 .detalleProductImg{
 
-    border: 2px solid red;
+   
     width: 800px ;
-    /* height: 600px; */
+   
     padding: 0 !important;
     margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
 }
@@ -28,9 +27,3 @@
 }
 
 
-.xxx{
-    border: 2px solid yellow;
-    text-align: center;
-    padding: 20px;
-
-}
