@@ -208,16 +208,16 @@ const DetalleEquipments = () => {
                     } */
                     title={equipment.name}
                   />
-                  <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                    <SwiperSlide>
+                  <Swiper navigation={true} modules={[Navigation]} >
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>
                     </SwiperSlide>
 
-                    <SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img>
                     </SwiperSlide>
 
-                    <SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img>
                     </SwiperSlide>
                   </Swiper>

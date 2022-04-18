@@ -1,7 +1,4 @@
-/* .swiper {
-  width: 100%;
-  height: 100%;
-} */
+
 
 .swiper-slide {
   height: 250px !important;
@@ -49,41 +46,50 @@
 /* EQUIPMENTS READ MORE */
 
 .equipments-Container {
-  margin: 12px;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-.equipments-ContTittle {
-  background-color: black;
-  padding-bottom: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin-top: 10vh;
-  border-radius: 4px;
+.equipments-menuCentral{
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: row;
+ 
 }
+ .equipments-ContTittle {
+  
+  margin-bottom: 4%;
+} 
 
 .equipments-Tittle {
-  color: white;
-  text-align: center;
-  font-size: 50px;
+  font-size: 5vmin;
+  color: #707279;
+   font-family: "Cinzel",serif;
+   text-align: center;
+   text-transform: uppercase;
 
 }
 
-.equipments-menuCentral {
-  overflow: auto;
-}
+
 
 .equipments-menu {
-  margin-top: 2vh;
-  float: left;
-  /* margin-left: 2%;
-  margin-right: 2%; */
-  width: 40%;
-
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  width: 600px;
+  
+  
 }
 
 .equipments-menuItem {
-  padding: 8px;
-  margin: 20px;
+  padding: 4px;
+  margin: 8px;
   border: 1px solid grey;
   border-radius: 6px;
   text-align: center;
@@ -91,38 +97,36 @@
   background-color: rgba(199, 201, 197, 0.062);
 }
 
+
+.equipments-main {
+  float: left;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: justify;
+  font-size: small;
+  line-height: 30px;
+
+}
+
+
 .equipments-image {
-  margin-top: 10vh;
-  float: right;
-  border-radius: 6px;
   justify-content: center;
   align-items: center;
-  /* margin-right: 10%;
-  margin-left: 10%; */
-  width: 50%;
+  display: flex;
+  width: 600px;
 
 }
 
 .equiments-LikAdd {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
-
-/* .equipments-likes {
-  font-size: xx-large;
-  font-size: 100px;
-  color: red;
-  border-radius: 100%;
-  padding: 10px;
-  margin: 20px;
-  width: 60px;
-  height: 60px;
-  border: 1px solid red;
-} */
 
 
 .equipments-Likes {
-  padding: 15px 25px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -133,13 +137,11 @@
   border-radius: 100%;
   border: 2px solid #4CAF50;
   box-shadow: 0 9px rgb(231, 228, 228);
-  margin-top: 12px;
-  margin-bottom: 36px;
-  margin-right: 12px;
+  margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 
 }
 
@@ -150,24 +152,21 @@
 
 
 .equipments-LikesUser {
-  padding: 15px 25px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: red;
-  background-color: white;
+  color: white;
+  background-color: #4CAF50;
   border: none;
   border-radius: 100%;
-  border: 3px solid #4CAF50;
+  border: 2px solid #4CAF50;
   box-shadow: 0 9px rgb(231, 228, 228);
-  margin-top: 12px;
-  margin-bottom: 36px;
-  margin-right: 12px;
+  margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 
 }
 
@@ -185,8 +184,10 @@
 }
 
 .equipments-AddToCart {
-  padding: 15px 25px;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -197,11 +198,9 @@
   border-radius: 15px;
   border: 2px solid #4CAF50;
   box-shadow: 0 9px rgb(231, 228, 228);
-  margin-top: 12px;
-  margin-bottom: 36px;
   font-weight: bold;
-  font-size: 30px;
-  width: 40%;
+
+  
 
 }
 
@@ -216,26 +215,53 @@
   transform: translateY(4px);
 }
 
-.equipments-main {
-  float: left;
-  width: 40%;
-  padding: 0 20px;
-  overflow: hidden;
-  text-align: justify;
-  font-size: larger;
-  font-weight: bold;
 
+/* swiper detalle product */
+
+.mySwiper{
+  height: 60%;
+}
+
+.swiperSlidedetalle{
+  height: 100% !important;
 }
 
 
-.equipments-questions {
+.swiperSlidedetalle img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+
+/* questions */
+
+
+.equipments-questions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   padding: 0 20px;
   overflow: hidden;
-  border: 4px solid grey;
+  border: 2px solid grey;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   text-align: justify;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.linkrouterquestion{
+  text-decoration: none !important;
+
+}
+.textSigninQuestion{
+  text-decoration: none !important;
+  font-size: 20px;
+
+
 }
 
 .questions {
@@ -271,32 +297,134 @@
 
 
 
-@media only screen and (max-width:800px) {
 
-  /* For tablets: */
-  .equipments-menu,
-  .equipments-image,
-  .equipments-main {
-    width: 100%;
+  /********************************************** M E D I A -Q U E R Y************************ */
+
+  @media screen and (min-width: 992px) and (max-width: 1280px) {
+
+    .mySwiper{
+      width: 450px;
+      display: flex;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  
   }
+  
+  
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+  
+    .equipments-menuCentral{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .equipments-AddToCart {
-    width: 80%;
+    .equipments-menu, .equipments-image{
+
+      width: 100%;
+
+    }
+
+  
   }
-}
+  
+  
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    .equipments-menuCentral{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-@media only screen and (max-width:500px) {
+    .equipments-menu, .equipments-image{
 
-  /* For mobile phones: */
-  .equipments-menu,
-  .equipments-image,
-  .equipments-main,
-  .equipments-AddToCart {
-    width: 100%;
+      width: 100%;
+
+    }
+
+  
+  
   }
+  
+  
+  @media screen and (max-width: 575px) {
+    .equipments-menuCentral{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .equipments-AddToCart {
-    width: 50%;
+    .equipments-menu, .equipments-image{
+
+      width: 100%;
+
+    }
+
+
   }
+  
+  
+  @media screen and (min-width: 421px) and (max-width: 574px) {
+    .equipments-menuCentral{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 
-}
+    .mySwiper{
+      width: 100%;
+      display: flex;
+      align-items: center !important;
+      justify-content: center !important;
+
+    }
+
+    .equipments-menu, .equipments-image{
+
+      width: 100%;
+
+    }
+
+    .equipments-main {
+
+      font-size: smaller;
+      line-height: 20px;
+
+    }
+
+ 
+  
+  }
+  
+  
+  @media screen and (max-width: 420px) {
+    .equipments-menuCentral{
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mySwiper{
+      width: 100%;
+      display: flex;
+      align-items: center !important;
+      justify-content: center !important;
+
+    }
+
+    .equipments-menu, .equipments-image{
+
+      width: 100%;
+
+    }
+
+    .equipments-main {
+
+      font-size: smaller;
+      line-height: 20px;
+
+    }
+   
+  
+  }
