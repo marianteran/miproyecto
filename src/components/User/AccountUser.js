@@ -19,8 +19,12 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { Link as LinkRouter } from "react-router-dom";
+<<<<<<< HEAD
 import Questions from "../Administrador/Questions";
 
+=======
+import Administrador from "../Administrador/Administrador"
+>>>>>>> develop
 
 
 const Home = () => {
@@ -206,9 +210,15 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
+<<<<<<< HEAD
                 :
                 <h1 style={{ marginTop: "10vh" }}>PERFIL ADMINISTRADOR</h1>}  
                       <Questions/>
+=======
+            </div>
+            :          
+            <Administrador/>            }
+>>>>>>> develop
         </>
     );
 };
