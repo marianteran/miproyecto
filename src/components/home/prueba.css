@@ -1,6 +1,4 @@
 
-
-
 .hero-gothic {
   display: flex;
   justify-content: center;
@@ -16,17 +14,18 @@
   position: relative;
   cursor: pointer;
   flex-grow: 1;
-  max-width: 50px;
+  max-width: 100px;
   height: 100%;
   margin-right: 20px;
   transition: all 0.33s cubic-bezier(0.74, 0.28, 0.25, 0.8);
   overflow: hidden;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .hero-gothic img {
   clip-path: inset(0% 0% 0% 0%);
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 50%;
