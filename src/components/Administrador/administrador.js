@@ -8,7 +8,7 @@ import NuevoProducto from "./NuevoProducto";
 
 
 const Home = () => {
-  const [{ user, equipments }, dispatch] = useStateValue();
+  const [{ user, equipments, notifica }, dispatch] = useStateValue();
   const [reload, setReload] = useState(false);
 
   let idFavorite = [];
@@ -67,7 +67,7 @@ const Home = () => {
             >
               Notifications
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                1+
+                {notifica}
                 <span class="visually-hidden">unread messages</span>
               </span>
             </button>
@@ -76,7 +76,7 @@ const Home = () => {
                 <a class="dropdown-item" href="#">
                   Apps
                 </a>
-              </li>
+              </li>              
               <li>
                 <a class="dropdown-item" href="#">
                   Social Media

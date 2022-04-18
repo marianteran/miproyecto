@@ -51,6 +51,7 @@ const DetalleEquipments = () => {
  
   useEffect(() => {
     window.scrollTo(0, 0);
+    
     dispatch({
       type: accionType.FILTER,
       equipmentsNew: equipments
@@ -163,7 +164,7 @@ const DetalleEquipments = () => {
 
 <div style={{display:"flex"}}>
         {/* CHECK DE MARCAS DE BUSQUEDA */}
-        <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column"}}>
+        <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column", padding:20,marginTop:30  }}>
           {brands.length > 0 ?
             brands?.map((brand) => {
               return (
@@ -187,12 +188,13 @@ const DetalleEquipments = () => {
         </div>
 
         {/* AQUI COMIENZAN LAS CARDS */}
-        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginTop:30 }}>
           {equipmentsNew.length > 0 ?
             equipmentsNew?.map(equipment => {             
               return (
-                <Card sx={{ width: 345, margin: "20px" }}>
+                <Card sx={{ width: 340, margin: "20px",boxShadow:"1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
                   <CardHeader
+                      sx={{ height:"30px", paddingY:6 }}
                     avatar={
                       <FavoriteIcon 
                      className={user && user.datosUser.favorite.includes(equipment._id) ?
@@ -207,19 +209,21 @@ const DetalleEquipments = () => {
                     } */
                     title={equipment.name}
                   />
-                  <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                    <SwiperSlide>
+                  <Swiper navigation={true} modules={[Navigation]} >
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>
                     </SwiperSlide>
 
-                    <SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img>
                     </SwiperSlide>
 
-                    <SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
                       <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img>
                     </SwiperSlide>
                   </Swiper>
+
+
                   <Stack spacing={1}>
                     <Rating name="size-large" defaultValue={2} size="large" />
                   </Stack>
@@ -230,15 +234,12 @@ const DetalleEquipments = () => {
                         {equipment.time}</p>
                     </Typography>
                   </CardContent>
-                  <Box sx={{ '& > :not(style)': { m: 1.7 }, display: "flex", justifyContent: "center" }}>
-                    <Fab variant="extended"  >
-                      <LinkRouter to={`/equipment/${equipment._id}`} style={{ textDecoration: "none", color: "black" }}>
+                  <Box sx={{display: "flex", justifyContent: "center", paddingBottom:2 }}>
+              
+                      <LinkRouter to={`/equipment/${equipment._id}`} className="myButton">
                         Read More
                       </LinkRouter>
-
-
-
-                    </Fab>
+  
                   </Box>
                 </Card>)
             }) :
