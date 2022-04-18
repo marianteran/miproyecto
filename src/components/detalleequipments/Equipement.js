@@ -226,7 +226,7 @@ const Equipment = () => {
                 {questions?.length > 0 ? "know opinions of our users" :
                 user?
                     <div>
-                       <p>"Be the first to ask"</p>        
+                       <p>Be the first to ask</p>        
                       
                     </div>:
                     <div>

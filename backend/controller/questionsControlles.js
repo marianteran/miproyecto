@@ -1,18 +1,22 @@
 const Questions = require("../models/questions")
+const Equipments = require("../models/equipments")
 
 const questionsControllers = {
     cargarQuestions: async (req, res) => {
         let { equipment, message, user, date } = req.body.dataQuestions;
-        console.log(req.body.dataQuestions)
+        let newEquipment = await Equipments.findOne({_id:equipment})       
+        console.log(newEquipment)  
+      
         new Questions({
-            equipment: equipment,
+            idEquipment: equipment,
+            equipment:{...newEquipment},
             user: user,
             questions: message,
             date:date
         }).save()
         let question
         try {
-            question = await Questions.find({ equipment: equipment }).populate("user")
+            question = await Questions.find({ idEquipment: equipment }).populate("user")
         } catch (error) {
             console.log(error)
         }
@@ -57,15 +61,20 @@ const questionsControllers = {
         res.json({ success: true, response: { question } })
     },
     obtenerQuestionsAdmin: async (req, res) => {
-        let id = req.params.id;
         let questions
+        let error = null
         try {
-            questions = await Questions.find({ equipment: id }).populate("user")
-        } catch (error) {
-            console.log(error)
+            questions = await Questions.find().populate("user")
+        } catch (err) {
+            error = err
+            console.log(error);
         }
-        res.json({ success: true, response: { questions  } })
-    },
+        res.json({
+            response: error ? 'ERROR' : { questions },
+            success: error ? false : true,
+            error: error
+        })
+    },   
     
 }
 module.exports = questionsControllers;

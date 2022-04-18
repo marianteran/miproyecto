@@ -1,7 +1,9 @@
+const { object } = require('joi');
 const mongoose = require('mongoose') //va a almacenar los datos
 
 const questionsSchema = new mongoose.Schema({
-    equipment: { type: mongoose.Types.ObjectId,ref:"itinerary", require: true },
+    idEquipment: { type: mongoose.Types.ObjectId,ref:"equipments", require: true },
+    equipment: { type: Object, require: true },
     user: { type: mongoose.Types.ObjectId,ref:"user", require: true },
     questions: { type: String, require: true },
     date: { type: String, require: true }
