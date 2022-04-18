@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link as LinkRouter } from "react-router-dom";
-import appweb from './appweb.png'
+import appweb from '../product/appweb.png'
 
 const AppWeb = () => {
 
