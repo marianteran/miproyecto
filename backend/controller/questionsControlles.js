@@ -55,7 +55,17 @@ const questionsControllers = {
         }
     
         res.json({ success: true, response: { question } })
-    }
+    },
+    obtenerQuestionsAdmin: async (req, res) => {
+        let id = req.params.id;
+        let questions
+        try {
+            questions = await Questions.find({ equipment: id }).populate("user")
+        } catch (error) {
+            console.log(error)
+        }
+        res.json({ success: true, response: { questions  } })
+    },
     
 }
 module.exports = questionsControllers;
