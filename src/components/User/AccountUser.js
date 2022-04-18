@@ -19,6 +19,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { Link as LinkRouter } from "react-router-dom";
+import Administrador from "../Administrador/Administrador"
 
 
 const Home = () => {
@@ -202,7 +203,7 @@ const Home = () => {
                 </div>
             </div>
             :          
-            <h1 style={{marginTop:"10vh"}}>PERFIL ADMINISTRADOR</h1>}
+            <Administrador/>            }
         </>
     );
 };
