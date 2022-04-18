@@ -19,7 +19,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { Link as LinkRouter } from "react-router-dom";
-import Administrador from "../Administrador/Administrador"
+import Administrador from "../Administrador/Administrador";
 
 
 const AccountUser = () => {
@@ -205,7 +205,7 @@ const AccountUser = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+         
             :          
             <Administrador/>            }
         </>

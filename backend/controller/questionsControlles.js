@@ -78,6 +78,7 @@ const questionsControllers = {
     answerQuestions: async (req, res) => {
         let id = req.params.id;
         let newAnswer = {answer:req.body.data }
+        console.log(newAnswer);
         let newfecha = {dateAnswer:req.body.newDate}
         let date                      
         let answer

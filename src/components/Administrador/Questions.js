@@ -41,11 +41,6 @@ const Questions = () => {
 
     }
 
-
-
-
-
-
     function fecha() {
         var registro = new Date()
         var dia = registro.getDate()
