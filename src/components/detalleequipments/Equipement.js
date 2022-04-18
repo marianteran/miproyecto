@@ -235,10 +235,10 @@ const Equipment = () => {
 
                                 <div className="equipments-questions">
                                     <>
-                                        <Collapse in={expanded} timeout="auto" unmountOnExit>
+                                        <Collapse in={expanded} timeout="auto" unmountOnExit >
                                             {user ?
-                                                <CardContent className="prueba">
-                                                    <form onSubmit={submitQuestions}>
+                                                <CardContent >
+                                                    <form onSubmit={submitQuestions} >
                                                         <div>
                                                             <label for="exampleFormControlTextarea1" className="form-label"></label>
                                                             <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
@@ -274,7 +274,7 @@ const Equipment = () => {
                                         <div className={questions?.length > 0 ? "questions shadow" : "questionsA"}>
                                             {questions?.map((item) => {
                                                 return (
-                                                    <Card sx={{ maxWidth: 390, margin: "6px" }}>
+                                                    <Card sx={{ maxWidth: "100%", margin: "6px" }}>
                                                         <CardHeader
                                                             avatar={
                                                                 <Avatar sx={{ bgcolor: red[500] }} /* aria-label="recipe" */>
