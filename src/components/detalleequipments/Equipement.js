@@ -258,7 +258,7 @@ const Equipment = () => {
                                     <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} />
                                 </ExpandMore>
                             </div>
-                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ borderStyle: "solid", borderColor: "#ff4a48" }}></textarea>
+                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ }}></textarea>
                         </div>
                         <div style={{ display: "flex", justifyContent: "right" }}>
                             <div >

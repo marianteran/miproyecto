@@ -27,7 +27,7 @@ const questionsControllers = {
         let id = req.params.id;
         let questions
         try {
-            questions = await Questions.find({ equipment: id }).populate("user")
+            questions = await Questions.find({ idEquipment: id }).populate("user")
         } catch (error) {
             console.log(error)
         }
@@ -75,6 +75,23 @@ const questionsControllers = {
             error: error
         })
     },   
+    answerQuestions: async (req, res) => {
+        let id = req.params.id;
+        let newAnswer = {answer:req.body.data }
+        let newfecha = {dateAnswer:req.body.newDate}
+        let date                      
+        let answer
+        try {
+            answer = await Questions.findOneAndUpdate( {_id:id}, newAnswer )
+            date = await Questions.findOneAndUpdate( {_id:id}, newfecha )
+
+        } catch (error) {
+            console.log(error)
+        }
+    
+        res.json({ success: true, response: { answer } })
+    },
+ 
     
 }
 module.exports = questionsControllers;
