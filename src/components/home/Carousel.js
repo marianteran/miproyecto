@@ -2,14 +2,14 @@
 
 import "./carousel.css";
 
+
+
 export default function Carousel() {
     return (
         <>
             <div className="slider">
                 <div className="slide-track">
-                    <div className="slide">
-                        <img src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2020/06/Screenshot-5-1024x478.png"></img>
-                    </div>
+                   
                     <div className="slide">
                         <img src="https://www.damos.co/mediateca/files/planes_responsive.jpg"></img>
                     </div>

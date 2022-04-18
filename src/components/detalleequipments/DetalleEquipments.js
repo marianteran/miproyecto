@@ -235,6 +235,9 @@ const DetalleEquipments = () => {
                       <LinkRouter to={`/equipment/${equipment._id}`} style={{ textDecoration: "none", color: "black" }}>
                         Read More
                       </LinkRouter>
+
+
+
                     </Fab>
                   </Box>
                 </Card>)
@@ -245,6 +248,8 @@ const DetalleEquipments = () => {
         </div>
 
       </div>
+
+  
     </>
   )
 

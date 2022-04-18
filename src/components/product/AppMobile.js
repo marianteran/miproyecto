@@ -3,42 +3,64 @@ import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
+import bg from './mobile.png'
 
 const AppMobile = () => {
-   
-  return (
-    <div>
-         <section id="appWeb">
-                <h5>App Mobile</h5>
+
+    return (
+        <div>
+            <section id="appMobile">
+            <div className="container">
+                    <div className='subtitle-principal-mobile '>
+                        <h2>Aplicaciones Mobile</h2>
+                    </div>
+                </div>
 
 
-                <div className="container appwebContainer">
-                    <div className="appWebImage">
-                        <div className="container__vector">
-                            <img src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2020/06/Screenshot-5-1024x478.png" alt="" />
-                        </div>
+                <div className="container appMobileContainer">
+                    <div className="appMobileImage">
+
+                        <img src={bg} alt="" />
+
                     </div>
 
-                    <div className="appWebContent">
+                    <div className="appMobileContent">
+
+                        <h4>Gestionamos tu sitio web responsive</h4>
 
                         <p>
-                            Una aplicación Web es un conjunto de páginas Web estáticas y dinámicas. Una página Web estática es aquélla que no cambia cuando un usuario la solicita: el servidor Web envía la página al navegador Web solicitante sin modificarla. Por el contrario, el servidor modifica las páginas Web dinámicas antes de enviarlas al navegador solicitante. La naturaleza cambiante de este tipo de página es la que le da el nombre de dinámica.
+                            Una Web Responsive es aquella que es capaz de adaptarse a cualquier dispositivo donde
+                            se visualice. Las estadísticas muestran el creciente de tráfico web que se genera
+                            desde dispositivos móviles, pero además Google penaliza  en su buscador a aquellas
+                            webs que no son responsables. Si tu sitio web está obsoleto, es el momento de ponerte en
+                            manos de nuestro equipo para diseñar una web responsive </p>
 
-                            Por ejemplo, podría diseñar una página para que mostrara los resultados del programa de salud y dejara cierta información fuera (como el nombre del empleado y sus resultados) para calcularla cuando la página la solicite un empleado en particular.
-                        </p>
+        
 
-                        <LinkRouter to='/appMobile' className="btn btn-outline-light ms-2">
-                            <button className='btn btn-dark'>Info</button>
+                        <LinkRouter to='/appMobile' className="container botonAppMobile">
+                            <div className="btnfluor">
+                                <a href="">info</a>
+                            </div>
                         </LinkRouter>
 
 
                     </div>
                 </div>
 
+                <div className="contentBarraProgresive">
+                    <p>Usuarios que usan internet desde Smartphone <span>93%</span></p>
+                    <div className="progress">
+
+                        <div className="progress-value"></div>
+                    </div>
+
+
+                </div>
+
 
             </section>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default AppMobile

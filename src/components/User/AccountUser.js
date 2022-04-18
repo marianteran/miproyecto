@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStateValue } from "../../context/Stateprovider";
 import "./userAccount.css";
-import userImage from "./userImage.png"
+import userImage from "../User/userImage.png"
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -19,7 +19,8 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { Link as LinkRouter } from "react-router-dom";
-import Administrador from "../Administrador/Administrador"
+/* import Administrador from "../Administrador/Administrador" */
+import Administrador from "../Administrador/administrador"
 
 
 const Home = () => {

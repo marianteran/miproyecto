@@ -4,10 +4,7 @@ import Carousel from './Carousel'
 const Hero = () => {
   return (
     <>
-     {/*  <div className='hero-container'>
-
-        <p className='hero-title'>SOMOS TU MEJOR ELECCION</p>
-      </div> */}
+  
 
       <section id='hero-dos'>
         <div className='hero-container-dos'>
@@ -16,43 +13,24 @@ const Hero = () => {
             <h6>CREA TU SITIO WEB</h6>
             <h1> El líder en diseño de páginas web</h1>
             <p>Crea una página web profesional, una tienda online o un portafolio y construye tu presencia online. Con nosotros, puedes hacer realidad cualquier idea.</p>
-            <button className='btn btn-primary'>Comenzar</button>
+            <div className="container botonhome ">
+              <div className="btnfluor">
+                <a href="">read more</a>
+              </div>
+            </div>
           </div>
 
           <div className='hero-slider'>
 
-            <Carousel/>
+            <Carousel />
           </div>
 
         </div>
 
       </section>
 
-
-    {/*   <section className='hero-tres'>
-        <div class='heroimage'>
-          <div class="captioncontainer">
-            <h1 class="captiontitle">
-              IMAGINALO
-            </h1>
-            <h2 class="captiontitle">
-              HAZLO REALIDAD
-            </h2>
-          </div>
-        </div>
-
-
-      </section > */}
-
-
-
-
-
-
-
-
-        </>
-        )
+    </>
+  )
 }
 
 export default Hero
