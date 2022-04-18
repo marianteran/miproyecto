@@ -1,3 +1,303 @@
+/* app mobile  */
+
+
+#appMobile{
+  text-align: center;
+  margin: 10% 0%;
+  border: 2px solid red;
+}
+
+
+.appMobileContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  
+}
+
+
+.appMobileImage{
+  width: 600px;
+  
+}
+
+.appMobileImage img{
+  width: 100%;
+  
+}
+
+.appMobileContent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+
+}
+
+.appMobileContent h4{
+
+  margin-bottom: 20px;
+}
+.botonAppMobile{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.contentBarraProgresive{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.progress {
+  background: rgba(91, 88, 88, 0.227);
+  justify-content: flex-start;
+  border-radius: 10px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 20px;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 80px;
+  background: blue;
+  height: 8px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 90%; }
+}
+
+
+
+
+/* social media */
+
+
+#socialMedia{
+  margin: 10% 0%;
+}
+
+
+.socialMediaContainer{
+  padding: 20px;
+ 
+  
+}
+
+
+.socialMediaContent{
+  background: url("./socialmedia.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.socialMediaInfo{
+  width: 40%;
+  backdrop-filter: blur(20px) saturate(120%) brightness(140%);
+  box-shadow: -9px 24px 165px -29px rgba(0,0,0,0.75);
+  border-radius: 1rem;
+  padding: 20px;
+}
+
+.socialMediaInfo h5{
+
+  font-size: 4vmin;
+  margin-bottom: 5%;
+
+}
+
+.socialMediaInfo p{
+  text-align: center;
+  line-height: 30px;
+  padding: 20px;
+
+}
+
+
+/* botones fluor */
+
+.botonSocialMedia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnfluormedia{
+  position: relative;
+  width: 155px;
+  height: 50px;
+  margin: 20px;
+  
+}
+
+.container .btnfluormedia a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /*  background: rgba(255, 255, 255, 0.05); */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: black;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter:blur(10px) ;
+  text-transform: uppercase;
+
+}
+
+.container .btnfluormedia:hover a{
+  letter-spacing: 2px;
+  color: #fff;
+  font-weight: 600;
+
+}
+
+.container .btnfluormedia a::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* background: linear-gradient(to left, rgba(255,255,255,0.15),transparent); */
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+
+.container .btnfluormedia:hover a::before{
+  transform: skewX(45deg) translateX(200%);
+
+}
+
+
+.container .btnfluormedia::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+ /*  background: #f00; */
+  border-radius: 10px;
+  transition: 0.2s;
+  transition-delay: 0s;
+}
+
+.container .btnfluormedia:hover::before{
+
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.2s ;
+}
+
+.container .btnfluormedia::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  /* background: #f00; */
+  border-radius: 10px;
+  transition: 0.2s;
+  transition-delay: 0s;
+}
+
+.container .btnfluormedia:hover::after{
+
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.2s ;
+}
+
+
+.container .btnfluormedia:nth-child(1)::before,
+.container .btnfluormedia:nth-child(1)::after{
+  background: #ff1f71;
+  box-shadow: 0 0 2px #ff1f71,
+  0 0 15px #ff1f71,
+  0 0 30px #ff1f71,
+  0 0 60px #ff1f71;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* hero tres */

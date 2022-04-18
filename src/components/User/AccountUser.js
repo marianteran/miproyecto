@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useStateValue } from "../../context/Stateprovider";
 import "./userAccount.css";
-import userImage from "./userImage.png"
+import userImage from "../User/userImage.png"
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
