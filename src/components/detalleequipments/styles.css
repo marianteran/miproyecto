@@ -258,7 +258,7 @@
   
 
 }
-.equipments-questions {
+/* .equipments-questions {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,7 +270,7 @@
   padding: 10px;
   text-align: justify;
 
-}
+} */
 
 .linkrouterquestion{
   text-decoration: none !important;
@@ -310,7 +310,6 @@
   border-radius: 20px;
   border-right: 2px solid rgba(250, 230, 223, 0.9);
 }
-
 
 
 
