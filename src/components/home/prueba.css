@@ -2,10 +2,11 @@
 .hero-gothic {
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 70vh;
   min-height: 300px;
-  background-color: black;
-  padding: 20px;
+  background-color:var(--color-bg);
+  padding-top: 4%;
+  padding-bottom: 4%;
   margin: 0 auto;
 }
 

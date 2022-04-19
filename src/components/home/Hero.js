@@ -10,9 +10,9 @@ const Hero = () => {
         <div className='hero-container-dos'>
 
           <div className='hero-text'>
-            <h6>CREA TU SITIO WEB</h6>
-            <h1> El líder en diseño de páginas web</h1>
-            <p>Crea una página web profesional, una tienda online o un portafolio y construye tu presencia online. Con nosotros, puedes hacer realidad cualquier idea.</p>
+            <h6>CREATE YOUR WEBSITE</h6>
+            <h1>The leader in web page design</h1>
+            <p>Create a professional website, online store or portfolio and build your online presence. With us, you can make any idea come true.</p>
             <div className="container botonhome ">
               <div className="btnfluor">
                 <a href="">read more</a>

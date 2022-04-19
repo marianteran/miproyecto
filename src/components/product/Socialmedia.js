@@ -11,7 +11,7 @@ const Socialmedia = () => {
     return (
         <section id="socialMedia">
             <div className="container">
-                <div className='subtitle-principal-mobile '>
+                <div className='subtitle-principal-media '>
                     <h2>Social Media</h2>
                 </div>
             </div>

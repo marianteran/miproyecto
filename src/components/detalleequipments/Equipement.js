@@ -241,14 +241,14 @@ const Equipment = () => {
                                                     <form onSubmit={submitQuestions} >
                                                         <div>
                                                             <label for="exampleFormControlTextarea1" className="form-label"></label>
-                                                            <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
+                                                            <div style={{ display: "flex", justifyContent: "right", margin: 0}}>
                                                                 <ExpandMore
                                                                     // expand={expanded}
                                                                     onClick={handleExpandClick}
                                                                     aria-expanded={expanded}
                                                                     aria-label="show more"
                                                                 >
-                                                                    <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} />
+                                                                    <ClearIcon style={{ color: "#054a59" }} aria-expanded={expanded} />
                                                                 </ExpandMore>
                                                             </div>
                                                             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{}}></textarea>
@@ -263,7 +263,7 @@ const Equipment = () => {
 
                                                                 >
                                                                     <Fab sx={{ bgcolor: "secondary" }} aria-label="SendIcon" aria-expanded={expanded} type="submit"  >
-                                                                        <SendIcon style={{ color: "#4CAF50" }} />
+                                                                        <SendIcon style={{ color: "#054a59" }} />
                                                                     </Fab>
                                                                 </ExpandMore>
                                                             </div>
@@ -297,7 +297,7 @@ const Equipment = () => {
                                                                     <input variant="body2" color="text.secondary"
                                                                         defaultValue={item.questions}
                                                                         onChange={inputText}
-                                                                        style={{ width: "100%", height: 70 }} >
+                                                                        style={{ width: "100%", height: 60 }} >
                                                                     </input>
                                                                 : <Typography variant="body2" color="text.secondary">
                                                                     {item.questions}
@@ -325,7 +325,7 @@ const Equipment = () => {
                                                     aria-label="show more"
                                                 >
                                                     <Fab color="white" aria-label="CommentIcon" sx={{ bgcolor: "white" }}>
-                                                        <CommentIcon sx={{ color: "#4CAF50" }} />
+                                                        <CommentIcon sx={{ color: "#054a59" }} />
                                                     </Fab>
                                                 </ExpandMore> : ""}
                                         </CardActions>
