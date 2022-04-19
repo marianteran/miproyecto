@@ -132,6 +132,7 @@ const DetalleEquipments = () => {
 
 
   const favorite = async (id) => {
+    console.log(id)
     const token = localStorage.getItem("token")
     if (!token) {
       swal({
@@ -143,13 +144,14 @@ const DetalleEquipments = () => {
     else {
       axios.put(`http://localhost:4000/api/favorite/${id}`, {},
         { headers: { 'Authorization': 'Bearer ' + token } })
-        .then(response => {
-          console.log(response.data.response);
+        .then(response => {       
+          console.log(response) 
           setReload(!reload)
+    
+          
         })
     }
   }
-
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
