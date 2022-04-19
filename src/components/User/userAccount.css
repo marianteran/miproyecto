@@ -1,0 +1,65 @@
+.banner{
+    height: 40rem !important;
+    margin-bottom: -3rem !important;  
+}
+
+
+.custom-header-title{
+    margin-bottom: 130px;
+}
+
+
+.custom-header-subtitle{
+    color: rgba(48, 47, 47, 0.6);
+    font-size: 1.2rem;
+    width: auto;
+   
+}
+
+.data{
+    color: rgba(39, 35, 35, 0.6);
+    font-weight:600;
+}
+
+.text-secondary{
+    color: rgba(95, 90, 90, 0.6) !important;
+    font-weight: lighter;
+}
+
+.custom-card{
+    margin-bottom: 5rem !important;
+}
+.background-card{
+    background-color: rgb(218, 218, 218);
+}
+.background-card-click:hover{
+    background-color: rgb(111, 108, 108);
+}
+
+
+.custom-card-body{
+    margin-top: 2rem;
+    height: 12rem;
+}
+
+.favourite-button{
+    font-weight: bold !important;
+    font-size: 1.2rem;
+}
+
+.logout-button{
+    font-weight: bold !important;
+    font-size: 1.5rem;
+    width: 8rem;
+}
+
+.custom-nav-link{
+    font-weight: bold;
+    color:  rgba(48, 47, 47, 0.6) !important;
+}
+
+.custom-image{
+    margin-bottom: 4rem;
+   border-radius: 50%;
+   height: 10rem;
+}

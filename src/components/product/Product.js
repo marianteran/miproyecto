@@ -10,12 +10,13 @@ import Socialmedia from './Socialmedia'
 const Product = () => {
   return (
     <>
-
-    <HeroProduct/>    
-    <AppWeb/>
-    <AppMobile/>
-    <Socialmedia/>
-    <Pc/>
+     
+        <HeroProduct />
+        <AppWeb />
+        <AppMobile />
+        <Socialmedia />
+        <Pc />
+ 
     </>
   )
 }

@@ -7,6 +7,7 @@ import { accionType } from '../../context/reducer'
 import { useStateValue } from '../../context/Stateprovider';
 import { useEffect } from 'react';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import AccountUser from '../User/AccountUser'
 
 
 
@@ -62,14 +63,17 @@ function Signin() {
                         buttons: "ok"
                     })
                 }
+                console.log(response.data.response)
                 dispatch({
                     type: accionType.USERDB,
                     user: response.data.response
                 })
+                
             })
     }
     return (
         <>
+      {!user?
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
@@ -113,19 +117,21 @@ function Signin() {
                             </div>
                         </div>
 
-                        <div className="helpForm signInUp-LinkSignUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <div className="helpForm signInUp-LinkSignUp" >
                             <div className="d-flex textSignUp" >
 
-                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter></h3>
+                                <h4>Don't have an account?</h4>
+                                <LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter>
                               
-                              {/*   <LinkRouter to="/singup" style={{ }}>
-                                   <h3> Sign Up </h3>
-                                </LinkRouter> */}
+                            
                             </div>
                         </div>
 
                     </form>
-                </div>
+                </div>:
+            <AccountUser/>}
+                
+                
         </>
     )
 }

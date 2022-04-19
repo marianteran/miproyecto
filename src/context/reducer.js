@@ -2,8 +2,10 @@ export const initialState = { // crear estados
     apps: [], //estado inicial de products
     smedia:[],
     equipments:[],
-    //productsNew: [],
+    equipmentsNew: [],
     user: null,   
+    favorites:[],
+    notifica:""
 }
 
 export const accionType = { // mis accioness
@@ -11,7 +13,9 @@ export const accionType = { // mis accioness
     SMEDIADB: "SMEDIADB",
     EQUIPMENTSDB: "EQUIPMENTSDB",
     USERDB: "USERDB",
-    FILTER: "FILTER"
+    FILTER: "FILTER",
+    NOTIFICA: "NOTIFICA"
+    
 }
 
 const reducer = (state, action) => {
@@ -40,8 +44,14 @@ const reducer = (state, action) => {
                 case "FILTER":
                     return {
                         ...state,
-                        productsNew: action.productsNew
+                        equipmentsNew: action.equipmentsNew
                     }
+                    case "NOTIFICA":
+                    return {
+                        ...state,
+                        notifica: action.notifica
+                    }
+                   
                                     
         default: return state
     }

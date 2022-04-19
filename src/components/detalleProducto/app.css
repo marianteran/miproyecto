@@ -1,0 +1,29 @@
+
+
+.detalleAppWebContainer{
+    padding: 50px;
+
+
+}
+
+
+.detalleProductImg{
+
+   
+    width: 800px ;
+   
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.detalleProductImg img{
+
+    width: 100%;
+}
+
+
