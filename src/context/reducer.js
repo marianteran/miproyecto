@@ -34,7 +34,8 @@ const reducer = (state, action) => {
                 case "EQUIPMENTSDB":
                 return {
                     ...state,
-                    equipments: action.equipments,         
+                    equipments: action.equipments,
+                    equipmentsNew:action.equipments         
                 }
             case "USERDB":
                 return {

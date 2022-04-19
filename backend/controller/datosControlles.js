@@ -76,22 +76,19 @@ const datosController = {
         let newEquip
         try {
             usuarioFav = await User.findOne({ _id: idUser })
-
-
-            if (usuarioFav.favorite.includes(idEquip)) {
-                User.findByIdAndUpdate({ _id: idUser }, { $pull: { favorite: idEquip } }, { new: true })
-                    .then(response => {
-                        resp.json({ success: true, response: response.favorite })
-                    })
-
-                    .catch(error => console.log(error))
+            newEquip = await Equipments.findOne({_id:idEquip})
+        
+            if (usuarioFav.favorite.includes(idEquip)) {             
+                let user = await User.findByIdAndUpdate({ _id: idUser }, { $pull: { favorite: idEquip } }, { new: true })
+                let equip = await Equipments.findByIdAndUpdate({ _id: idEquip }, { $pull: { likes: idUser } }, { new: true })
+                resp.json({ success: true, response:{user, equip}  })
+                console.log(user)    
             }
             else {
-                User.findByIdAndUpdate({ _id: idUser }, { $push: { favorite: idEquip } }, { new: true })
-                    .then(response => {
-                        resp.json({ success: true, response: response.favorite })
-                    })
-                    .catch(error => console.log(error))
+                let user = await User.findByIdAndUpdate({ _id: idUser }, { $push: { favorite: idEquip } }, { new: true })
+                let equip = await Equipments.findByIdAndUpdate({ _id: idEquip }, { $push: { likes: idUser } }, { new: true })
+                resp.json({ success: true, response:{user, equip}  })
+                console.log(user)  
             }
         } catch (err) {
             error = err
