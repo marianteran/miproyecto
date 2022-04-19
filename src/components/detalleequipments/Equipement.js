@@ -118,36 +118,10 @@ const Equipment = () => {
         setReload(!reload)
     }
 
-
-    const deleteEdit = async (id, name) => {
-        if (name === "Delete") {
-            await axios.delete(`http://localhost:4000/api/questions/${id}`)
-                .then(response => setReload(!reload))
-        }
-        else if (name === "Edit") {
-            setEdit(false)
-        }
-
-    }
     const inputText = (event) => {
         setChangeQuestions(event.target.value)
     }
-    const editQuestions = async (id) => {
-        fecha()
-        let data = changeQuestions
-        let newDate = date
-        if (id !== "x") {
-            await axios.put(`http://localhost:4000/api/questions/${id}`, { data, newDate })
-                .then(response => {
-                    setEdit(true)
-                    setReload(!reload)
-                })
-        }
-        else {
-            setEdit(true)
-        }
-
-    }
+   
 
 
     function fecha() {

@@ -23,15 +23,15 @@ const Notificaciones = () => {
                   return(
                     temporal.push(item)
                   )
-                }} )              
-              
-              setQuestions(temporal)
+                }} )                          
+              setQuestions(temporal)             
+              setReload(!reload)
               dispatch({
                 type: accionType.NOTIFICA,
                 notifica: questions.length
               })
-              setReload(!reload)
           })
+          
   }, [reload])
 
   const inputText = (event) => {  
@@ -45,6 +45,7 @@ const Notificaciones = () => {
       let newDate = date  
           await axios.put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
               .then(response => {
+                console.log(response)
                   setReload(!reload)                  
               })}
 

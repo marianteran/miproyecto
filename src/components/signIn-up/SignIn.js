@@ -63,6 +63,7 @@ function Signin() {
                         buttons: "ok"
                     })
                 }
+                console.log(response.data.response)
                 dispatch({
                     type: accionType.USERDB,
                     user: response.data.response
