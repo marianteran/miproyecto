@@ -11,7 +11,7 @@ const Pc = () => {
         <div>
             <section id="pc">
                 <div className="container">
-                    <div className='subtitle-principal-mobile '>
+                    <div className='subtitle-principal-pc '>
                         <h2>Equipos</h2>
                     </div>
                 </div>

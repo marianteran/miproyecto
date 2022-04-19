@@ -61,7 +61,7 @@ const Questions = () => {
    console.log(equimentsQuestions) */
     return (
         <>
-            <div style={{ margin: "20px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ margin: "10px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 {questions?.map((item) => {
                     return (
 

@@ -5,7 +5,7 @@ import './prueba.css'
 const stub=[
 {image:'https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/2659/posts/37331/image-upload/Porto%20-%20Multipurpose%20Responsive%20HTML%20Template-intro.jpg'}, 
 {image:'https://s.tmimgcdn.com/scr/800x500/51500/plantilla-web-pro-gratis-sitio-web-pro_51576-0-original.jpg'},
-{image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFBVSOqr4qxkqP3YkESRffDr593ZG_lMqFHtC-RM0qmdJFuMIeOlLcyusdbuqsxt-b2k&usqp=CAU'},
+{image:'https://nestrategia.com/wp-content/uploads/2019/01/diseno-paginas-web-madrid-profesionales-1.jpg'},
 {image:'https://wwwhatsnew.com/wp-content/uploads/2017/08/Mashup-Template-730x416.jpg'},
 {image:'https://i.pinimg.com/originals/1d/e4/ad/1de4ad2669f3e3c085089b05703129e5.jpg'}
 ]

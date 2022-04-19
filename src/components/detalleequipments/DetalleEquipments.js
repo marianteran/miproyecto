@@ -12,6 +12,9 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import { Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -48,7 +51,6 @@ const DetalleEquipments = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
-  const [idFav, setIdFav] = useState("")
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,7 +59,6 @@ const DetalleEquipments = () => {
       type: accionType.FILTER,
       equipmentsNew: equipments
     })
-
   }, [reload])
 
 
@@ -151,7 +152,6 @@ const DetalleEquipments = () => {
         })
     }
   }
-  console.log(user)
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -166,7 +166,10 @@ const DetalleEquipments = () => {
           <TextField label="Find your Equipment"
             onChange={filterEquipments}
             onKeyPress={filterEquipments}
-            focused />
+            
+         />
+
+         
         </Box>
 
         <div style={{ display: "flex" }}>
@@ -176,7 +179,9 @@ const DetalleEquipments = () => {
               brands?.map((brand) => {
                 return (
                   <div style={{ display: "flex" }}>
-                    <Switch {...label} defaultChecked onChange={selectBrand} name={brand} />
+                    <Switch {...label} defaultChecked onChange={selectBrand} name={brand}
+                      color="default"
+                      style={{ color: "rgb(2,104,115)" }} />
                     {brand}
                   </div>
                 )
@@ -196,7 +201,7 @@ const DetalleEquipments = () => {
 
           {/* AQUI COMIENZAN LAS CARDS */}
           <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginTop: 30 }}>
-            {equipmentsNew.length > 1 ?
+            {equipmentsNew.length > 0 ?
               equipmentsNew?.map(equipment => {
                 return (
                   <Card sx={{ width: 340, margin: "20px", boxShadow: "1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
@@ -204,7 +209,7 @@ const DetalleEquipments = () => {
                       sx={{ height: "30px", paddingY: 6 }}
                       avatar={
                         <FavoriteIcon
-                          className={user && user.datosUser.favorite.includes(equipment._id)?
+                          className={user && user.datosUser.favorite.includes(equipment._id) ?
                             "colorLike" : ""}
                           onClick={() => favorite(equipment._id)}
 
@@ -242,9 +247,11 @@ const DetalleEquipments = () => {
                       </Typography>
                     </CardContent>
                     <Box sx={{ display: "flex", justifyContent: "center", paddingBottom: 2 }}>
+
                       <LinkRouter to={`/equipment/${equipment._id}`} className="myButton">
                         Read More
                       </LinkRouter>
+
                     </Box>
                   </Card>)
               }) :
