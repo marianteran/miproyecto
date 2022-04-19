@@ -13,6 +13,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import Switch from '@mui/material/Switch';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import StaticPC from '../detalleProducto/AppWeb/Static.PNG'
+import PresupuestoEnv from "./PresupuestoEnv.js";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
@@ -32,15 +33,23 @@ const DetalleAppWeb = () => {
 	const [checked, setChecked] = React.useState([]);
 	const [imgenPc, setImagenPc] = useState('pStatic.png')
 	const [expanded, setExpanded] = React.useState(false);
-	const [priceTotal, setPriceTotal] = useState('')
+	const [price, setPrice] = useState()
+	const [priceTotal, setPriceTotal] = useState(0)
+	const [presuSend,setPresuSend ] = useState(false)
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
 	};
 
-	const handleToggle = (value) => () => {
+
+	const handleToggle = (value, price) => () => {
 		const currentIndex = checked.indexOf(value);
+
+		console.log(price);
+		console.log(priceTotal)
 		const newChecked = [...checked];
+		const newPrice = priceTotal+price	
+		setPriceTotal(newPrice)
 
 		if (currentIndex === -1) {
 			newChecked.push(value);
@@ -48,16 +57,19 @@ const DetalleAppWeb = () => {
 			newChecked.splice(currentIndex, 1);
 		}
 
-		setChecked(newChecked);
-
+		setChecked(newChecked);	
 		appWeb[1].functions.map((item) => {
 			if (item.title === value) {
-				return (
-					setImagenPc(item.image)
-				)
+				setImagenPc(item.image)
 			}
 		})
 	};
+
+	function presupuesto() {
+		setPresuSend(true)
+	}
+
+	
 
 	//CONST SETEABLES:
 	const [appPulsada, setAppPulsada] = useState()
@@ -91,7 +103,7 @@ const DetalleAppWeb = () => {
 
 			<div className="detalleAppWebContainer">
 
-				<div style={{ display: "flex", justifyContent: "center", marginTop: "10vh", marginBottom:"5vh" }}>
+				<div style={{ display: "flex", justifyContent: "center", marginTop: "10vh", marginBottom: "5vh" }}>
 					{appWeb.map((app) => {
 						return (
 							<div>
@@ -105,7 +117,7 @@ const DetalleAppWeb = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent:"space-around" }}>
+					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 						<div className="detalleProductImg">
 
 							<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
@@ -113,6 +125,7 @@ const DetalleAppWeb = () => {
 
 						</div>
 						<div>
+						{!presuSend?
 							<List
 								sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
 								subheader={<ListSubheader>functions</ListSubheader>}
@@ -126,9 +139,10 @@ const DetalleAppWeb = () => {
 												</ListItemIcon>
 												<ListItemText id="switch-list-label-wifi" primary={item.title} />
 												<Switch
-													edge="end"
-													onChange={handleToggle(item.title)}
+													edge="end"												
+													onChange={handleToggle(item.title,item.price)}
 													checked={checked.indexOf(item.title) !== -1}
+													disabled={checked.indexOf(item.title) !== -1}
 													inputProps={{
 														'aria-labelledby': 'switch-list-label-wifi',
 													}}
@@ -138,11 +152,15 @@ const DetalleAppWeb = () => {
 									)
 								})}
 
-							</List>
-							<h3>Total:{priceTotal}</h3>
+							</List>:""}
+							<h3>Total:{" "+priceTotal +" $USD"}</h3>
+							<button  onClick={()=>presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
 						</div>
+						{presuSend?
+						<PresupuestoEnv checked={checked} app={appWeb[1]} />:""}
 					</div>
-					:
+								
+						:
 					<div className="detalleProductImg">
 						<img src={StaticPC} alt="" />
 					</div>}

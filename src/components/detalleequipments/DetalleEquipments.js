@@ -48,17 +48,19 @@ const DetalleEquipments = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
- 
+  const [idFav, setIdFav] = useState("")
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     dispatch({
       type: accionType.FILTER,
       equipmentsNew: equipments
     })
-  }, [reload]) 
 
- 
+  }, [reload])
+
+
   const handleExpandClick = (parametro) => {
     setCheckKey(parametro)
     setExpanded(!expanded);
@@ -70,7 +72,9 @@ const DetalleEquipments = () => {
     if (!brands.includes(equipment.brand)) {
       return (
         brands.push(equipment.brand)
-      )}})
+      )
+    }
+  })
 
   function filterEquipments(event) {
     let textEquipment = event.target.value.toLowerCase()
@@ -125,8 +129,9 @@ const DetalleEquipments = () => {
     }
   }
 
-  
+
   const favorite = async (id) => {
+    console.log(id)
     const token = localStorage.getItem("token")
     if (!token) {
       swal({
@@ -138,13 +143,15 @@ const DetalleEquipments = () => {
     else {
       axios.put(`http://localhost:4000/api/favorite/${id}`, {},
         { headers: { 'Authorization': 'Bearer ' + token } })
-        .then(response => {
-          console.log(response.data.response);
+        .then(response => {       
+          console.log(response) 
           setReload(!reload)
+    
+          
         })
     }
   }
- 
+  console.log(user)
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -162,95 +169,93 @@ const DetalleEquipments = () => {
             focused />
         </Box>
 
-<div style={{display:"flex"}}>
-        {/* CHECK DE MARCAS DE BUSQUEDA */}
-        <div style={{ display: "flex", justifyContent: "left" , flexDirection:"column", padding:20,marginTop:30  }}>
-          {brands.length > 0 ?
-            brands?.map((brand) => {
-              return (
-                <div style={{display:"flex"}}>
-                  <Switch {...label} defaultChecked onChange={selectBrand} name={brand} />
-                  {brand}
+        <div style={{ display: "flex" }}>
+          {/* CHECK DE MARCAS DE BUSQUEDA */}
+          <div style={{ display: "flex", justifyContent: "left", flexDirection: "column", padding: 20, marginTop: 30 }}>
+            {brands.length > 0 ?
+              brands?.map((brand) => {
+                return (
+                  <div style={{ display: "flex" }}>
+                    <Switch {...label} defaultChecked onChange={selectBrand} name={brand} />
+                    {brand}
+                  </div>
+                )
+              })
+              :
+              <div style={{ display: "flex" }}>
+                <GreenSwitch {...label} onChange={selectBrand} name={"All Brand"} />
+                Press to see all brands
+                <div>
+                  <h1 style={{ display: "flex", justifyContent: "left", marginTop: "2%" }}>
+                    {brandValue === "All Brand" ? "" : brandValue}
+                  </h1>
                 </div>
-              )
-            })
-            :
-            <div style={{display:"flex"}}>
-              <GreenSwitch {...label} onChange={selectBrand} name={"All Brand"} />
-              Press to see all brands
-              <div>
-                <h1 style={{ display: "flex", justifyContent: "left", marginTop: "2%" }}>
-                  {brandValue === "All Brand" ? "" : brandValue}
-                </h1>
-              </div>
-            </div>}
+              </div>}
 
-        </div>
+          </div>
 
-        {/* AQUI COMIENZAN LAS CARDS */}
-        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginTop:30 }}>
-          {equipmentsNew.length > 0 ?
-            equipmentsNew?.map(equipment => {             
-              return (
-                <Card sx={{ width: 340, margin: "20px",boxShadow:"1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
-                  <CardHeader
-                      sx={{ height:"30px", paddingY:6 }}
-                    avatar={
-                      <FavoriteIcon 
-                     className={user && user.datosUser.favorite.includes(equipment._id) ?
-                      "colorLike":""}                      
-                    onClick={() => favorite(equipment._id)}                
+          {/* AQUI COMIENZAN LAS CARDS */}
+          <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", marginTop: 30 }}>
+            {equipmentsNew.length > 1 ?
+              equipmentsNew?.map(equipment => {
+                return (
+                  <Card sx={{ width: 340, margin: "20px", boxShadow: "1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
+                    <CardHeader
+                      sx={{ height: "30px", paddingY: 6 }}
+                      avatar={
+                        <FavoriteIcon
+                          className={user && user.datosUser.favorite.includes(equipment._id)?
+                            "colorLike" : ""}
+                          onClick={() => favorite(equipment._id)}
 
-                     />}
-               /*      action={
-                      <LinkRouter key={equipment._id} to={`/equipment/${equipment._id}`}>
-                        <FavoriteIcon style={{ color: "#7dd6e5" }} />
-                      </LinkRouter>
-                    } */
-                    title={equipment.name}
-                  />
-                  <Swiper navigation={true} modules={[Navigation]} >
-                    <SwiperSlide className="swiper-slide">
-                      <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>
-                    </SwiperSlide>
+                        />}
+                      /*      action={
+                             <LinkRouter key={equipment._id} to={`/equipment/${equipment._id}`}>
+                               <FavoriteIcon style={{ color: "#7dd6e5" }} />
+                             </LinkRouter>
+                           } */
+                      title={equipment.name}
+                    />
+                    <Swiper navigation={true} modules={[Navigation]} >
+                      <SwiperSlide className="swiper-slide">
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>
+                      </SwiperSlide>
 
-                    <SwiperSlide className="swiper-slide">
-                      <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img>
-                    </SwiperSlide>
+                      <SwiperSlide className="swiper-slide">
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img>
+                      </SwiperSlide>
 
-                    <SwiperSlide className="swiper-slide">
-                      <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img>
-                    </SwiperSlide>
-                  </Swiper>
+                      <SwiperSlide className="swiper-slide">
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img>
+                      </SwiperSlide>
+                    </Swiper>
 
 
-                  <Stack spacing={1}>
-                    <Rating name="size-large" defaultValue={2} size="large" />
-                  </Stack>
-                  <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                      {equipment.price + " $USD"}
-                      <p>
-                        {equipment.time}</p>
-                    </Typography>
-                  </CardContent>
-                  <Box sx={{display: "flex", justifyContent: "center", paddingBottom:2 }}>
-              
+                    <Stack spacing={1}>
+                      <Rating name="size-large" defaultValue={2} size="large" />
+                    </Stack>
+                    <CardContent>
+                      <Typography variant="body2" color="text.secondary">
+                        {equipment.price + " $USD"}
+                        <p>
+                          {equipment.time}</p>
+                      </Typography>
+                    </CardContent>
+                    <Box sx={{ display: "flex", justifyContent: "center", paddingBottom: 2 }}>
                       <LinkRouter to={`/equipment/${equipment._id}`} className="myButton">
                         Read More
                       </LinkRouter>
-  
-                  </Box>
-                </Card>)
-            }) :
-            <h1 style={{ color: "", display: "flex", justifyContent: "center", marginTop: "2%" }}>Sorry, no matches, please try again..</h1>}
+                    </Box>
+                  </Card>)
+              }) :
+              <h1 style={{ color: "", display: "flex", justifyContent: "center", marginTop: "2%" }}>Sorry, no matches, please try again..</h1>}
 
-        </div>
+          </div>
         </div>
 
       </div>
 
-  
+
     </>
   )
 

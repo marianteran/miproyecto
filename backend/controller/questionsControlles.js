@@ -4,9 +4,7 @@ const Equipments = require("../models/equipments")
 const questionsControllers = {
     cargarQuestions: async (req, res) => {
         let { equipment, message, user, date } = req.body.dataQuestions;
-        let newEquipment = await Equipments.findOne({_id:equipment})       
-        console.log(newEquipment)  
-      
+        let newEquipment = await Equipments.findOne({_id:equipment})             
         new Questions({
             idEquipment: equipment,
             equipment:{...newEquipment},
@@ -78,7 +76,6 @@ const questionsControllers = {
     answerQuestions: async (req, res) => {
         let id = req.params.id;
         let newAnswer = {answer:req.body.data }
-        console.log(newAnswer);
         let newfecha = {dateAnswer:req.body.newDate}
         let date                      
         let answer
