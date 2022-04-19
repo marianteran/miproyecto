@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+
+import { accionType } from '../../context/reducer';
 import { useStateValue } from "../../context/Stateprovider";
 import "./userAccount.css";
 import userImage from "../User/userImage.png"
@@ -27,14 +29,23 @@ const AccountUser = () => {
     const [{ user, equipments }, dispatch] = useStateValue();
     const [reload, setReload] = useState(false)
 
-
- 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        axios.get("http://localhost:4000/api/equipments")
+        .then(response => {    
+          dispatch({
+            type: accionType.EQUIPMENTSDB,
+            equipments: response.data.response.equipments
+          })
+        })     
+      }, [reload])
+    
 
     let idFavorite = [];
     let myFavorite = [];
 
-    equipments.map((item) => {
-        if (user.datosUser.favorite.includes(item._id)) {
+    equipments.map((item) => {        
+        if (item.likes.includes(user.datosUser.id)) {
             myFavorite.push(item);
         }
     });

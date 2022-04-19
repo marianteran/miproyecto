@@ -39,7 +39,9 @@ const Notificaciones = () => {
   }
 
 
-  const answerQuestions = async (id) => {
+  const answerQuestions = async (id, event) => {
+    console.log(event)
+      event.preventDefault()
       fecha()     
       let data = changeQuestions
       let newDate = date  
@@ -128,7 +130,7 @@ const Notificaciones = () => {
             </div>
   
             <div style={{ marginLeft: "1vw", marginRight: "2vw" }}>
-              <form>
+              <form onSubmit={(event)=>answerQuestions(item._id, event)}>
                 <input
                   type="textarea"
                   className="form-control"
@@ -139,7 +141,7 @@ const Notificaciones = () => {
                   type="submit"
                   className="btn btn-dark"
                   style={{ marginTop: "3vh", marginBottom: "2vh" }}
-                  onClick={()=>answerQuestions(item._id)}
+                  
                 >
                   Submit
                 </button>

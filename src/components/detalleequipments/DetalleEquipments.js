@@ -47,14 +47,21 @@ const DetalleEquipments = () => {
 
   const [{ equipments, equipmentsNew, user }, dispatch] = useStateValue()
   const [reload, setReload] = useState(false)
-
   const [expanded, setExpanded] = React.useState(false);
   const [checkKey, setCheckKey] = useState("")
   const [brandValue, setBrandValue] = useState("")
+  const [favoritos, setFavoritos]= useState([])
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
+    axios.get("http://localhost:4000/api/equipments")
+    .then(response => {    
+      dispatch({
+        type: accionType.EQUIPMENTSDB,
+        equipments: response.data.response.equipments
+      })
+    })
+  
     dispatch({
       type: accionType.FILTER,
       equipmentsNew: equipments
@@ -145,13 +152,18 @@ const DetalleEquipments = () => {
       axios.put(`http://localhost:4000/api/favorite/${id}`, {},
         { headers: { 'Authorization': 'Bearer ' + token } })
         .then(response => {       
-          console.log(response) 
+          console.log(response.data.response.equip.likes) 
+         setFavoritos(response.data.response.equip.likes)
+          
           setReload(!reload)
     
           
         })
     }
   }
+  console.log(favoritos)
+  console.log(user)
+  console.log(equipmentsNew)
   return (
     <>
       <div style={{ marginTop: "20vh" }}>
@@ -209,7 +221,7 @@ const DetalleEquipments = () => {
                       sx={{ height: "30px", paddingY: 6 }}
                       avatar={
                         <FavoriteIcon
-                          className={user && user.datosUser.favorite.includes(equipment._id) ?
+                          className={user && equipment.likes.includes(user.datosUser.id) ?
                             "colorLike" : ""}
                           onClick={() => favorite(equipment._id)}
 
