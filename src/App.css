@@ -11,13 +11,12 @@
 
 
 :root{
-  --color-bg:#BA0F88;
-  --color-bg-variant: #BA0F88;
-  --color-primary:#6B0A4E;
-  --color-primary-variant: rgb(147,12,107);;
+  --color-bg:#101a26;
+  --color-bg-variant: #054a59;
+  --color-primary:#026873;
+  --color-primary-variant:#2abfbf;;
   --color-white:#fff;
-  --color-light:rgba(255,255,255,0.6);
-  --color-dark:rgb(147,12,107);
+  --color-light:#35f2df;
   --color-esqueleto:#EFF3F5;
  
 }
@@ -133,7 +132,7 @@
 
 .container .btnfluor:nth-child(1)::before,
 .container .btnfluor:nth-child(1)::after{
-  background: #1d3d9e;
+  background: var(--color-primary);
 /*   box-shadow: 0 0 2px #1d3d9e,
   0 0 15px #1d3d9e,
   0 0 30px #1d3d9e,
