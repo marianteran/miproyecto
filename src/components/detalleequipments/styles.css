@@ -19,23 +19,26 @@
 
 
 .myButton {
-	box-shadow: 3px 4px 0px 0px #899599;
-	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-	background-color:#ededed;
+	/* box-shadow: 3px 4px 0px 0px #899599; */
+	/* background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%); */
+	
+  background-color:#054a59;
 	border-radius:15px;
 	border:1px solid #d6bcd6;
 	display:inline-block;
 	cursor:pointer;
-	color:#3a8a9e;
+	color:white;
 	font-family:Arial;
-	font-size:17px;
+	font-size:15px;
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
+  margin-bottom: 20px;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
+	
+  background-color:#026873;
+  color: white;
 }
 .myButton:active {
 	position:relative;
@@ -72,10 +75,9 @@
 
 .equipments-Tittle {
   font-size: 4vmin;
-  color: #707279;
-   font-family: "Cinzel",serif;
-   text-align: center;
-   text-transform: uppercase;
+  color: var(--color-bg-variant);
+  text-align: left;
+  
 
 }
 
@@ -131,11 +133,11 @@
   text-decoration: none;
   outline: none;
   color: white;
-  background-color: #4CAF50;
+  background-color: #026873;
   border: none;
   border-radius: 100%;
-  border: 2px solid #4CAF50;
-  box-shadow: 0 9px rgb(231, 228, 228);
+  border: 2px solid #026873;
+/*   box-shadow: 0 9px rgb(231, 228, 228); */
   margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
@@ -159,11 +161,11 @@
   text-decoration: none;
   outline: none;
   color: white;
-  background-color: #4CAF50;
+  background-color: #026873;
   border: none;
   border-radius: 100%;
-  border: 2px solid #4CAF50;
-  box-shadow: 0 9px rgb(231, 228, 228);
+  border: 2px solid #026873;
+/*   box-shadow: 0 9px rgb(231, 228, 228); */
   margin-right: 10px;
   font-weight: bold;
   font-size: 30px;
@@ -174,7 +176,7 @@
 
 .equipments-Likes:hover {
   background-color: white;
-  color: black;
+  color: #026873;
 }
 
 .equipments-Likes:active {
@@ -195,11 +197,11 @@
   text-decoration: none;
   outline: none;
   color: white;
-  background-color: #4CAF50;
+  background-color:#026873;
   border: none;
   border-radius: 15px;
-  border: 2px solid #4CAF50;
-  box-shadow: 0 9px rgb(231, 228, 228);
+  border: 2px solid #026873;
+/*   box-shadow: 0 9px rgb(231, 228, 228); */
   font-weight: bold;
 
   
@@ -208,7 +210,7 @@
 
 .equipments-AddToCart:hover {
   background-color: white;
-  color: black;
+  color: #026873;
 }
 
 .equipments-AddToCart:active {
@@ -253,8 +255,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin: 20px auto ;
+  width: 88%;
+  margin: 10px auto 7% auto;
+  
   
 
 }
@@ -265,10 +268,10 @@
   width: 80%;
   padding: 0 20px;
   overflow: hidden;
-  
   border-radius: 10px;
   padding: 10px;
   text-align: justify;
+ 
 
 } 
 
@@ -309,7 +312,7 @@
 }
 
 .questions::-webkit-scrollbar-thumb {
-  background-color: #4CAF50;
+  background-color: #026873;
   border-radius: 20px;
   border-right: 2px solid rgba(250, 230, 223, 0.9);
 }

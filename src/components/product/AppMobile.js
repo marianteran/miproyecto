@@ -3,7 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
-import bg from './mobile.png'
+import bg from './mobile.jpg'
 
 const AppMobile = () => {
 
@@ -26,7 +26,8 @@ const AppMobile = () => {
 
                     <div className="appMobileContent">
 
-                        <h4>Gestionamos tu sitio web responsive</h4>
+                        <h4 id="txt">Gestionamos tu sitio web responsive</h4>
+                    
 
                         <p>
                             Una Web Responsive es aquella que es capaz de adaptarse a cualquier dispositivo donde
