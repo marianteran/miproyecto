@@ -4,10 +4,10 @@ const Equipments = require("../models/equipments")
 const questionsControllers = {
     cargarQuestions: async (req, res) => {
         let { equipment, message, user, date } = req.body.dataQuestions;
-        let newEquipment = await Equipments.findOne({_id:equipment})             
-        new Questions({
-            idEquipment: equipment,
-            equipment:{...newEquipment},
+        let newEquipment = await Equipments.findOne({_id:equipment})  
+        console.log(newEquipment)           
+        new Questions({       
+            equipment:newEquipment,
             user: user,
             questions: message,
             date:date
@@ -88,6 +88,22 @@ const questionsControllers = {
         }
     
         res.json({ success: true, response: { answer } })
+    },
+    checkQuestions: async (req, res) => {
+        let id = req.params.id;
+        console.log(req.params.id)
+        let newCheck = {check:true }        
+        let check                      
+        let answer
+        try {
+            check = await Questions.findOneAndUpdate( {_id:id}, newCheck )
+            
+
+        } catch (error) {
+            console.log(error)
+        }
+    
+        res.json({ success: true, response: { check } })
     },
  
     

@@ -8,7 +8,7 @@ const {obtenerApp , obtenerSocialMedia, obtenerEquipments, equipment, favorite} 
 const userController = require("../controller/userControlles.js")
 const validator = require("../controller/validador")
 const {nuevoUsuario, verifyEmail , accesUser, cerrarSesion, verifyToken} = userController
-const {cargarQuestions, obtenerQuestions, deleteQuestions, editQuestions, obtenerQuestionsAdmin, answerQuestions} = questionsControllers
+const {cargarQuestions, obtenerQuestions, deleteQuestions, editQuestions, obtenerQuestionsAdmin, answerQuestions, checkQuestions} = questionsControllers
 
 Router.route('/apps')
 .get(obtenerApp)
@@ -40,6 +40,9 @@ Router.route("/questions")
 
 Router.route("/answer/:id")
 .put(answerQuestions)
+
+Router.route("/check/:id")
+.put(checkQuestions)
 
 Router.route("/questions/:id")
 .get(obtenerQuestions)

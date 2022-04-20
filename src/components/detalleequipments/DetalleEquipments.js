@@ -187,7 +187,7 @@ const DetalleEquipments = () => {
         <div style={{ display: "flex" }}>
           {/* CHECK DE MARCAS DE BUSQUEDA */}
           <div style={{ display: "flex", justifyContent: "left", flexDirection: "column", padding: 20, marginTop: 30 }}>
-            {brands.length > 0 ?
+            {brands.length > 1 ?
               brands?.map((brand) => {
                 return (
                   <div style={{ display: "flex" }}>
