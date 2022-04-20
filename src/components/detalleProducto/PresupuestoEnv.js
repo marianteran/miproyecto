@@ -62,7 +62,7 @@ const PresupuestoEnv = (props) => {
 
     return (
         <>
-            <div style={{ marginTop: "20vh" }}>
+            <div className="presupuestoContenedor" >
 
                 <div className="mb-3 row">
                     <label for="staticEmail" className="col-sm-2 col-form-label"><strong> Email</strong> </label>
@@ -107,13 +107,14 @@ const PresupuestoEnv = (props) => {
                     </textarea>
 
 
-                    <button onClick={() => submitQuestions(props.checked)} type="button" >
-                        <LinkRouter to="/respuesta" className="btn btn-primary"> send </LinkRouter>
-                    </button>
+                    <div className="btnPresupuestoContenedor">
+                        <button onClick={() => submitQuestions(props.checked)} type="button"  >
+                            <LinkRouter to="/respuesta" className="btnPresupuesto"> SEND </LinkRouter>
+                        </button>
 
-
-
+                    </div>
                 </div>
+                
             </div>
         </>
     )

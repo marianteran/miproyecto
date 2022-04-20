@@ -120,50 +120,6 @@ const AccountUser = () => {
     <>
       {user.datosUser.email !== "seomadesign@gmail.com" ? (
         <>
-<<<<<<< HEAD
-            {user.datosUser.email !== "seomadesign@gmail.com" ?
-                <>
-                    <div style={{ display: "flex", justifyContent: "center", marginTop: "20vh" }}>
-
-
-                        <div className=" d-flex align-items-center col-lg-5 col-sm-7 col-md-7 ">
-                            <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 ">
-                                <h1 className="">Your account</h1>
-                                <h4 className="custom-header-subtitle">Find your activity history here</h4>
-                            </div>
-                            
-                            <div>
-                                <img
-                                    src={user.datosUser.img ? user.datosUser.img : userImage}
-                                    className="custom-image d-block w-100 col-sm-12 col-md-6 col-lg-6 col-lg-5"
-                                    alt="User Image"
-                                />
-                            </div>
-                        </div>
-
-
-                        <div className="card  col-lg-4 col-sm-5 col-md-5 mb-4">
-                            <h5 className="card-header background-card">Account details</h5>
-                            <div className="card-body data">
-                                <p className="card-text justify-content-between d-flex p-2">
-                                    <div className="d-inline">User</div>
-                                    <div className="d-inline text-secondary">PRUEBA</div>
-                                </p>
-                                <p className="card-text d-flex p-2 justify-content-between">
-                                    <div className="d-inline">Email</div>
-                                    <div className="d-inline text-secondary">{user.datosUser.email}</div>
-                                </p>
-                                <p className="card-text d-flex p-2 justify-content-between">
-                                    <div className="d-inline">Name</div>
-                                    <div className="d-inline text-secondary">{user.datosUser.name}</div>
-                                </p>
-                                <p className="card-text d-flex p-2 justify-content-between">
-                                    <div className="d-inline">Last Name</div>
-                                    <div className="d-inline text-secondary">{user.datosUser.lastName}</div>
-                                </p>
-                            </div>
-                        </div>
-=======
           <div
             style={{
               display: "flex",
@@ -258,7 +214,6 @@ const AccountUser = () => {
                       >
                         Notifications {notifica}
                       </a>
->>>>>>> develop
                     </div>
                   </li>
                 </ul>
