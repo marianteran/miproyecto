@@ -33,7 +33,8 @@ const Home = () => {
 
 
 
-         
+         <Notificaciones />
+
 
 
 {/* 

@@ -1,66 +1,65 @@
-import React, { useEffect, useState } from "react";import { useStateValue } from "../../context/Stateprovider";
+import React, { useEffect, useState } from "react";
+import { useStateValue } from "../../context/Stateprovider";
 import "../Administrador/administrador.css";
 import swal from "sweetalert";
 import axios from "axios";
-import { accionType } from '../../context/reducer';
-
-
+import { accionType } from "../../context/reducer";
 
 const Notificaciones = () => {
   const [{ user, equipments, notifica }, dispatch] = useStateValue();
   const [reload, setReload] = useState(false);
-  const [questions, setQuestions] = useState() 
-  const [changeQuestions, setChangeQuestions] = useState()
-  
-  let date = ""
+  const [questions, setQuestions] = useState();
+  const [changeQuestions, setChangeQuestions] = useState();
+
+  let date = "";
 
   useEffect(() => {
-      axios.get("http://localhost:4000/api/questions/")
-          .then(response => {
-            let temporal = []
-              response.data.response.questions.map((item)=>{
-                if(!item.answer){
-                  return(
-                    temporal.push(item)
-                  )
-                }} )                          
-              setQuestions(temporal)             
-              setReload(!reload)
-              dispatch({
-                type: accionType.NOTIFICA,
-                notifica: questions.length
-              })
-          })
-          
-  }, [reload])
+    axios.get("http://localhost:4000/api/questions/").then((response) => {
+      let temporal = [];
+      response.data.response.questions.map((item) => {
+        if (!item.answer) {
+          return temporal.push(item);
+        }
+      });
+      setQuestions(temporal);
+      setReload(!reload);
+      dispatch({
+        type: accionType.NOTIFICA,
+        notifica: questions.length,
+      });
+    });
+  }, [reload]);
 
-  const inputText = (event) => {  
-     setChangeQuestions(event.target.value)
-  }
-
+  const inputText = (event) => {
+    setChangeQuestions(event.target.value);
+  };
 
   const answerQuestions = async (id, event) => {
-      event.preventDefault()
-      fecha()     
-      let data = changeQuestions
-      let newDate = date  
-          await axios.put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
-              .then(response => {
-                setReload(!reload)                  
-              })}
+    event.preventDefault();
+    fecha();
+    let data = changeQuestions;
+    let newDate = date;
+    await axios
+      .put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
+      .then((response) => {
+        setReload(!reload);
+      });
+  };
 
   function fecha() {
-      var registro = new Date()
-      var dia = registro.getDate()
-      var mes = registro.getMonth() + 1
-      var time = registro.getHours() + ":" + registro.getMinutes()
-      var year = registro.getYear()
-      date = dia + "/" + mes + "/" + year + " " + time
+    var registro = new Date();
+    var dia = registro.getDate();
+    var mes = registro.getMonth() + 1;
+    var time = registro.getHours() + ":" + registro.getMinutes();
+    var year = registro.getYear();
+    date = dia + "/" + mes + "/" + year + " " + time;
   }
-
 
   return (
     <>
+<<<<<<< HEAD
+      <div className="divPrincipal">
+=======
       <div
         style={{
           display: "flex",
@@ -68,85 +67,64 @@ const Notificaciones = () => {
           marginBottom: "10vh",
         }}
       >
+>>>>>>> develop
         {/*NOTIFICACIONES*/}
 
-        {questions?.map((item)=>{
-          return(
-            <div
-            style={{
-              marginLeft: "5vw",
-              borderStyle: "solid",
-              borderWidth: "0.5px",
-              borderColor: "rgb(217, 217, 217)",
-              borderRadius: "10px",
-              width: "38vw",
-              height:"100%",
-              maxHeight: "50vh",
-            }}
-          >
-            <h3 style={{ marginTop: "1vh", marginLeft: "1vw" }}>
-              <strong>Notification #{item._id}</strong>
-            </h3>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginLeft: "1vw",
-                marginBottom: "2vw",
-                marginTop: "2vw",
-                borderStyle: "solid",
-                borderWidth: "0.5px",
-                borderColor: "rgb(217, 217, 217)",
-                borderRadius: "10px",
-                width: "35vw",
-                height:"100%",
-                maxHeight: "18vh",
-              }}
-            >
-              <div style={{ margin: "10px" }}>
-                <h6>
-                  <strong>User:</strong>
+        {questions?.map((item) => {
+          return (
+            <div className="divNotificaciones">
+              <h3>
+                <strong>Notification #{item._id}</strong>
+              </h3>
+              <div className="divDatos">
+                <div>
+                <h6 style={{marginLeft:"4px"}}>
+                  <strong>User: </strong>
                 </h6>
-              </div>
-  
-              <div style={{ margin: "8px" }}>
-                <p>{item.user.name + " " + item.user.lastName + " update: " + item.date}</p>
-              </div>
-  
-              <div style={{ margin: "10px" }}>
-                <h6>
-                  <strong>Message:</strong>
-                </h6>
-              </div>
-  
-              <div style={{ margin: "8px" }}>
-                <p>
-                {item.questions}
+                </div>
+                <div>
+                <p style={{marginLeft:"4px"}}>
+                  {" " + item.user.name +
+                    " " +
+                    item.user.lastName +
+                    " update: " +
+                    item.date} 
                 </p>
+
+                </div>
+
+                  <div>
+                  <h6 style={{marginLeft:"4px"}}>
+                  <strong>Message: </strong>
+                </h6>
+                </div>
+                <div>
+                <p style={{marginLeft:"4px"}}>{" " + item.questions} </p>
+              </div>
+
+                  </div>
+
+
+              <div className="divForm">
+                <form onSubmit={(event) => answerQuestions(item._id, event)} className="formNoti">
+                  <input
+                    type="textarea"
+                    className="form-control"
+                    aria-describedby="reply"
+                    onChange={inputText}
+                  />
+                  <button
+                    type="submit"
+                    className="btn btn-dark"
+                    style={{ marginTop: "3vh", marginBottom: "2vh" }}
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
-  
-            <div style={{ marginLeft: "1vw", marginRight: "2vw" }}>
-              <form onSubmit={(event)=>answerQuestions(item._id, event)}>
-                <input
-                  type="textarea"
-                  className="form-control"
-                  aria-describedby="reply"
-                  onChange={inputText}                 
-                />
-                <button
-                  type="submit"
-                  className="btn btn-dark"
-                  style={{ marginTop: "3vh", marginBottom: "2vh" }}
-                  
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-          )
-        })}        
+          );
+        })}
       </div>
     </>
   );
