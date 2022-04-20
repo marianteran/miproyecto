@@ -189,7 +189,7 @@ const AccountUser = () => {
                                                 <h4> {item.answer}</h4>
                                                 <div className="d-flex" style={{ justifyContent: "center" }}>
                                                     {/* <button onClick={()=>leida(item._id)}>
-                                                <LinkRouter to={`/equipment/${item.equipment}`}  className="myButton">
+                                                <LinkRouter to={`/equipment/${item.equipment}`} onClick={()=>leida(item._id) className="myButton">
                                                     Answer
                                                 </LinkRouter>
                                                 </button> */}
