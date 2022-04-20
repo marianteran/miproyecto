@@ -9,6 +9,10 @@
     background: blue;
 }
 
+
+.bg-dark{
+    background: rgb(16,26,38) !important;
+}
 #demo-customized-button {
     background: none !important;
     padding: none !important;

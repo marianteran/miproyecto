@@ -14,18 +14,13 @@ db.apps.insertMany([
           "name": "Static", 
   	      "description":"We create your static website. Show the information of your business and reach your customers.",
           "time":"15 days",
-<<<<<<< HEAD
           "image":"",
-          "price":"300",
-=======
-          "image":"Static.png",
-          "price":"300$",
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
+          "price":300,
 	        "functions":
 	                    [{
 	                      "title":"Home Page",
 	                      "description":"Home page with the information you want to highlight about your business.",
-                        "price":"100",
+                        "price":100,
                         "image":"",
 	                      "time":"1 day",
 	                        },
@@ -34,7 +29,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Information component",
 	                      "description":"Component dedicated to the information you want to show about your company.",
-                        "price":"50",
+                        "price":50,
                         "image":"",
 	                      "time":"7 days",
 	                        },
@@ -43,7 +38,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Contact component",
 	                      "description":"Contact form for users",
-                        "price":"50",
+                        "price":50,
                         "image":"",
 	                      "time":"3 days",
 	                        },
@@ -52,7 +47,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Image reel",
 	                      "description":"Upload your photos to a camera roll.",
-                        "price":"100",
+                        "price":100,
                         "image":"",
 	                      "time":"1 day",
 	                        },
@@ -66,19 +61,14 @@ db.apps.insertMany([
           "name": "Personalized", 
   	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
           "time":"30 days",
-<<<<<<< HEAD
           "image":"",
-          "price":"300",
-=======
-          "image":"pStaticSinLogo.png",
-          "price":"300$",
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
+          "price":300,
 	        "functions":
 	                    [
 						{
 	                    "title":"User Login",
 	                    "description":"User connection section",
-                        "price":"100$",
+                        "price":100,
                         "image":"pLogin.png",
 	                      "time":"3 days",
 	                        },
@@ -87,13 +77,8 @@ db.apps.insertMany([
 							{
 	                      "title":"Shopping cart",
 	                      "description":"We add a shopping cart to your e-commerce.",
-<<<<<<< HEAD
-                        "price":"100",
-                        "image":"",
-=======
-                        "price":"100$",
+                        "price":100,
                         "image":"pCart.png",
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 	                      "time":"7 day",
 	                        },
 
@@ -101,110 +86,61 @@ db.apps.insertMany([
 							   {
 	                      "title":"Direct Messages",
 	                      "description":"Internal chat between users.",
-                        "price":"200$",
+                        "price":200,
                         "image":"pChat.png",
 	                      "time":"1 day",
 	                      },
 
-						    {
-	                      "title":"File Upload",
+						{
+	                      "title":"Upload File",
 	                      "description":"Component that allows uploading new files.",
-                        "price":"100$",
+                        "price":100,
                         "image":"pDetail.png",
 	                      "time":"4 day",
 	                        },
+
+
                         {
 	                      "title":"User Comments",
 	                      "description":"User comments section enabled.",
-<<<<<<< HEAD
-                        "price":"100",
-                        "image":"",
-=======
-                        "price":"100$",
-                        "image":"pComment.png",
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
+                        "price":100,
+                        "image":"pComments.png",
 	                      "time":"7 days",
 	                        },  
 
-<<<<<<< HEAD
 
-                        {
-	                      "title":"User Login",
-	                      "description":"User connection section",
-                        "price":"100",
-                        "image":"",
-	                      "time":"3 days",
-=======
-							       {
-	                      "title":"Photography Session",
-	                      "description":"Photo session for the products you want to display on the page.",
-                        "price":"100$",
-                        "image":"pCard.png",
-	                      "time":"3 day",
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
-	                        },
+						{
+	                    "title":"Photo Cards",
+	                    "description":"Photo session for the products you want to display on the page.",
+                        "price":100,
+                        "image":"pCards.png",
+	                    "time":"3 day",
+	                    },
+ 			
 
-									       {
+			             {
 	                      "title":"Bot",
 	                      "description":"User help bot.",
-                        "price":"200$",
-                        "image":"pBot.png",
+                        "price":200,
+                        "image":"pComplete.png",
 	                      "time":"2 day",
-	                        },  			
+	                        },
 
 
                         {
 	                      "title":"User Profile Modification",
 	                      "description":"User profile with option to modify data.",
-                        "price":"100",
-                        "image":"",
+                        "price":100,
+                        "image":"pComplete.png",
 	                      "time":"3 day",
 	                        }, 		
 
-<<<<<<< HEAD
 
-                        {
-	                      "title":"Photography Session",
-	                      "description":"Photo session for the products you want to display on the page.",
-                        "price":"100",
-                        "image":"",
-	                      "time":"3 day",
-	                        },
-
-
-                        {
-	                      "title":"Upload File",
-	                      "description":"Component that allows uploading new files.",
-                        "price":"100",
-                        "image":"",
-	                      "time":"4 day",
-	                        },
-
-
-                        {
-	                      "title":"Bot",
-	                      "description":"User help bot.",
-                        "price":"200",
-                        "image":"",
-	                      "time":"2 day",
-	                        },
-
-
-                        {
-	                      "title":"Direct Messages",
-	                      "description":"Internal chat between users.",
-                        "price":"200",
-                        "image":"",
-	                      "time":"1 day",
-	                      },
 
 
                           
                           
                           ]},  
-=======
-                        ]},  
->>>>>>> 5a0f37135455f90e7ed099b266f30045536dd710
 
 
           {"type":"App Mobile",
@@ -212,12 +148,12 @@ db.apps.insertMany([
   	      "description":"We create your static website. Show the information of your business and reach your customers.",
           "time":"15 days",
           "image":"",
-          "price":"300",
+          "price":300,
 	        "functions":
 	                    [{
 	                      "title":"Home Page",
 	                      "description":"Home page with the information you want to highlight about your business.",
-                        "price":"100",
+                        "price":100,
                         "image":"",
 	                      "time":"1 day",
 	                        },
@@ -226,7 +162,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Information component",
 	                      "description":"Component dedicated to the information you want to show about your company.",
-                        "price":"50",
+                        "price":50,
                         "image":"",
 	                      "time":"7 days",
 	                        },
@@ -235,7 +171,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Contact component",
 	                      "description":"Contact form for users",
-                        "price":"50",
+                        "price":50,
                         "image":"",
 	                      "time":"3 days",
 	                        },
@@ -244,7 +180,7 @@ db.apps.insertMany([
                         {
 	                      "title":"Image reel",
 	                      "description":"Upload your photos to a camera roll.",
-                        "price":"100",
+                        "price":100,
                         "image":"",
 	                      "time":"1 day",
 	                        },
@@ -259,78 +195,77 @@ db.apps.insertMany([
   	      "description":"We create your personalized website. Show the information of your business and reach your customers.",
           "time":"30 days",
           "image":"",
-          "price":"300",
+          "price":300,
 	        "functions":
 	                    [{
+	                    "title":"User Login",
+	                    "description":"User connection section",
+                        "price":100,
+                        "image":"pmLogin.png",
+	                      "time":"3 days",
+	                        },
+							
+							
+							{
 	                      "title":"Shopping cart",
 	                      "description":"We add a shopping cart to your e-commerce.",
-                        "price":"100",
-                        "image":"",
+                        "price":100,
+                        "image":"pmCart.png",
 	                      "time":"7 day",
+	                        },
+
+
+							   {
+	                      "title":"Direct Messages",
+	                      "description":"Internal chat between users.",
+                        "price":200,
+                        "image":"pmChat.png",
+	                      "time":"1 day",
+	                      },
+
+						{
+	                      "title":"Upload File",
+	                      "description":"Component that allows uploading new files.",
+                        "price":100,
+                        "image":"pmDetail.png",
+	                      "time":"4 day",
 	                        },
 
 
                         {
 	                      "title":"User Comments",
 	                      "description":"User comments section enabled.",
-                        "price":"100",
-                        "image":"",
+                        "price":100,
+                        "image":"pmComments.png",
 	                      "time":"7 days",
-	                        },
+	                        },  
 
 
-                        {
-	                      "title":"User Login",
-	                      "description":"User connection section",
-                        "price":"100",
-                        "image":"",
-	                      "time":"3 days",
+						{
+	                    "title":"Photo Cards",
+	                    "description":"Photo session for the products you want to display on the page.",
+                        "price":100,
+                        "image":"pmCards.png",
+	                    "time":"3 day",
+	                    },
+ 			
+
+			             {
+	                      "title":"Bot",
+	                      "description":"User help bot.",
+                        "price":200,
+                        "image":"pmComplete.png",
+	                      "time":"2 day",
 	                        },
 
 
                         {
 	                      "title":"User Profile Modification",
 	                      "description":"User profile with option to modify data.",
-                        "price":"100",
-                        "image":"",
+                        "price":100,
+                        "image":"pmComplete.png",
 	                      "time":"3 day",
-	                        },
-
-
-                        {
-	                      "title":"Photography Session",
-	                      "description":"Photo session for the products you want to display on the page.",
-                        "price":"100",
-                        "image":"",
-	                      "time":"3 day",
-	                        },
-
-
-                        {
-	                      "title":"File Upload",
-	                      "description":"Component that allows uploading new files.",
-                        "price":"100",
-                        "image":"",
-	                      "time":"4 day",
-	                        },
-
-
-                        {
-	                      "title":"Bot",
-	                      "description":"User help bot.",
-                        "price":"200",
-                        "image":"",
-	                      "time":"2 day",
-	                        },
-
-
-                        {
-	                      "title":"Direct Messages",
-	                      "description":"Internal chat between users.",
-                        "price":"200",
-                        "image":"",
-	                      "time":"1 day",
-	                      },
+	                        }, 		
 
 
                           

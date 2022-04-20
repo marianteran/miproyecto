@@ -6,29 +6,39 @@ import axios from 'axios'
 import CarouselPc from './CarouselPc'
 
 const Pc = () => {
-   
+
     return (
         <div>
             <section id="pc">
-                <h5>PC</h5>
+                <div className="container">
+                    <div className='subtitle-principal-pc '>
+                        <h2>Equipment</h2>
+                    </div>
+                </div>
 
 
                 <div className="container pcContainer">
 
                     <div className="pcContent">
+
+                        <h4>We give you advice on everything you need</h4>
                         <p>
-                            Una aplicación Web es un conjunto de páginas Web estáticas y dinámicas. Una página Web estática es aquélla que no cambia cuando un usuario la solicita: el servidor Web envía la página al navegador Web solicitante sin modificarla. Por el contrario, el servidor modifica las páginas Web dinámicas antes de enviarlas al navegador solicitante. La naturaleza cambiante de este tipo de página es la que le da el nombre de dinámica.
-                            Por ejemplo, podría diseñar una página para que mostrara los resultados del programa de salud y dejara cierta información fuera (como el nombre del empleado y sus resultados) para calcularla cuando la página la solicite un empleado en particular.
+                        We offer a variety of equipment to help you enter the world of technology,
+                             with the best prices and staff
+                             highly qualified to provide you with the best service
                         </p>
-                        <LinkRouter to='/equipments' className="btn btn-outline-light ms-2">
-                            <button className='btn btn-dark'>Info</button>
-                        </LinkRouter>
+
+
                     </div>
                     <div className="pcCarousel">
                         <CarouselPc />
                     </div>
                 </div>
-
+                <LinkRouter to='/equipments' className="container botonPC">
+                    <div className="btnfluorPC">
+                        <a href="">info</a>
+                    </div>
+                </LinkRouter>
 
             </section>
 

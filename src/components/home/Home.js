@@ -6,83 +6,113 @@ import './home.css'
 const Home = () => {
     return (
         <>
-            <Hero />
 
 
-            <div className='homeMain'>
+            <div id="home">
+                <Hero />
 
-                <div className='homeImage'>
+                <section id='all-need'>
+                    <div>
+                        <h1>EVERYTHING YOU NEED</h1>
 
-                    <img src='https://www.jimdo.com/static/3e429504c49b797f94016ad1a6709112/b8073/style.webp'></img>
-                </div>
+                        <div className='allNeed'>
+                            <div className='allNeedContent'>
+                                <h5>ADAPTED FOR MOBILE</h5>
+                                <p>Your page will look perfect on any device, be it a phone, a tablet or a computer.</p>
+                            </div>
+                            <div className='allNeedContent'>
+                                <h5>FREE REGISTRATION</h5>
+                                <p>You can register for free; no credit card required. It is risk free.</p>
+                            </div>
+                            <div className='allNeedContent'>
+                                <h5>FAST CUSTOM SUPPORT</h5>
+                                <p>We've helped launch millions of websites and we're ready to make yours a success too.</p>
+                            </div>
+
+                        </div>
+                        <div className='allNeed'>
+                            <div className='allNeedContent'>
+                                <h5>HTTPS SECURE CONNECTION</h5>
+                                <p>Enjoy peace of mind knowing that your website and visitor data is protected by the HTTPS encryption protocol.</p>
+                            </div>
+                            <div className='allNeedContent'>
+                                <h5>CUSTOM DOMAIN</h5>
+                                <p>Adding a personal address to your website is easy, and in most cases you can use one you already have.</p>
+                            </div>
+                            <div className='allNeedContent'>
+                                <h5>FLEXIBLE DESIGNS</h5>
+                                <p>Goodbye to flat and boring templates: you will always be in control of what is on your website.</p>
+                            </div>
+
+                        </div>
 
 
-                <div className='homeDescrip'>
 
-                    <h2>Consigue tu página web fácilmente</h2>
-                    
 
-                    <p>Al principio te hacemos unas cuantas preguntas para conocerte. A continuación, en función de tu sector profesional, combinamos tu información con los contenidos creados por nuestros profesionales. El resultado es una página web única con textos, fotos y tu propia información, totalmente lista para presentarse y adaptada a tu negocio.</p>
+                    </div>
+
+                </section>
+
+
+
+
+                <div className='homeMain'>
+
+                    <div className='homeImage'>
+
+                        <img src='https://www.jimdo.com/static/3e429504c49b797f94016ad1a6709112/b8073/style.webp'></img>
+                    </div>
+
+
+
+                    <div className='homeDescrip'>
+
+                        <h2>Get your website easily</h2>
+
+
+                        <p>At the beginning we ask you a few questions to
+                            get to know you. Next, depending on your professional sector,
+                            we combine your information with the content created by our professionals.
+                            The result is a unique web page with texts, photos and your own information,
+                            completely ready to be presented and adapted to your business. </p>
+                    </div >
 
                 </div >
 
-            </div >
 
-            <div className='homeImgFixed'>
+
+                <div className='homeImgFixeContenedor'>
+
+                    <div className='homeImgFixed'>
+
+
+                    </div>
+                </div>
+
+
+
+                <HeroGothic />
+
+                <div className='home-frase'>
+
+                    <h1>
+
+                        "Simplicity taken to the extreme is called elegance"
+                    </h1>
+
+                    <p className='firma' >Jhon Franklin</p>
+
+
+
+
+                </div >
+
+
+
+
 
 
             </div>
-
-            <HeroGothic/>
-
-
-            <section id='all-need'>
-                <div>
-                    <h1>TODO LO QUE NECESITAS</h1>
-
-                    <div className='allNeed'>
-                        <div className='allNeedContent'>
-                            <h5>ADAPTADO PARA MÓVILES</h5>
-                            <p>Tu página se verá perfecta en cualquier dispositivo, ya sea un teléfono, una tableta o un ordenador.</p>                            
-                        </div>
-                        <div className='allNeedContent'>
-                            <h5>REGISTRO GRATUITO</h5>
-                            <p>Puedes registrarte de manera gratuita; no se requiere tarjeta de crédito. Es libre de riesgos..</p>                            
-                        </div>
-                        <div className='allNeedContent'>
-                            <h5>SOPORTE RÁPIDO PERSONALIZADO</h5>
-                            <p>Hemos ayudado a lanzar millones de páginas web y estamos listos para hacer que la tuya también sea un éxito.</p>                            
-                        </div>
-
-                    </div>
-                    <div className='allNeed'>
-                        <div className='allNeedContent'>
-                            <h5>CONEXIÓN SEGURA HTTPS</h5>
-                            <p>Disfruta de la tranquilidad de saber que los datos de tu sitio web y de tus visitantes están protegidos por el protocolo de cifrado HTTPS..</p>                            
-                        </div>
-                        <div className='allNeedContent'>
-                            <h5>DOMINIO PERSONALIZADO</h5>
-                            <p>Agregar una dirección personal a tu página web es fácil y, en la mayoría de los casos, puedes usar una que ya tengas.</p>                            
-                        </div>
-                        <div className='allNeedContent'>
-                            <h5>DISEÑOS FLEXIBLES</h5>
-                            <p>Adiós a plantillas planas y aburridas: siempre tendrás el control de lo que hay en tu página web.</p>                            
-                        </div>
-
-                    </div>
-               
-
-
-
-                </div>
-
-            </section>
-
-
-
-
-           
-
 
 
         </>

@@ -63,6 +63,7 @@ function Signin() {
                         buttons: "ok"
                     })
                 }
+                console.log(response.data.response)
                 dispatch({
                     type: accionType.USERDB,
                     user: response.data.response
@@ -116,14 +117,13 @@ function Signin() {
                             </div>
                         </div>
 
-                        <div className="helpForm signInUp-LinkSignUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <div className="helpForm signInUp-LinkSignUp" >
                             <div className="d-flex textSignUp" >
 
-                                <h3>Don't have an account?<LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter></h3>
+                                <h4>Don't have an account?</h4>
+                                <LinkRouter className="signInUp-toSignUp" to='/signup'> Click here...</LinkRouter>
                               
-                              {/*   <LinkRouter to="/singup" style={{ }}>
-                                   <h3> Sign Up </h3>
-                                </LinkRouter> */}
+                            
                             </div>
                         </div>
 

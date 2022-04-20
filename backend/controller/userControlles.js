@@ -49,7 +49,7 @@ const userControllers = {
         if (user) {
             user.emailVerified = true
             await user.save()
-            res.redirect("hhttp://localhost:4000/api/signin")
+            res.redirect("http://localhost:4000/api/signin")
         }
         else {
             res.json({ success: false, response: "your email couldn't be verified" })
@@ -57,7 +57,7 @@ const userControllers = {
     },
     nuevoUsuario: async (req, res) => {
         const { img, name, lastName, email, password, from } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
-        console.log(req.body)
+        //console.log(req.body)
         try {
             const usuarioExiste = await User.findOne({ email })
             if (usuarioExiste) {                
@@ -181,7 +181,50 @@ const userControllers = {
         else{
             res.json({success:false, response:"Sesion vencida, inicia sesion de nuevo"})
         }
-    }
+    },
+
+    accesAdmin: async (req, res) => {
+        const { email, password } = req.body.UserData
+
+        try {
+            const user = await User.findOne({ email })
+
+            if (!user) {
+                res.json({ success: false, from: "controller", error: "user or password are incorrect" })
+            }
+            else {
+                if (user.emailVerified) {
+                    let passwordCoincide = bcryptjs.compareSync(password, user.password)
+
+                    if (passwordCoincide) {
+                        const datosUser = {
+                            img:user.img,
+                            name: user.name,
+                            lastName: user.lastName,
+                            email: user.email,
+                            connected: user.connected,
+                            id: user._id,
+                            from:user.from,
+                            favorite:user.favorite,
+                        }
+                        user.connected = true
+                        await user.save()
+                        const token = jwt.sign({ ...datosUser }, process.env.SECRETKEY,{expiresIn:60*60*24})
+                        res.json({ success: true, from: "controller", response: { token, datosUser } })
+                    }
+                    else {
+                        res.json({ success: false, from: "controller", error: "user or password are incorret" })
+                    }
+                }
+                else {
+                    res.json({ success: false, from: "controller", error: "verify your email or password" })
+                }
+            }
+        }
+        catch (error) { 
+            console.log(error); res.json({ success: false, response: null, error: error })
+        }
+    },
 }
 
 

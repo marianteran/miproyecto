@@ -6,7 +6,7 @@ const appsSchema = new mongoose.Schema ({
         description: {type:String,require:true},
         time:{type:String,require:true},     
         image:{type:String,require:true},
-        price: {type:String,require:true},
+        price: {type:Number,require:true},
         functions:{type:Array,require:true},   
        
     })
