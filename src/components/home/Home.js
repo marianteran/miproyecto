@@ -67,11 +67,14 @@ const Home = () => {
 
                     <div className='homeDescrip'>
 
-                        <h2>Consigue tu página web fácilmente</h2>
+                        <h2>Get your website easily</h2>
 
 
-                        <p>Al principio te hacemos unas cuantas preguntas para conocerte. A continuación, en función de tu sector profesional, combinamos tu información con los contenidos creados por nuestros profesionales. El resultado es una página web única con textos, fotos y tu propia información, totalmente lista para presentarse y adaptada a tu negocio.</p>
-
+                        <p>At the beginning we ask you a few questions to
+                            get to know you. Next, depending on your professional sector,
+                            we combine your information with the content created by our professionals.
+                            The result is a unique web page with texts, photos and your own information,
+                            completely ready to be presented and adapted to your business. </p>
                     </div >
 
                 </div >
@@ -88,20 +91,16 @@ const Home = () => {
 
 
 
-
-
-
-
                 <HeroGothic />
 
                 <div className='home-frase'>
 
                     <h1>
 
-                    "La simplicidad llevada al extremo se llama elegancia"
+                        "Simplicity taken to the extreme is called elegance"
                     </h1>
 
-                    <p>Jhon Franklin</p>
+                    <p className='firma' >Jhon Franklin</p>
 
 
 

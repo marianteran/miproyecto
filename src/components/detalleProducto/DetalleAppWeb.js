@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeroProduct from '../product/HeroProduct'
+import HeroDetalle from "./HeroDetalle";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
@@ -98,12 +98,15 @@ const DetalleAppWeb = () => {
 	console.log(appWeb)
 	return (
 		<>
-			<div>DetalleProducto</div>
-			{/*   <HeroProduct />*/}
+			<div>< HeroDetalle/></div>
+
+
+			
+			  
 
 			<div className="detalleAppWebContainer">
 
-				<div style={{ display: "flex", justifyContent: "center", marginTop: "10vh", marginBottom: "5vh" }}>
+				<div style={{ display: "flex", justifyContent: "center", marginBottom: "5vh" }}>
 					{appWeb.map((app) => {
 						return (
 							<div>
