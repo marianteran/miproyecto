@@ -439,6 +439,12 @@
  
   
   }
+
+  .css-1012ceb-MuiAvatar-root {
+    border: 3px solid white;
+    width: 100px !important;
+    height: 100px !important;
+}
   
   
   @media screen and (max-width: 420px) {
