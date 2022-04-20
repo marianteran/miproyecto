@@ -23,10 +23,10 @@ const Footer = () => {
 
         </div>
 
-        <div className="footer"><b>SEOMA Web Design</b> es un desarrollo integral en conjunto con MINDHUB </div>
+        <div className="footer"><b>SEOMA Web Design</b> It is an integral development in conjunction with MINDHUB </div>
 
         <div className="footer__copyright">
-          <small>&copy;GRUPO A</small>
+          <small>&copy;GROUP A</small>
         </div>
 
       </footer>

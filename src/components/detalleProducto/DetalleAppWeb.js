@@ -129,7 +129,7 @@ const DetalleAppWeb = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
+					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap:"wrap", alignItems:"center" }}>
 
 						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 							<div className="detalleProductImg">
