@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link as LinkRouter } from "react-router-dom";
-import appweb from './website1.jpeg'
+import appweb from './img/website1.jpeg'
 
 const AppWeb = () => {
 
@@ -10,7 +10,7 @@ const AppWeb = () => {
             <section id="appWeb">
                 <div className="container">
                     <div className='subtitle-principal '>
-                        <h2>Aplicaciones Web</h2>
+                        <h2>Web applications</h2>
                     </div>
                 </div>
 
@@ -20,12 +20,12 @@ const AppWeb = () => {
                     <div className="appWebContent">
 
                         <h4>
-                            Diseñamos tu sitio para renovar tu imagen y presencia online. </h4>
+                        We design your site to renew your image and online presence. </h4>
 
                         <p>
-                            ¿Necesitas generar más ventas? Desarrollamos Sitios Web Institucionales. Landing Pages
-                            Adaptables a todas las pantallas. Diseño de páginas web claras, atractivas y efectivas
-                            que te ayudarán a dar la mejor imagen de tu negocio.
+                        Do you need to generate more sales? We develop Institutional Websites. Landing Pages
+                             Adaptable to all screens. Design of clear, attractive and effective web pages
+                             that will help you give the best image of your business.
                         </p>
 
 

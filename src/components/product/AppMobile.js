@@ -3,7 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
-import bg from './mobile.jpg'
+import bg from './img/mobile.jpg'
 
 const AppMobile = () => {
 
@@ -12,7 +12,7 @@ const AppMobile = () => {
             <section id="appMobile">
             <div className="container">
                     <div className='subtitle-principal-mobile '>
-                        <h2>Aplicaciones Mobile</h2>
+                        <h2>Mobile applications</h2>
                     </div>
                 </div>
 
@@ -26,15 +26,15 @@ const AppMobile = () => {
 
                     <div className="appMobileContent">
 
-                        <h4 id="txt">Gestionamos tu sitio web responsive</h4>
+                        <h4 id="txt">We manage your responsive website</h4>
                     
 
                         <p>
-                            Una Web Responsive es aquella que es capaz de adaptarse a cualquier dispositivo donde
-                            se visualice. Las estadísticas muestran el creciente de tráfico web que se genera
-                            desde dispositivos móviles, pero además Google penaliza  en su buscador a aquellas
-                            webs que no son responsables. Si tu sitio web está obsoleto, es el momento de ponerte en
-                            manos de nuestro equipo para diseñar una web responsive </p>
+                        A Responsive Web is one that is capable of adapting to any device where
+                             be displayed. The statistics show the growing web traffic that is generated
+                             from mobile devices, but Google also penalizes in its search engine those
+                             websites that are not responsible. If your website is outdated, it's time to get in touch
+                             hands of our team to design a responsive website </p>
 
         
 
@@ -49,7 +49,7 @@ const AppMobile = () => {
                 </div>
 
                 <div className="contentBarraProgresive">
-                    <p>Usuarios que usan internet desde Smartphone <span>93%</span></p>
+                    <p>Users who use the internet from Smartphone <span>93%</span></p>
                     <div className="progress">
 
                         <div className="progress-value"></div>
