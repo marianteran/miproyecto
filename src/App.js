@@ -17,6 +17,7 @@ import Cart from './components/carro/Cart';
 import swal from 'sweetalert'
 import DetalleEquipments from './components/detalleequipments/DetalleEquipments';
 import Equipment from './components/detalleequipments/Equipement';
+import Respuesta from './components/detalleProducto/Respuesta';
 
 function App() {
   const [{ equipments }, dispatch] = useStateValue() 
@@ -72,6 +73,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/equipments" element={<DetalleEquipments />} />
           <Route path="/equipment/:id" element={<Equipment/>} />
+          <Route path="/respuesta" element={<Respuesta/>} />
+
 
         </Routes>
         <Footer />

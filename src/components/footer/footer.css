@@ -1,5 +1,5 @@
 footer{
-    background: rgb(16,26,38);
+    background: var(--color-bg-variant);
     color: whitesmoke;
     text-align: center;
     padding: 2vh;
