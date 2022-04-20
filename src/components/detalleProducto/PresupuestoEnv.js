@@ -21,7 +21,7 @@ const PresupuestoEnv = (props) => {
 
 
     useEffect(() => {
-        navigate("/appWeb");
+        navigate("/respuesta");
 
 
     }, [reload])
