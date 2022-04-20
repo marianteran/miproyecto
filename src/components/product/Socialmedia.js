@@ -21,9 +21,9 @@ const Socialmedia = () => {
                 <div className="socialMediaContent">
 
                     <div className="socialMediaInfo">
-                        <h4>Generación y diseño de tiendas online para que aumentes tus ventas</h4>
+                        <h4>Generation and design of online stores to increase your saless</h4>
 
-                        <p>Realizar ventas web no tiene que ser tan complicado. ¿Cómo conseguirlo? Nosotros hacemos la parte difícil . Te diseñamos y generamos tu tienda web para que puedas aumentar tus canales de venta y tu exposición.</p>
+                        <p>Making web sales does not have to be so complicated. How to get it? We do the hard part. We design and generate your web store so that you can increase your sales channels and your exposure.</p>
 
 
                     </div>

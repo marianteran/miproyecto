@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeroProduct from '../product/HeroProduct'
+import HeroDetalle from "./HeroDetalle";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
@@ -18,6 +18,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const DetalleAppWeb = () => {
+	
 	//BASES DE DATOS:
 	const [{ apps }, dispatch] = useStateValue()
 	useEffect(() => {
@@ -28,14 +29,23 @@ const DetalleAppWeb = () => {
 					apps: response.data.response.apps
 				})
 			})
+
+		
 	}, [])
+
+
+
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
 	const [imgenPc, setImagenPc] = useState('pStatic.png')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
-	const [presuSend,setPresuSend ] = useState(false)
+	const [presuSend, setPresuSend] = useState(false)
+	
+
+
+	
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
@@ -48,7 +58,7 @@ const DetalleAppWeb = () => {
 		console.log(price);
 		console.log(priceTotal)
 		const newChecked = [...checked];
-		const newPrice = priceTotal+price	
+		const newPrice = priceTotal + price
 		setPriceTotal(newPrice)
 
 		if (currentIndex === -1) {
@@ -57,7 +67,7 @@ const DetalleAppWeb = () => {
 			newChecked.splice(currentIndex, 1);
 		}
 
-		setChecked(newChecked);	
+		setChecked(newChecked);
 		appWeb[1].functions.map((item) => {
 			if (item.title === value) {
 				setImagenPc(item.image)
@@ -69,7 +79,7 @@ const DetalleAppWeb = () => {
 		setPresuSend(true)
 	}
 
-	
+
 
 	//CONST SETEABLES:
 	const [appPulsada, setAppPulsada] = useState()
@@ -98,18 +108,20 @@ const DetalleAppWeb = () => {
 	console.log(appWeb)
 	return (
 		<>
-			<div>DetalleProducto</div>
-			{/*   <HeroProduct />*/}
+			<div>< HeroDetalle /></div>
+
 
 			<div className="detalleAppWebContainer">
 
-				<div style={{ display: "flex", justifyContent: "center", marginTop: "10vh", marginBottom: "5vh" }}>
+				<div className="checkboxstatic">
 					{appWeb.map((app) => {
 						return (
 							<div>
 								{app.name === "Static" ?
-									<Checkbox {...label} checked={statica} name={app.name} onClick={tipoDeAppp} />
-									: <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp} />}
+									<Checkbox {...label} checked={statica} name={app.name} onClick={tipoDeAppp}
+									/>
+									: <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp}
+									/>}
 								{app.name}
 							</div>)
 					})
@@ -117,50 +129,59 @@ const DetalleAppWeb = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-						<div className="detalleProductImg">
+					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
 
-							<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
-							{/* <img src={imgenPc} alt="" /> */}
+						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
+							<div className="detalleProductImg">
+								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
+							</div>
 
+							<div>
+								{!presuSend ?
+									<List
+										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+										subheader={<ListSubheader>functions</ListSubheader>}
+									>
+										{appWeb[1].functions.map((item) => {
+											return (
+												<div>
+													<ListItem>
+														<ListItemIcon>
+															<AddCircleOutlineIcon />
+														</ListItemIcon>
+														<ListItemText id="switch-list-label-wifi" primary={item.title} />
+														<Switch
+															edge="end"
+															onChange={handleToggle(item.title, item.price)}
+															checked={checked.indexOf(item.title) !== -1}
+															disabled={checked.indexOf(item.title) !== -1}
+															inputProps={{
+																'aria-labelledby': 'switch-list-label-wifi',
+															}}
+														/>
+													</ListItem>
+												</div>
+											)
+										})}
+										<h3>Total:{" " + priceTotal + " $USD"}</h3>
+										<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
+
+
+									</List> :   " "}
+
+							</div>
 						</div>
+
+
+
 						<div>
-						{!presuSend?
-							<List
-								sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-								subheader={<ListSubheader>functions</ListSubheader>}
-							>
-								{appWeb[1].functions.map((item) => {
-									return (
-										<div>
-											<ListItem>
-												<ListItemIcon>
-													<AddCircleOutlineIcon />
-												</ListItemIcon>
-												<ListItemText id="switch-list-label-wifi" primary={item.title} />
-												<Switch
-													edge="end"												
-													onChange={handleToggle(item.title,item.price)}
-													checked={checked.indexOf(item.title) !== -1}
-													disabled={checked.indexOf(item.title) !== -1}
-													inputProps={{
-														'aria-labelledby': 'switch-list-label-wifi',
-													}}
-												/>
-											</ListItem>
-										</div>
-									)
-								})}
-
-							</List>:""}
-							<h3>Total:{" "+priceTotal +" $USD"}</h3>
-							<button  onClick={()=>presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
+							{presuSend ?
+								<PresupuestoEnv checked={checked} app={appWeb[1]} /> : ""}
 						</div>
-						{presuSend?
-						<PresupuestoEnv checked={checked} app={appWeb[1]} />:""}
 					</div>
-								
-						:
+
+
+					:
 					<div className="detalleProductImg">
 						<img src={StaticPC} alt="" />
 					</div>}

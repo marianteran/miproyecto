@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import HeroProduct from '../product/HeroProduct'
+import HeroDetalle from "./HeroDetalle";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
 import mobileBase from './appMobileBase.webp'
 import Checkbox from '@mui/material/Checkbox';
 import StaticPC from '../detalleProducto/AppWeb/Static.PNG'
+import "./app.css"
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -41,11 +42,12 @@ const [appPulsada, setAppPulsada] = useState()
 
 return (
     <>
-    <div>DetalleProducto</div>    
-    <HeroProduct/>
+   
+    <HeroDetalle/>
+
     
 
-<div style={{display:"flex", justifyContent:"center"}}>
+<div className="checkboxstatic">
       {appMobile.map((app)=>{
         
         return(

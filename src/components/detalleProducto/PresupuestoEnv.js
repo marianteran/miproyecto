@@ -1,19 +1,35 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
 import "./app.css"
 import swal from 'sweetalert'
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-const PresupuestoEnv = (props) => {
-   
-    const [{ user, favorites }, dispatch] = useStateValue()
-    const [reload, setReload] = useState(false)   
-    const [questions, setQuestions] = useState()
-  
-    let date = ""
-  
+import { Link as LinkRouter } from "react-router-dom";
 
-    const submitQuestions = async (items) => {       
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
+const PresupuestoEnv = (props) => {
+
+    const navigate = useNavigate();
+
+    const [{ user, favorites }, dispatch] = useStateValue()
+    const [reload, setReload] = useState(false)
+    const [questions, setQuestions] = useState()
+
+    let date = ""
+
+
+    useEffect(() => {
+        navigate("/appWeb");
+
+
+    }, [reload])
+
+
+
+    const submitQuestions = async (items) => {
+
         swal({
             title: "questions sent",
             icon: "success",
@@ -25,12 +41,12 @@ const PresupuestoEnv = (props) => {
         const dataQuestions = {
             equipment: props.app._id,
             user: user.datosUser.id,
-            message:"I want to consult for a web page that includes these functions"+valor,
+            message: "I want to consult for a web page that includes these functions" + valor,
             date: date
         }
         await axios.post("http://localhost:4000/api/questions", { dataQuestions })
             .then(response => {
-               
+
             })
         setReload(!reload)
     }
@@ -42,42 +58,62 @@ const PresupuestoEnv = (props) => {
         var year = registro.getYear()
         date = dia + "/" + mes + "/" + year + " " + time
     }
-   
+
 
     return (
         <>
-        <div style={{marginTop:"20vh"}}>
-            <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                <div>{user?user.datosUser.email:""}</div>
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">Name</label>
-                <div>{user?user.datosUser.name:""}</div>
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">User</label>
-                <div>{user?user.datosUser.id:""}</div>
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label"></label>                
-                <textarea className="form-control" id="exampleFormControlTextarea1" value={"  I want to consult for a web page that includes these functions"} rows="3">
-              
-                </textarea>
-                <div>
-                {props.checked?.map((item)=>{
-                    return(
-                        <ul>
-                            <li style={{backgroundColor:"gray"}}>
-                                {item}
-                            </li>
-                        </ul>
-                    )
-                }) }
+            <div style={{ marginTop: "20vh" }}>
+
+                <div className="mb-3 row">
+                    <label for="staticEmail" className="col-sm-2 col-form-label"><strong> Email</strong> </label>
+                    <div className="col-sm-10">
+                        <input type="text" readonly className="form-control-plaintext" id="staticEmail" value={user ? user.datosUser.email : ""} />
+                    </div>
                 </div>
-                <button  onClick={()=>submitQuestions(props.checked)} type="button" class="btn btn-primary">Send question</button>
-   
-            </div>
+
+                <div className="mb-3 row">
+                    <label for="staticName" className="col-sm-2 col-form-label"><strong> Name</strong> </label>
+                    <div className="col-sm-10">
+                        <input type="text" readonly className="form-control-plaintext" id="staticName" value={user ? user.datosUser.name : ""} />
+                    </div>
+                </div>
+
+                <div className="mb-3 row">
+                    <label for="staticUser" className="col-sm-2 col-form-label"><strong> User</strong> </label>
+                    <div className="col-sm-10">
+                        <input type="text" readonly className="form-control-plaintext" id="staticUser" value={user ? user.datosUser.id : ""} />
+                    </div>
+                </div>
+
+
+
+                <div className="mb-3">
+                    <p><strong>Product</strong> </p>
+                    <div className="pruebadecheckcon">
+
+                        {props.checked?.map((item) => {
+                            return (
+                                <div>
+                                    {item} -
+                                </div>
+
+                            )
+                        })}
+
+                    </div>
+                    <label for="exampleFormControlTextarea1" className="form-label"></label>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" value={"  I want to consult for a web page that includes these functions"} rows="3">
+
+                    </textarea>
+
+
+                    <button onClick={() => submitQuestions(props.checked)} type="button" >
+                        <LinkRouter to="/respuesta" className="btn btn-primary"> send </LinkRouter>
+                    </button>
+
+
+
+                </div>
             </div>
         </>
     )

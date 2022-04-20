@@ -1,0 +1,24 @@
+.administradorcontenedor{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20vh;
+    margin-bottom: 7vh;
+    border: 2px solid red;
+}
+
+.btn-group-vertical{
+    background: yellow;
+}
+
+.administradorDropdown{
+    
+    width: 200px;
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button-administrador{
+    text-align: left;
+}

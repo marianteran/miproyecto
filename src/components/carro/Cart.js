@@ -86,7 +86,7 @@ const Cart = () => {
 			{/* BOTON CONTINUR */}
 			<div className="cart-boton">
 
-				<Button className="myButton">Continue</Button>
+				<div className="myButton">Continue</div>
 
 			</div>
 		</div>

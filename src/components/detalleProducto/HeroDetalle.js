@@ -1,12 +1,15 @@
 import React from 'react'
+import "./app.css"
 
 const HeroDetalle = () => {
     return (
         <>
 
-            <div id='heroDetalleProduct'>
+            <div id='encabezado'>
 
-                <div className='heroDetalleProductContainer'> 
+                <div className='encabezadoDetalle'> 
+
+                <h1>PROBANDO</h1>
 
 
 
