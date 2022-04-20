@@ -169,7 +169,8 @@ const userControllers = {
         if(!req.error){
             res.json({success:true, 
                 datosUser:
-                {img:req.user.img,
+                {
+                img:req.user.img,
                 name:req.user.name, 
                 lastName: req.user.lastName,
                 email: req.user.email, 
