@@ -4,6 +4,7 @@
   height: 250px !important;
   background: #fff;
   align-items: center;
+  
 }
 
 .swiper-slide img {
@@ -116,8 +117,6 @@
 }
 
 
-
-
 .equiments-LikAdd {
   display: flex;
   justify-content: center;
@@ -186,6 +185,25 @@
   box-shadow: 0 5px rgb(182, 181, 181);
   transform: translateY(4px);
 }
+
+  /* .css-1012ceb-MuiAvatar-root {
+    border: 3px solid white;
+    width: 100px !important;
+    height: 100px !important;
+} */
+
+
+
+
+/* AVATAR DEL COMENTARIO DE EQUIPOS */
+.MuiAvatar-circular {  
+  border: 3px solid white !important;
+  width: 102px !important;
+  height: 102px !important;
+}
+
+
+
 
 .equipments-AddToCart {
   display: flex;
@@ -438,7 +456,7 @@
  
   
   }
-  
+
   
   @media screen and (max-width: 420px) {
   .equipments-menuCentral{
