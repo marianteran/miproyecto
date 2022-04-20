@@ -3,15 +3,15 @@ import { Link, Link as LinkRouter } from "react-router-dom";
 
 const Respuesta = () => {
     return (
-        <div>
-            <div className='home-frase'>
+        <div id='respuesta'>
+            <div className='respuestaContenedor'>
 
                 <h1>
 
-                    En breve le responderemos
+                We will answer you shortly
                 </h1>
 
-                <div className="container botonhome ">
+                <div className="container botonrespuesta ">
                     <div className="btnfluor">
 
                         <LinkRouter to="/product">read more</LinkRouter>

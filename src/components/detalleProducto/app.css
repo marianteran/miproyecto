@@ -21,7 +21,6 @@
 
 /* checkbox */
 .checkboxstatic{
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +46,12 @@
 
 }
 
-.detalleProductImg img{
+.detalleProductImgMobile{
+   
+    width: 400px;
+}
+
+.detalleProductImg img, .detalleProductImgMobile img{
 
     width: 100%;
 }
@@ -104,6 +108,38 @@
 /* find presupuesto */
 
 
+/* respuesta */
+
+#respuesta{
+    margin-top: 15vh;
+  
+
+}
+
+
+.respuestaContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var( --color-bg-variant);
+    padding-top: 20vh;
+    
+    
+}
+
+.respuestaContenedor h1{
+    font-size: 7vmin;
+    font-style: italic;
+    
+}
+
+.botonrespuesta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0 4% 0;
+}
 
 
 
