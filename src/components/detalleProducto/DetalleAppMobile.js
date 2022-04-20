@@ -47,7 +47,7 @@ return (
 
     
 
-<div style={{display:"flex", justifyContent:"center"}}>
+<div className="checkboxstatic">
       {appMobile.map((app)=>{
         
         return(
