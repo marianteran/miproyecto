@@ -40,15 +40,13 @@ const Notificaciones = () => {
 
 
   const answerQuestions = async (id, event) => {
-    console.log(event)
       event.preventDefault()
       fecha()     
       let data = changeQuestions
       let newDate = date  
           await axios.put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
               .then(response => {
-                console.log(response)
-                  setReload(!reload)                  
+                setReload(!reload)                  
               })}
 
   function fecha() {
@@ -61,7 +59,6 @@ const Notificaciones = () => {
   }
 
 
-  //Orly al array My Favorite le puedes hacer el map de las cards
   return (
     <>
       <div
