@@ -12,7 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Switch from '@mui/material/Switch';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import StaticPC from '../detalleProducto/AppWeb/Static.PNG'
+import StaticMobile from '../detalleProducto/staticm.PNG'
 import PresupuestoEnv from "./PresupuestoEnv.js";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -37,7 +37,7 @@ const DetalleAppWeb = () => {
 
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
-	const [imgenPc, setImagenPc] = useState('staticm.png')
+	const [imgenPc, setImagenPc] = useState('pmstatic.png')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
@@ -183,7 +183,7 @@ const DetalleAppWeb = () => {
 
 					:
 					<div className="detalleProductImg">
-						<img src={StaticPC} alt="" />
+						<img src={StaticMobile} alt="" />
 					</div>}
 
 			</div>
