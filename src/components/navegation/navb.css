@@ -35,9 +35,9 @@
     border: 1px solid white;
 }
 
-.MuiButton-endIcon {
+/* .MuiButton-endIcon {
     background: yellow !important;
-}
+} */
 
 .MuiMenuItem-root {
     justify-content: center !important;
@@ -45,4 +45,13 @@
 
 .MuiPaper-root {
     background: white !important;
+}
+
+.Navb-AccountUser {
+    text-decoration: none;
+    color: #374151
+}
+
+.Navb-AccountUser:hover {
+    color: #374151
 }
