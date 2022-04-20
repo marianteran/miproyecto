@@ -8,8 +8,7 @@
     margin-bottom: 130px;
 }
 
-
-.custom-header-subtitle {
+.custom-header-subtitle{
     color: rgba(48, 47, 47, 0.6);
     font-size: 1.2rem;
     width: auto;
@@ -62,56 +61,53 @@
 
 .custom-image {
     margin-bottom: 4rem;
-    border-radius: 50%;
-    height: 10rem;
+   border-radius: 50%;
+   height: 6rem;
+}
+
+
+  /********************************************** M E D I A -Q U E R Y************************ */
+
+  @media screen and (min-width: 992px) and (max-width: 1280px) {
+   
+  
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+
+
+
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+
+
+}
+
+
+@media screen and (max-width: 575px) {
+
+
+
+}
+
+
+@media screen and (min-width: 421px) and (max-width: 574px) {
+
+
+}
+
+
+@media screen and (max-width: 420px) {
+
+
 }
 
 
 
 
 
-
-.account-YourImgDet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 15vh;
-}
-
-.account-YourImg {
-    display: flex;
-    flex-wrap: wrap;
-    /* margin-top: 8vh; */
-    justify-content: center;
-}
-
-.account-Your {
-    display: flex;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-}
-
-.account-Img {
-    display: flex;
-
-}
-
-.account-Det {
-    display: flex;
-    width: 400px;
-    margin-bottom: 50px;
-
-}
-
-.account-FavNotGeneral {
-    display: flex;
-    justify-content: center;
-}
-
-.account-FavNot {
-    display: flex;
-    width: 80%;
-    height: 80vh;
-    margin-bottom: 50px;
-}

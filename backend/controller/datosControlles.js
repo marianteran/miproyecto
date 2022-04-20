@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const Apps = require('../models/apps')
-const Smedia = require('../models/smedia.js')
+const Smedia = require('../models/smedias.js')
 const Equipments = require('../models/equipments.js')
 const User = require("../models/user")
 

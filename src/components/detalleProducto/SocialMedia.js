@@ -17,27 +17,30 @@ import PresupuestoEnv from "./PresupuestoEnv.js";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const DetalleAppWeb = () => {
+const SocialMedia = () => {
 	
 	//BASES DE DATOS:
-	const [{ apps }, dispatch] = useStateValue()
+	const [{ smedia }, dispatch] = useStateValue()
+    const [redes, setRedes] = useState()
 	useEffect(() => {
-		axios.get("http://localhost:4000/api/apps")
+		axios.get("http://localhost:4000/api/smedia")
 			.then(response => {
 				dispatch({
-					type: accionType.APPSDB,
-					apps: response.data.response.apps
+					type: accionType.SMEDIADB,
+					smedia: response.data.response.smedia
 				})
+                console.log(response.data.response.socialMedia) 
+                setRedes(response.data.response.socialMedia)
 			})
 
 		
-	}, [])
+	}, []) 
 
 
 
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
-	const [imgenPc, setImagenPc] = useState('pStatic.png')
+	const [imgenPc, setImagenPc] = useState('smedia1.png')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
@@ -68,7 +71,7 @@ const DetalleAppWeb = () => {
 		}
 
 		setChecked(newChecked);
-		appWeb[1].functions.map((item) => {
+		redes.functions.map((item) => {
 			if (item.title === value) {
 				setImagenPc(item.image)
 			}
@@ -81,59 +84,19 @@ const DetalleAppWeb = () => {
 
 
 
-	//CONST SETEABLES:
-	const [appPulsada, setAppPulsada] = useState()
-	const [statica, setStatica] = useState(true)
-	const [personal, setPersonal] = useState(false)
-	let appWeb = []
-
-	apps.map((app) => {
-		if (app.type === "App Web")
-			return (
-				appWeb.push(app)
-			)
-	})
-	const tipoDeAppp = (event) => {
-		if (event.target.name === "Personalized" && event.target.checked) {
-			setAppPulsada(event.target.name)
-			setStatica(false)
-			setPersonal(true)
-		}
-		else {
-			setAppPulsada("Static")
-			setPersonal(false)
-			setStatica(true)
-		}
-	}
-	console.log(appWeb)
+	console.log(redes)
 	return (
 		<>
 			<div>< HeroDetalle /></div>
 
 
-			<div className="detalleAppWebContainer">
+			<div className="detalleAppWebContainer">		
 
-				<div className="checkboxstatic">
-					{appWeb.map((app) => {
-						return (
-							<div>
-								{app.name === "Static" ?
-									<Checkbox {...label} checked={statica} name={app.name} onClick={tipoDeAppp}
-									/>
-									: <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp}
-									/>}
-								{app.name}
-							</div>)
-					})
-					}
-				</div>
-				{personal && appPulsada === "Personalized" ?
-
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap:"wrap", alignItems:"center" }}>
+					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
 
 						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 							<div className="detalleProductImg">
-								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
+								<img src={process.env.PUBLIC_URL + `/img/apps/SocialMedia/${imgenPc}`} alt="images"></img>
 							</div>
 
 							<div>
@@ -142,7 +105,8 @@ const DetalleAppWeb = () => {
 										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
 										subheader={<ListSubheader>functions</ListSubheader>}
 									>
-										{appWeb[1].functions.map((item) => {
+										{redes?
+                                        redes[0].functions.map((item) => {
 											return (
 												<div>
 													<ListItem>
@@ -162,7 +126,7 @@ const DetalleAppWeb = () => {
 													</ListItem>
 												</div>
 											)
-										})}
+										}):""}
 										<h3>Total:{" " + priceTotal + " $USD"}</h3>
 										<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
 
@@ -171,24 +135,17 @@ const DetalleAppWeb = () => {
 
 							</div>
 						</div>
-
-
-
 						<div>
 							{presuSend ?
-								<PresupuestoEnv checked={checked} app={appWeb[1]} /> : ""}
+								<PresupuestoEnv checked={checked} app={redes} /> : ""}
 						</div>
 					</div>
 
 
-					:
-					<div className="detalleProductImg">
-						<img src={StaticPC} alt="" />
-					</div>}
 
 			</div>
 		</>
 	)
 }
 
-export default DetalleAppWeb
+export default SocialMedia

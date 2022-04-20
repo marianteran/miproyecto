@@ -28,7 +28,7 @@ const Socialmedia = () => {
 
                     </div>
 
-                    <LinkRouter to='/appMobile' className="container botonSocialMedia">
+                    <LinkRouter to='/smedia' className="container botonSocialMedia">
                         <div className="btnfluormedia">
                             <a href="">info</a>
                         </div>
