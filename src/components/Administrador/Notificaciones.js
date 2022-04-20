@@ -57,17 +57,7 @@ const Notificaciones = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <div className="divPrincipal">
-=======
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginBottom: "10vh",
-        }}
-      >
->>>>>>> develop
         {/*NOTIFICACIONES*/}
 
         {questions?.map((item) => {
@@ -129,5 +119,6 @@ const Notificaciones = () => {
     </>
   );
 };
+
 
 export default Notificaciones;
