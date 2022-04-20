@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useStateValue } from '../../context/Stateprovider';
 import axios from 'axios'
 import "./app.css"
 import swal from 'sweetalert'
+import { Link as LinkRouter } from "react-router-dom";
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
 const PresupuestoEnv = (props) => {
+
+    const navigate = useNavigate();
 
     const [{ user, favorites }, dispatch] = useStateValue()
     const [reload, setReload] = useState(false)
@@ -13,7 +20,16 @@ const PresupuestoEnv = (props) => {
     let date = ""
 
 
+    useEffect(() => {
+        navigate("/appWeb");
+
+
+    }, [reload])
+
+
+
     const submitQuestions = async (items) => {
+
         swal({
             title: "questions sent",
             icon: "success",
@@ -69,12 +85,12 @@ const PresupuestoEnv = (props) => {
                     </div>
                 </div>
 
-    
 
-                 <div className="mb-3">
-                 <p><strong>Product</strong> </p>
-                 <div className="pruebadecheckcon">
-                        
+
+                <div className="mb-3">
+                    <p><strong>Product</strong> </p>
+                    <div className="pruebadecheckcon">
+
                         {props.checked?.map((item) => {
                             return (
                                 <div>
@@ -83,6 +99,7 @@ const PresupuestoEnv = (props) => {
 
                             )
                         })}
+
                     </div>
                     <label for="exampleFormControlTextarea1" className="form-label"></label>
                     <textarea className="form-control" id="exampleFormControlTextarea1" value={"  I want to consult for a web page that includes these functions"} rows="3">
@@ -90,10 +107,11 @@ const PresupuestoEnv = (props) => {
                     </textarea>
 
 
+                    <button onClick={() => submitQuestions(props.checked)} type="button" >
+                        <LinkRouter to="/respuesta" className="btn btn-primary"> send </LinkRouter>
+                    </button>
 
 
-                    
-                    <button onClick={() => submitQuestions(props.checked)} type="button" class="btn btn-primary">Send question</button>
 
                 </div>
             </div>
