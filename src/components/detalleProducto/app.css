@@ -19,38 +19,24 @@
     
 }
 
-
+/* checkbox */
 .checkboxstatic{
-
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5vh;
-    border: 2px solid red;
-}
-
-
-
-.pruebadecheckcon{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     
 }
 
 
+
 .detalleAppWebContainer{
-    padding: 50px;
-
-
+    padding: 20px;
+    margin: 5% 0% 5% 0%;
 }
 
-
 .detalleProductImg{
-
-   
     width: 800px ;
-   
     padding: 0 !important;
     margin: 0 !important;
     display: flex;
@@ -60,9 +46,200 @@
 
 }
 
-.detalleProductImg img{
+.detalleProductImgMobile{
+   
+    width: 400px;
+}
+
+.detalleProductImg img, .detalleProductImgMobile img{
 
     width: 100%;
 }
 
 
+/* presupuesto  */
+.presupuestoContenedor{
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+
+}
+
+.btnPresupuestoContenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0 2% 0;
+}
+
+.btnPresupuesto{
+  
+	background-color:var(--color-bg-variant);
+	border-radius:10px;
+	border:1px solid var(--color-bg-variant);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:10px 20px;
+	text-decoration:none;
+	
+}
+
+.btnPresupuesto:hover{
+    background:linear-gradient(to bottom, #026873 5%, #026873 100%);
+	background-color:#ffffff;
+    color: #ffffff;
+
+
+}
+
+
+.pruebadecheckcon{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+
+}
+
+/* find presupuesto */
+
+
+/* respuesta */
+
+#respuesta{
+    margin-top: 15vh;
+  
+
+}
+
+
+.respuestaContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var( --color-bg-variant);
+    padding-top: 20vh;
+    
+    
+}
+
+.respuestaContenedor h1{
+    font-size: 7vmin;
+    font-style: italic;
+    
+}
+
+.botonrespuesta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0 4% 0;
+}
+
+
+
+  /********************************************** M E D I A -Q U E R Y************************ */
+
+  @media screen and (min-width: 992px) and (max-width: 1280px) {
+    .detalleProductImg{
+        width: 600px ;
+    }
+
+    .presupuestoContenedor{
+        width: 400px;
+    }
+  
+  }
+  
+  
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .detalleProductImg{
+        width: 500px ;
+    }
+    
+    .presupuestoContenedor{
+        width: 300px;
+    }
+    
+
+
+  
+  }
+  
+  
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+ 
+    .detalleProductImg{
+        width: 350px ;
+    }
+    
+    .presupuestoContenedor{
+        width: 300px;
+    }
+
+  
+  }
+  
+  
+  @media screen and (max-width: 575px) {
+
+    .detalleProductImg{
+        width: 500px ;
+    }
+    
+    .presupuestoContenedor{
+        margin-top: 20px;
+        width: 500px;
+    }
+
+    
+
+  }
+  
+  
+  @media screen and (min-width: 421px) and (max-width: 574px) {
+
+    .detalleProductImg{
+        width: 350px ;
+    }
+    
+    .presupuestoContenedor{
+        margin-top: 20px;
+        width: 300px;
+    }
+    
+  
+  }
+  
+  
+  @media screen and (max-width: 420px) {
+    .detalleProductImg{
+        width: 350px ;
+    }
+    
+    .presupuestoContenedor{
+        margin-top: 20px;
+        width: 300px;
+    }
+
+  }
+
+
+
+ 
+
+
+
+
+
+
+ 
+  
+
+  
