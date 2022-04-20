@@ -90,7 +90,8 @@ const AccountUser = () => {
                 })
                 console.log(respuesta)
                 setReload(!reload)
-            })}
+            })
+    }
 
     let idFavorite = [];
     let myFavorite = [];
@@ -123,13 +124,22 @@ const AccountUser = () => {
         <>
             {user.datosUser.email !== "seomadesign@gmail.com" ?
                 <>
-                    <div style={{ display: "flex", justifyContent: "center", marginTop: "20vh" }}>
-                        <div className=" d-flex align-items-center col-lg-5 col-sm-7 col-md-7 ">
-                            <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 ">
-                                <h1 className="">Your account</h1>
-                                <h4 className="custom-header-subtitle">Find your activity history here</h4>
+
+                    <div className="account-YourImgDet">
+                        {/* <div style={{ display: "flex", justifyContent: "center", marginTop: "20vh" }}> */}
+
+                        <div className="account-YourImg">
+
+                            {/* <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 "> */}
+
+                            <div className="account-Your">
+                                <div >
+                                    <h1 className="">Your account</h1>
+                                    <h4 className="custom-header-subtitle">Find your activity history here</h4>
+                                </div>
                             </div>
-                            <div>
+
+                            <div className="account-Img">
                                 <img
                                     src={user.datosUser.img ? user.datosUser.img : userImage}
                                     className="custom-image d-block w-100 col-sm-12 col-md-6 col-lg-6 col-lg-5"
@@ -137,8 +147,12 @@ const AccountUser = () => {
                                 />
                             </div>
                         </div>
-                        <div className="card  col-lg-4 col-sm-5 col-md-5 mb-4">
+                        {/* </div> */}
+
+
+                        <div className="card account-Det">
                             <h5 className="card-header background-card">Account details</h5>
+
                             <div className="card-body data">
                                 <p className="card-text justify-content-between d-flex p-2">
                                     <div className="d-inline">User</div>
@@ -157,12 +171,16 @@ const AccountUser = () => {
                                     <div className="d-inline text-secondary">{user.datosUser.lastName}</div>
                                 </p>
                             </div>
+
                         </div>
                     </div>
-                    <div style={{ display: "flex", justifyContent: "center", marginTop: "2vh", }}>
+
+                    <div className="account-FavNotGeneral">
+
+                    <div className="card custom-card text-center card text-center account-FavNot">
 
                         {/* Card favorites */}
-                        <div className="card custom-card text-center card text-center col-lg-8 col-sm-5 col-md-5" style={{ height: "100vh" }}>
+                        {/* <div className="card custom-card text-center card text-center col-lg-8 col-sm-5 col-md-5" style={{ height: "100vh" }}> */}
                             <div className="card-header background-card">
                                 <ul className="nav nav-tabs card-header-tabs">
                                     <li className="nav-item">
@@ -263,9 +281,14 @@ const AccountUser = () => {
                             }
 
 
-                        </div>
+                        {/* </div> */}
 
                     </div>
+
+                    </div>
+
+
+
 
                 </> :
                 <Administrador />}
