@@ -10,6 +10,7 @@ import NuevoProducto from "./NuevoProducto";
 const Home = () => {
   const [{ user, equipments, notifica }, dispatch] = useStateValue();
   const [reload, setReload] = useState(false);
+  
 
   let idFavorite = [];
   let myFavorite = [];
@@ -19,26 +20,7 @@ const Home = () => {
       myFavorite.push(item);
     }
   });
-  const favorite = async (id) => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      swal({
-        title: "Go to sign in to post your opinions",
-        icon: "error",
-        buttons: "ok",
-      });
-    } else {
-      axios.put(`http://localhost:4000/api/favorite/${id}`,
-          {},
-          { headers: { Authorization: "Bearer " + token } }
-        )
-        .then((response) => {
-          setReload(!reload);
-        });
-    }
-  };
-
-  //Orly al array My Favorite le puedes hacer el map de las cards
+ 
   return (
     <>
       <div
