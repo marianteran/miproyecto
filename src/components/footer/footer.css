@@ -3,17 +3,31 @@ footer{
     color: whitesmoke;
     text-align: center;
     padding: 2vh;
-
+    flex-wrap: wrap;
 }
 
+.footer__copyright {
+    padding-bottom: 1vh;
+}
 
+.footer_toLink {
+    justify-content: left;
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
-
-.footer__copyright{
-    padding: 2vh;
+.footer__link {
     
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
-
-
-
+.footer__link:hover {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 10px;
+}
