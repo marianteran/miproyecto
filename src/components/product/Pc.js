@@ -12,7 +12,7 @@ const Pc = () => {
             <section id="pc">
                 <div className="container">
                     <div className='subtitle-principal-pc '>
-                        <h2>Equipos</h2>
+                        <h2>Equipment</h2>
                     </div>
                 </div>
 
@@ -21,11 +21,11 @@ const Pc = () => {
 
                     <div className="pcContent">
 
-                        <h4>Te brindamos  accesoria en todo lo que necesitas  </h4>
+                        <h4>We give you advice on everything you need</h4>
                         <p>
-                            Ofrecemos una variedad de equipos para ayudarte a ingresar en el mundo de la tecnología,
-                            con los mejores precios y personal
-                            altamente calificado para brindarte el mejor servicio
+                        We offer a variety of equipment to help you enter the world of technology,
+                             with the best prices and staff
+                             highly qualified to provide you with the best service
                         </p>
 
 

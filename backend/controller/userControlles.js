@@ -57,7 +57,7 @@ const userControllers = {
     },
     nuevoUsuario: async (req, res) => {
         const { img, name, lastName, email, password, from } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
-        console.log(req.body)
+        //console.log(req.body)
         try {
             const usuarioExiste = await User.findOne({ email })
             if (usuarioExiste) {                

@@ -23,15 +23,15 @@ const Notificaciones = () => {
                   return(
                     temporal.push(item)
                   )
-                }} )              
-              
-              setQuestions(temporal)
+                }} )                          
+              setQuestions(temporal)             
+              setReload(!reload)
               dispatch({
                 type: accionType.NOTIFICA,
                 notifica: questions.length
               })
-              setReload(!reload)
           })
+          
   }, [reload])
 
   const inputText = (event) => {  
@@ -39,13 +39,14 @@ const Notificaciones = () => {
   }
 
 
-  const answerQuestions = async (id) => {
+  const answerQuestions = async (id, event) => {
+      event.preventDefault()
       fecha()     
       let data = changeQuestions
       let newDate = date  
           await axios.put(`http://localhost:4000/api/answer/${id}`, { data, newDate })
               .then(response => {
-                  setReload(!reload)                  
+                setReload(!reload)                  
               })}
 
   function fecha() {
@@ -58,7 +59,6 @@ const Notificaciones = () => {
   }
 
 
-  //Orly al array My Favorite le puedes hacer el map de las cards
   return (
     <>
       <div
@@ -127,7 +127,7 @@ const Notificaciones = () => {
             </div>
   
             <div style={{ marginLeft: "1vw", marginRight: "2vw" }}>
-              <form>
+              <form onSubmit={(event)=>answerQuestions(item._id, event)}>
                 <input
                   type="textarea"
                   className="form-control"
@@ -138,7 +138,7 @@ const Notificaciones = () => {
                   type="submit"
                   className="btn btn-dark"
                   style={{ marginTop: "3vh", marginBottom: "2vh" }}
-                  onClick={()=>answerQuestions(item._id)}
+                  
                 >
                   Submit
                 </button>

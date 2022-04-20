@@ -7,34 +7,6 @@
 }
 
 
-/* hero product */
-
-#heroDetalleProduct{
-  margin-top: 5vh;
-}
-
-
-.heroDetalleProductContainer{
-  width: 100%;
-  height: 400px;
-  background: url('./bgproducto.jpg');
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* app mobile  */
 
 
@@ -166,7 +138,7 @@
 
 
 .socialMediaContent{
-  background: url("./socialmedia.jpg");
+  background: url("./img/socialmedia.jpg");
   background-repeat: no-repeat;
   width: 100%;
   height: 500px;
@@ -629,7 +601,7 @@
 
 
 .heroimage {
-    background-image: url('./bgproductheader.jpg');
+    background-image: url('./img/bgproductheader.jpg');
     background-size: cover;
     margin: 0px;
     height: 40vw;

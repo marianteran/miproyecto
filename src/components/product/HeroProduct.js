@@ -7,10 +7,10 @@ const HeroProduct = () => {
                 <div className='heroimage'>
                     <div className="captioncontainer">
                         <h1 className="captiontitle">
-                            IMAGINALO
+                        IMAGINE IT
                         </h1>
                         <h2 className="captiontitle">
-                            HAZLO REALIDAD
+                        MAKE IT REAL
                         </h2>
                     </div>
                 </div>
