@@ -124,11 +124,14 @@ const AccountUser = () => {
             {user.datosUser.email !== "seomadesign@gmail.com" ?
                 <>
                     <div style={{ display: "flex", justifyContent: "center", marginTop: "20vh" }}>
+
+
                         <div className=" d-flex align-items-center col-lg-5 col-sm-7 col-md-7 ">
                             <div className="custom-header-title col-sm-12 col-md-6 col-lg-5 ">
                                 <h1 className="">Your account</h1>
                                 <h4 className="custom-header-subtitle">Find your activity history here</h4>
                             </div>
+                            
                             <div>
                                 <img
                                     src={user.datosUser.img ? user.datosUser.img : userImage}
@@ -137,6 +140,8 @@ const AccountUser = () => {
                                 />
                             </div>
                         </div>
+
+
                         <div className="card  col-lg-4 col-sm-5 col-md-5 mb-4">
                             <h5 className="card-header background-card">Account details</h5>
                             <div className="card-body data">

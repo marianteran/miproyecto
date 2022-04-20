@@ -65,7 +65,7 @@ const Notificaciones = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          marginBottom: "7vh",
+          marginBottom: "10vh",
         }}
       >
         {/*NOTIFICACIONES*/}

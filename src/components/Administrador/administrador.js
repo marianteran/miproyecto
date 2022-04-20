@@ -24,12 +24,16 @@ const Home = () => {
 	return (
 		<>
 
+		<div className="administrador">
+
+		<Notificaciones />
+		</div>
 
 		
 
 
 
-         <Notificaciones />
+         
 
 
 {/* 
