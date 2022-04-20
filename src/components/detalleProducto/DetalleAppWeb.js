@@ -18,6 +18,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const DetalleAppWeb = () => {
+	
 	//BASES DE DATOS:
 	const [{ apps }, dispatch] = useStateValue()
 	useEffect(() => {
@@ -28,7 +29,12 @@ const DetalleAppWeb = () => {
 					apps: response.data.response.apps
 				})
 			})
+
+		
 	}, [])
+
+
+
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
 	const [imgenPc, setImagenPc] = useState('pStatic.png')
@@ -36,6 +42,10 @@ const DetalleAppWeb = () => {
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
 	const [presuSend, setPresuSend] = useState(false)
+	
+
+
+	
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
@@ -153,12 +163,12 @@ const DetalleAppWeb = () => {
 												</div>
 											)
 										})}
+										<h3>Total:{" " + priceTotal + " $USD"}</h3>
+										<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
 
-									</List> : " "}
 
+									</List> :   " "}
 
-								<h3>Total:{" " + priceTotal + " $USD"}</h3>
-								<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
 							</div>
 						</div>
 
