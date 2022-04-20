@@ -32,12 +32,9 @@ const Home = () => {
 		
 
 
-<<<<<<< HEAD
-         <Notificaciones />
-=======
 
-         
->>>>>>> develop
+         <Notificaciones />
+
 
 
 {/* 
