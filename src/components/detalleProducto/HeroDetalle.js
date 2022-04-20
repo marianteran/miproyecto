@@ -9,7 +9,7 @@ const HeroDetalle = () => {
 
                 <div className='encabezadoDetalle'> 
 
-                <h1>PROBANDO</h1>
+                <h1>PROBANDO baner</h1>
 
 
 
