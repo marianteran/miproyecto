@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel'
+import { Link as LinkRouter } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -15,7 +16,7 @@ const Hero = () => {
             <p>Create a professional website, online store or portfolio and build your online presence. With us, you can make any idea come true.</p>
             <div className="container botonhome ">
               <div className="btnfluor">
-                <a href="">read more</a>
+                <LinkRouter to="/product">read more</LinkRouter>
               </div>
             </div>
           </div>
