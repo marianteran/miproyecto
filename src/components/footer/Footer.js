@@ -13,7 +13,7 @@ const Footer = () => {
         <footer>
 
 
-        <div className="footer">YOURPAGE es un desarrollo integral en conjunto con MINHUB </div>
+        <div className="footer">YOURPAGE es un desarrollo integral en conjunto con MINDHUB </div>
           <div className="footer__copyright">
             <small> &copy;GRUPO A.</small>
           </div>
