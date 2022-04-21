@@ -23,6 +23,7 @@ import Switch from '@mui/material/Switch';
 import { pink } from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
 import swal from 'sweetalert'
+import HeroDetalle from "../detalleProducto/HeroDetalle";
 
 // Import Swiper React components
 // Import Swiper styles
@@ -165,8 +166,10 @@ const DetalleEquipments = () => {
   console.log(user)
   console.log(equipmentsNew)
   return (
+
     <>
-      <div style={{ marginTop: "20vh" }}>
+    <HeroDetalle/>
+      <div >
         {/* TEXT INPUNT DE BUSQUEDA */}
         <Box
           component="form"

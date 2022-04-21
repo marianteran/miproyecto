@@ -110,12 +110,16 @@ const Navb = () => {
                                 <LinkRouter className="nav-link" to="/servicios">Services</LinkRouter>
                             </li>
                         </ul>
+                        {user?  
+                                                <div className='nav-Cart'>
+                                                <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
+                                                    <i className="fa fa-shopping-cart me-1"></i> Cart(0)
+                                                </LinkRouter>
+                                            </div>
+                        :
+                        ""
+                    }
 
-                        <div className='nav-Cart'>
-                            <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
-                                <i className="fa fa-shopping-cart me-1"></i> Cart(0)
-                            </LinkRouter>
-                        </div>
 
                         <div className="buttons">
                             {!user ?
