@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import Hero from './Hero'
 import HeroGothic from './HeroGothic'
 import './home.css'
 
 const Home = () => {
+    useEffect(() => {
+        window.scroll(0, 0);
+      }, []);
+
+
     return (
         <>
 

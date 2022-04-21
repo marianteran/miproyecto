@@ -18,23 +18,25 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const SocialMedia = () => {
-	
+
 	//BASES DE DATOS:
 	const [{ smedia }, dispatch] = useStateValue()
-    const [redes, setRedes] = useState()
+	const [redes, setRedes] = useState()
 	useEffect(() => {
+		window.scroll(0, 0);
+
 		axios.get("http://localhost:4000/api/smedia")
 			.then(response => {
 				dispatch({
 					type: accionType.SMEDIADB,
 					smedia: response.data.response.smedia
 				})
-                console.log(response.data.response.socialMedia) 
-                setRedes(response.data.response.socialMedia)
+				console.log(response.data.response.socialMedia)
+				setRedes(response.data.response.socialMedia)
 			})
 
-		
-	}, []) 
+
+	}, [])
 
 
 
@@ -45,11 +47,11 @@ const SocialMedia = () => {
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
 	const [presuSend, setPresuSend] = useState(false)
-    const [red, setRed] = useState()
-	
+	const [red, setRed] = useState()
 
 
-	
+
+
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
@@ -82,8 +84,9 @@ const SocialMedia = () => {
 	function presupuesto() {
 		setPresuSend(true)
 	}
-    function selectRed(event) {
-        setRed(event.target.name)}
+	function selectRed(event) {
+		setRed(event.target.name)
+	}
 
 
 	console.log(red)
@@ -93,36 +96,40 @@ const SocialMedia = () => {
 
 
 			<div className="detalleAppWebContainer">
-            <div className="checkboxstatic">
+				<div className="checkboxstatic">
 					{redes?.map((app) => {
 						return (
 							<div>
-					{/* 			{app.name === "Static" ? */}
-									<Checkbox {...label} Change={selectRed} name={app.name}
-									/> {app.name} 
-									{/* : <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp} */}
-									{/* />} */}
+								{/* 			{app.name === "Static" ? */}
+								<Checkbox {...label} Change={selectRed} name={app.name}
+								/> {app.name}
+								{/* : <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp} */}
+								{/* />} */}
 								{/* {app.name} */}
 							</div>)
 					})
 					}
-				</div>		
+				</div>
 
-					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
+				<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
 
-						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-							<div className="detalleProductImg">
-								<img src={process.env.PUBLIC_URL + `/img/apps/SocialMedia/${imgenPc}`} alt="images"></img>
-							</div>
+					<div className="socialmediamobile"  style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", marginRight:10 }}>
+						<div className="detalleProductImgSmedia">
+							<img src={process.env.PUBLIC_URL + `/img/apps/SocialMedia/${imgenPc}`} alt="images"></img>
+						</div>
 
-							<div>
-								{!presuSend ?
-									<List
-										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-										subheader={<ListSubheader>functions</ListSubheader>}
-									>
-										{redes?
-                                        redes[0].functions.map((item) => {
+						<div>
+							{!presuSend ?
+								<List
+									className="listSMmobile"
+									sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',marginLeft:10 }}
+									
+								>
+									<div className='subtitle-principal-web '>
+											<h3>Custom Social Media Product </h3>
+										</div>
+									{redes ?
+										redes[0].functions.map((item) => {
 											return (
 												<div>
 													<ListItem>
@@ -142,20 +149,23 @@ const SocialMedia = () => {
 													</ListItem>
 												</div>
 											)
-										}):""}
-										<h3>Total:{" " + priceTotal + " $USD"}</h3>
-										<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
+										}) : ""}
+										<div className='subtitle-total '>
+											<h3 >Total:{" " + priceTotal + " $USD"}</h3>
+										</div>
 
+										<div className="boton-consulta">
+											<button onClick={() => presupuesto()} type="button" className="myButton">Consult</button>
+										</div>
+								</List> : " "}
 
-									</List> :   " "}
-
-							</div>
-						</div>
-						<div>
-							{presuSend ?
-								<PresupuestoEnv checked={checked} app={redes} /> : ""}
 						</div>
 					</div>
+					<div>
+						{presuSend ?
+							<PresupuestoEnv checked={checked} app={redes} /> : ""}
+					</div>
+				</div>
 
 
 
