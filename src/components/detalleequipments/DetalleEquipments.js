@@ -216,7 +216,7 @@ const DetalleEquipments = () => {
             {equipmentsNew.length > 0 ?
               equipmentsNew?.map(equipment => {
                 return (
-                  <Card sx={{ width: 340, margin: "20px", boxShadow: "1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
+                  <Card key={equipment._id} sx={{ width: 340, margin: "20px", boxShadow: "1px 0px 5px 3px rgba(0,0,0,0.1)" }}>
                     <CardHeader
                       sx={{ cursor: "pointer", height: "30px", paddingY: 6 }}
                       avatar={
@@ -226,11 +226,7 @@ const DetalleEquipments = () => {
                           onClick={() => favorite(equipment._id)}
 
                         />}
-                      /*      action={
-                             <LinkRouter key={equipment._id} to={`/equipment/${equipment._id}`}>
-                               <FavoriteIcon style={{ color: "#7dd6e5" }} />
-                             </LinkRouter>
-                           } */
+                     
                       title={equipment.name}
                     />
                     <Swiper navigation={true} modules={[Navigation]} >
