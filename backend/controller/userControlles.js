@@ -176,7 +176,8 @@ const userControllers = {
                 email: req.user.email, 
                 connected:req.user.connected , 
                 id:req.user.id,
-                favorite:req.user.favorite},
+                favorite:req.user.favorite,
+                from:req.user.from},
                 response:"Welcome Back Again "+req.user.name})
         }
         else{
