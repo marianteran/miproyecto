@@ -90,7 +90,7 @@ const Navb = () => {
     }
 
 
-console.log(carro);
+console.log(user);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar fixed-top   py-3 shadow-sm">
@@ -147,6 +147,7 @@ console.log(carro);
                                         {user.datosUser.from !== "Seoma" ?
                                             <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
+                                            
                                             <Avatar sx={{ bgcolor: red[500] }} style={{ width: 50, height: 50, padding: 2, marginTop: 6, marginLeft: 4 }}>
                                                 {user.datosUser.img}
                                             </Avatar>
