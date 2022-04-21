@@ -45,6 +45,7 @@ const SocialMedia = () => {
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
 	const [presuSend, setPresuSend] = useState(false)
+    const [red, setRed] = useState()
 	
 
 
@@ -81,16 +82,31 @@ const SocialMedia = () => {
 	function presupuesto() {
 		setPresuSend(true)
 	}
+    function selectRed(event) {
+        setRed(event.target.name)}
 
 
-
-	console.log(redes)
+	console.log(red)
 	return (
 		<>
 			<div>< HeroDetalle /></div>
 
 
-			<div className="detalleAppWebContainer">		
+			<div className="detalleAppWebContainer">
+            <div className="checkboxstatic">
+					{redes?.map((app) => {
+						return (
+							<div>
+					{/* 			{app.name === "Static" ? */}
+									<Checkbox {...label} Change={selectRed} name={app.name}
+									/> {app.name} 
+									{/* : <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp} */}
+									{/* />} */}
+								{/* {app.name} */}
+							</div>)
+					})
+					}
+				</div>		
 
 					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
 
