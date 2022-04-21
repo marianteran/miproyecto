@@ -17,11 +17,12 @@ import PresupuestoEnv from "./PresupuestoEnv.js";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const DetalleAppWeb = () => {
-	
+const DetalleAppMobile = () => {
+
 	//BASES DE DATOS:
 	const [{ apps }, dispatch] = useStateValue()
 	useEffect(() => {
+		window.scroll(0, 0);
 		axios.get("http://localhost:4000/api/apps")
 			.then(response => {
 				dispatch({
@@ -30,7 +31,7 @@ const DetalleAppWeb = () => {
 				})
 			})
 
-		
+
 	}, [])
 
 
@@ -42,10 +43,10 @@ const DetalleAppWeb = () => {
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
 	const [presuSend, setPresuSend] = useState(false)
-	
 
 
-	
+
+
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
@@ -129,10 +130,10 @@ const DetalleAppWeb = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
+					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", alignItems: "center", }}>
 
 						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-							<div className="detalleProductImg">
+							<div className="detalleProductImgMobile">
 								<img src={process.env.PUBLIC_URL + `/img/apps/appMobile/${imgenPc}`} alt="images"></img>
 							</div>
 
@@ -140,8 +141,11 @@ const DetalleAppWeb = () => {
 								{!presuSend ?
 									<List
 										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-										subheader={<ListSubheader>functions</ListSubheader>}
+
 									>
+										<div className='subtitle-principal-web '>
+											<h3>Custom Mobile Application </h3>
+										</div>
 										{appMobile[1].functions.map((item) => {
 											return (
 												<div>
@@ -163,11 +167,15 @@ const DetalleAppWeb = () => {
 												</div>
 											)
 										})}
-										<h3>Total:{" " + priceTotal + " $USD"}</h3>
-										<button onClick={() => presupuesto()} type="button" class="btn btn-primary">Consult for this budget</button>
+										<div className='subtitle-total '>
+											<h3 >Total:{" " + priceTotal + " $USD"}</h3>
+										</div>
 
+										<div className="boton-consulta">
+											<button onClick={() => presupuesto()} type="button" className="myButton">Consult</button>
+										</div>
 
-									</List> :   " "}
+									</List> : " "}
 
 							</div>
 						</div>
@@ -182,8 +190,51 @@ const DetalleAppWeb = () => {
 
 
 					:
-					<div className="detalleProductImg">
-						<img src={StaticMobile} alt="" />
+
+					<div className="detalleProductContainerStatic" >
+
+
+
+						<div className="detalleProductImgMobileStatic">
+							<img src={StaticMobile} alt="" />
+						</div>
+
+						<div className="presupuestoContenedor">
+							<div className="container">
+
+
+								<div className='subtitle-principal-web '>
+									<h3>Static Mobile Application </h3>
+								</div>
+
+								<p>We create your static website. Show the information of your business and reach your customers
+								</p>
+
+
+								<div>
+									<h6> <strong> Functions</strong>   </h6>
+
+									<table>
+										<tr>
+											<td>Home Page</td>
+											<td>Information component</td>
+										</tr>
+
+										<tr>
+											<td>Contact component</td>
+											<td> Image reel</td>
+										</tr>
+									</table>
+
+								</div>
+								<p><strong>Time:</strong> 15 days</p>
+								<p><strong>Price</strong> 300 U$D</p>
+
+
+							</div>
+
+						</div>
+
 					</div>}
 
 			</div>
@@ -191,4 +242,4 @@ const DetalleAppWeb = () => {
 	)
 }
 
-export default DetalleAppWeb
+export default DetalleAppMobile

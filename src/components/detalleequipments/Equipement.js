@@ -31,6 +31,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ClearIcon from '@mui/icons-material/Clear';
 import PersonIcon from '@mui/icons-material/Person';
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 
 const ExpandMore = styled((props) => {
@@ -123,6 +124,10 @@ const Equipment = () => {
     }
    
 
+    const addCart = () =>{
+        setSelectionRange()
+    }
+
 
     function fecha() {
         var registro = new Date()
@@ -167,7 +172,7 @@ const Equipment = () => {
 
                                             {/* <div className="equipments-likes">{item.likes}♥</div> */}
 
-                                            <div className="equipments-AddToCart">Add to cart</div>
+                                            <button onClick={addCart(item._id)} className="equipments-AddToCart">Add to cart</button>
 
                                         </div>
 

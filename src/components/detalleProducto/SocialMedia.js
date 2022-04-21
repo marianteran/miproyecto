@@ -17,18 +17,22 @@ import PresupuestoEnv from "./PresupuestoEnv.js";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const DetalleAppWeb = () => {
+const SocialMedia = () => {
 
 	//BASES DE DATOS:
-	const [{ apps }, dispatch] = useStateValue()
+	const [{ smedia }, dispatch] = useStateValue()
+	const [redes, setRedes] = useState()
 	useEffect(() => {
 		window.scroll(0, 0);
-		axios.get("http://localhost:4000/api/apps")
+
+		axios.get("http://localhost:4000/api/smedia")
 			.then(response => {
 				dispatch({
-					type: accionType.APPSDB,
-					apps: response.data.response.apps
+					type: accionType.SMEDIADB,
+					smedia: response.data.response.smedia
 				})
+				console.log(response.data.response.socialMedia)
+				setRedes(response.data.response.socialMedia)
 			})
 
 
@@ -38,11 +42,12 @@ const DetalleAppWeb = () => {
 
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
-	const [imgenPc, setImagenPc] = useState('pStatic.png')
+	const [imgenPc, setImagenPc] = useState('smedia1.png')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
 	const [presuSend, setPresuSend] = useState(false)
+	const [red, setRed] = useState()
 
 
 
@@ -69,7 +74,7 @@ const DetalleAppWeb = () => {
 		}
 
 		setChecked(newChecked);
-		appWeb[1].functions.map((item) => {
+		redes.functions.map((item) => {
 			if (item.title === value) {
 				setImagenPc(item.image)
 			}
@@ -79,76 +84,52 @@ const DetalleAppWeb = () => {
 	function presupuesto() {
 		setPresuSend(true)
 	}
-
-
-
-	//CONST SETEABLES:
-	const [appPulsada, setAppPulsada] = useState()
-	const [statica, setStatica] = useState(true)
-	const [personal, setPersonal] = useState(false)
-	let appWeb = []
-
-	apps.map((app) => {
-		if (app.type === "App Web")
-			return (
-				appWeb.push(app)
-			)
-	})
-	const tipoDeAppp = (event) => {
-		if (event.target.name === "Personalized" && event.target.checked) {
-			setAppPulsada(event.target.name)
-			setStatica(false)
-			setPersonal(true)
-		}
-		else {
-			setAppPulsada("Static")
-			setPersonal(false)
-			setStatica(true)
-		}
+	function selectRed(event) {
+		setRed(event.target.name)
 	}
-	console.log(appWeb)
+
+
+	console.log(red)
 	return (
 		<>
 			<div>< HeroDetalle /></div>
 
 
 			<div className="detalleAppWebContainer">
-
 				<div className="checkboxstatic">
-					{appWeb.map((app) => {
+					{redes?.map((app) => {
 						return (
 							<div>
-								{app.name === "Static" ?
-									<Checkbox {...label} checked={statica} name={app.name} onClick={tipoDeAppp}
-									/>
-									: <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp}
-									/>}
-								{app.name}
+								{/* 			{app.name === "Static" ? */}
+								<Checkbox {...label} Change={selectRed} name={app.name}
+								/> {app.name}
+								{/* : <Checkbox {...label} checked={personal} name={app.name} onClick={tipoDeAppp} */}
+								{/* />} */}
+								{/* {app.name} */}
 							</div>)
 					})
 					}
 				</div>
-				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap: "wrap", alignItems: "center" }}>
+				<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
 
-						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-							<div className="detalleProductImg">
-								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
-							</div>
+					<div className="socialmediamobile"  style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", marginRight:10 }}>
+						<div className="detalleProductImgSmedia">
+							<img src={process.env.PUBLIC_URL + `/img/apps/SocialMedia/${imgenPc}`} alt="images"></img>
+						</div>
 
-							<div>
-
-
-								{!presuSend ?
-									<List
-										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-
-									>
-										<div className='subtitle-principal-web '>
-											<h3>Custom Web Application </h3>
+						<div>
+							{!presuSend ?
+								<List
+									className="listSMmobile"
+									sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',marginLeft:10 }}
+									
+								>
+									<div className='subtitle-principal-web '>
+											<h3>Custom Social Media Product </h3>
 										</div>
-										{appWeb[1].functions.map((item) => {
+									{redes ?
+										redes[0].functions.map((item) => {
 											return (
 												<div>
 													<ListItem>
@@ -168,8 +149,7 @@ const DetalleAppWeb = () => {
 													</ListItem>
 												</div>
 											)
-										})}
-
+										}) : ""}
 										<div className='subtitle-total '>
 											<h3 >Total:{" " + priceTotal + " $USD"}</h3>
 										</div>
@@ -177,72 +157,21 @@ const DetalleAppWeb = () => {
 										<div className="boton-consulta">
 											<button onClick={() => presupuesto()} type="button" className="myButton">Consult</button>
 										</div>
+								</List> : " "}
 
-									</List> : " "}
-
-							</div>
-						</div>
-
-
-
-						<div>
-							{presuSend ?
-								<PresupuestoEnv checked={checked} app={appWeb[1]} /> : ""}
 						</div>
 					</div>
+					<div>
+						{presuSend ?
+							<PresupuestoEnv checked={checked} app={redes} /> : ""}
+					</div>
+				</div>
 
 
-					:
-
-					<div className="detalleProductContainerStatic">
-						<div className="detalleProductImg">
-
-							<img src={StaticPC} alt="" />
-						</div>
-
-
-						<div className="presupuestoContenedor">
-							<div className="container">
-
-
-								<div className='subtitle-principal-web '>
-									<h3>Static Web Applications </h3>
-								</div>
-
-								<p>We create your static website. Show the information of your business and reach your customers
-								</p>
-
-
-								<div>
-									<h6> <strong> Functions</strong>   </h6>
-
-									<table>
-										<tr>
-											<td>Home Page</td>
-											<td>Information component</td>
-										</tr>
-
-										<tr>
-											<td>Contact component</td>
-											<td> Image reel</td>
-										</tr>
-									</table>
-
-								</div>
-								<p><strong>Time:</strong> 15 days</p>
-								<p><strong>Price</strong> 300 U$D</p>
-
-
-							</div>
-
-						</div>
-
-
-					</div>}
 
 			</div>
 		</>
 	)
 }
 
-export default DetalleAppWeb
+export default SocialMedia

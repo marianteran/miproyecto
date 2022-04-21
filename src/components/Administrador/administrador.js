@@ -24,22 +24,27 @@ const Home = () => {
 	return (
 		<>
 
-		<div className="administrador">
-
-		<Notificaciones />
-		</div>
-
-		
 
 
 
-         <Notificaciones />
+
+			{/*          <Notificaciones />
+ */}
+
+
+			<div style={{marginTop:"10vh", display:"flex", flexDirection:"row"}}>
+
+
+ 
 
 
 
-{/* 
-			
-				<div className="btn-group-vertical" >
+
+
+
+
+
+				{/* <div className="btn-group-vertical" >
 					<div class="dropdown">
 						<button
 							class="btn btn-light dropdown-toggle"
@@ -82,15 +87,20 @@ const Home = () => {
 					<button type="button" class="btn btn-light">
 						Data Base
 					</button>
+				</div> */}
+
+
+
+				<div className="administrador">
+
+					<Notificaciones />
 				</div>
 
-			
+			</div>
 
 
 
-
-
-
+			{/* 
 			</div>
 
 
@@ -128,7 +138,10 @@ const Home = () => {
 					New Product
 				</button>
 				<button type="button" class="btn btn-light button-administrador">
-					Notificaciones
+				<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+								{notifica}
+								<span class="visually-hidden">Notificaciones</span>
+							</span>					
 				</button>
 
 			</div>
