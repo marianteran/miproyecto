@@ -11,6 +11,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const PresupuestoEnv = (props) => {
 
+    console.log(props)
     const navigate = useNavigate();
 
     const [{ user, favorites }, dispatch] = useStateValue()
@@ -21,7 +22,6 @@ const PresupuestoEnv = (props) => {
 
 
     useEffect(() => {
-       
 
 
     }, [reload])
@@ -62,6 +62,7 @@ const PresupuestoEnv = (props) => {
 
     return (
         <>
+        
             <div className="presupuestoContenedor" >
 
                 <div className="mb-3 row">
