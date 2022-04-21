@@ -39,19 +39,21 @@ const AccountUser = () => {
         equipments: response.data.response.equipments,
       });
     });
-    axios.get("http://localhost:4000/api/questions/").then((response) => {
+    axios.get("http://localhost:4000/api/questions/")
+    .then((response) => {
       let temporal = [];
       response.data.response.questions.map((item) => {
         if (item.answer && item.user._id === user.datosUser.id && !item.check) {
-          return temporal.push(item);
-        }
+          temporal.push(item)
+          console.log(temporal)
+          setRespuesta(temporal)}
+          console.log(respuesta);
+          dispatch({
+            type: accionType.NOTIFICA,
+            notifica: respuesta.length,
+          })
       });
-      setRespuesta(temporal);
-      console.log(respuesta);
-      dispatch({
-        type: accionType.NOTIFICA,
-        notifica: respuesta.length,
-      });
+
     });
   }, [reload]);
 
@@ -77,17 +79,15 @@ const AccountUser = () => {
           }
         });
         setRespuesta(temporal);
-        console.log(respuesta);
         dispatch({
           type: accionType.NOTIFICA,
           notifica: respuesta.length,
         });
-        console.log(respuesta);
         setReload(!reload);
       });
   };
 
-  let idFavorite = [];
+
   let myFavorite = [];
 
   equipments.map((item) => {
@@ -115,7 +115,6 @@ const AccountUser = () => {
         });
     }
   };
-  console.log(respuesta);
   return (
     <>
       {user.datosUser.email !== "seomadesign@gmail.com" ? (

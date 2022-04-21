@@ -12,7 +12,6 @@ const Home = () => {
 	const [reload, setReload] = useState(false);
 
 
-	let idFavorite = [];
 	let myFavorite = [];
 
 	equipments.map((item) => {

@@ -5,7 +5,8 @@ export const initialState = { // crear estados
     equipmentsNew: [],
     user: null,   
     favorites:[],
-    notifica:""
+    notifica:"",
+    carro:[]
 }
 
 export const accionType = { // mis accioness
@@ -14,7 +15,8 @@ export const accionType = { // mis accioness
     EQUIPMENTSDB: "EQUIPMENTSDB",
     USERDB: "USERDB",
     FILTER: "FILTER",
-    NOTIFICA: "NOTIFICA"
+    NOTIFICA: "NOTIFICA",
+    CARRO: "CARRO"
     
 }
 
@@ -51,6 +53,11 @@ const reducer = (state, action) => {
                     return {
                         ...state,
                         notifica: action.notifica
+                    }
+                    case "CARRO":
+                    return {
+                        ...state,
+                        carro: action.carro
                     }
                    
                                     

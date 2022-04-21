@@ -59,7 +59,7 @@ const StyledMenu = styled((props) => (
 const Navb = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const [{ user, notifica }, dispatch] = useStateValue()
+    const [{ user, notifica, carro }, dispatch] = useStateValue()
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -87,7 +87,7 @@ const Navb = () => {
     }
 
 
-
+console.log(carro);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar fixed-top   py-3 shadow-sm">
@@ -113,7 +113,7 @@ const Navb = () => {
 
                         <div className='nav-Cart'>
                             <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
-                                <i className="fa fa-shopping-cart me-1"></i> Cart(0)
+                                <i className="fa fa-shopping-cart me-1"></i> Cart({carro})
                             </LinkRouter>
                         </div>
 
