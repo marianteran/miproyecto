@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
@@ -16,6 +16,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import logo from './logo.png'
 
 const StyledMenu = styled((props) => (
+
+
+
     <Menu
         elevation={0}
         anchorOrigin={{
@@ -59,7 +62,7 @@ const StyledMenu = styled((props) => (
 const Navb = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const [{ user, notifica }, dispatch] = useStateValue()
+    const [{ user, notifica, carro }, dispatch] = useStateValue()
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -78,6 +81,7 @@ const Navb = () => {
                         buttons: "ok"
                     })
                     localStorage.removeItem("token")
+                    localStorage.removeItem("cart")
                     dispatch({
                         type: accionType.USERDB,
                         user: null
@@ -87,13 +91,13 @@ const Navb = () => {
     }
 
 
-
+    console.log(user);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar fixed-top   py-3 shadow-sm">
                 <div className="container">
                     <LinkRouter className="navbar-brand fw-bold fs-4" to="/">
-                        <img  src={logo} width="100" alt="logo"></img>
+                        <img src={logo} width="100" alt="logo"></img>
                     </LinkRouter>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -110,15 +114,15 @@ const Navb = () => {
                                 <LinkRouter className="nav-link" to="/servicios">Services</LinkRouter>
                             </li>
                         </ul>
-                        {user?  
-                                                <div className='nav-Cart'>
-                                                <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
-                                                    <i className="fa fa-shopping-cart me-1"></i> Cart(0)
-                                                </LinkRouter>
-                                            </div>
-                        :
-                        ""
-                    }
+                        {user ?
+                            <div className='nav-Cart'>
+                                <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
+                                    <i className="fa fa-shopping-cart me-1"></i> Cart
+                                </LinkRouter>
+                            </div>
+                            :
+                            ""
+                        }
 
 
                         <div className="buttons">
@@ -138,15 +142,23 @@ const Navb = () => {
                                         onClick={handleClick}
                                     // endIcon={<KeyboardArrowDownIcon />}
                                     >
-                                        <span className="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
-                                            {notifica}                                       
-                                        </span>
+
+                                        {user.datosUser.email === "seomadesign@gmail.com" ?
+                                            <span className="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+                                                {notifica}
+                                            </span>
+                                            : ""
+
+                                        }
+
+
                                         {user.datosUser.from !== "Seoma" ?
                                             <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
                                             :
-                                            <Avatar sx={{ bgcolor: red[500] }} style={{ width: 50, height: 50, padding: 2, marginTop: 6, marginLeft: 4 }}>
+
+                                            <div className='imagen-logo-user'>
                                                 {user.datosUser.img}
-                                            </Avatar>
+                                            </div>
                                         }
                                     </Button>
                                     <StyledMenu
@@ -159,8 +171,10 @@ const Navb = () => {
                                         onClose={handleClose}
                                     >
                                         <MenuItem onClick={() => cerrarSesion()} disableRipple>
-                                            <PersonOffIcon />
-                                            Sign Out
+                                            <LinkRouter to="/">
+                                                <PersonOffIcon />
+                                                Sign Out
+                                            </LinkRouter>
                                         </MenuItem>
                                         <LinkRouter className='Navb-AccountUser' to='/SignIn'>
                                             <MenuItem >

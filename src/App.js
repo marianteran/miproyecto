@@ -19,6 +19,7 @@ import DetalleEquipments from './components/detalleequipments/DetalleEquipments'
 import Equipment from './components/detalleequipments/Equipement';
 import Respuesta from './components/detalleProducto/Respuesta';
 import SocialMedia from './components/detalleProducto/SocialMedia';
+import Nosotros from './components/nosotros/Nosotros';
 
 function App() {
   const [{ equipments }, dispatch] = useStateValue() 
@@ -76,6 +77,7 @@ function App() {
           <Route path="/equipments" element={<DetalleEquipments />} />
           <Route path="/equipment/:id" element={<Equipment/>} />
           <Route path="/respuesta" element={<Respuesta/>} />
+          <Route path="/nosotros" element={<Nosotros/>} />
 
 
         </Routes>

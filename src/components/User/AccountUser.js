@@ -47,7 +47,7 @@ const AccountUser = () => {
                 }
             });
             setRespuesta(temporal);
-            console.log(respuesta);
+    
             dispatch({
                 type: accionType.NOTIFICA,
                 notifica: respuesta.length,
@@ -77,12 +77,12 @@ const AccountUser = () => {
                     }
                 });
                 setRespuesta(temporal);
-                console.log(respuesta);
+          
                 dispatch({
                     type: accionType.NOTIFICA,
                     notifica: respuesta.length,
                 });
-                console.log(respuesta);
+         
                 setReload(!reload);
             });
     };
@@ -115,7 +115,7 @@ const AccountUser = () => {
                 });
         }
     };
-    console.log(respuesta);
+
     return (
         <>
             {user.datosUser.email !== "seomadesign@gmail.com" ? (
