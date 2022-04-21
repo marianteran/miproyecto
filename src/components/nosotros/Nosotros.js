@@ -8,7 +8,7 @@ const Nosotros = () => {
         <div className='contenedor-nosotros'>
 
             <div className="card-nosotros">
-                <img src={ana} class="card-img-top-nosotros" alt="..."></img>
+                
                     <div className="card-body">
                         <p className="card-text">Ana Mendoza</p>
                     </div>
