@@ -20,6 +20,7 @@ const Footer = () => {
           <div><Linkrouter className="footer__link" to="/product">Products</Linkrouter></div>
 
           <div><Linkrouter className="footer__link" to="/servicios">Services</Linkrouter></div>
+          {/* <div><Linkrouter className="footer__link" to="/nosotros">Nosotros</Linkrouter></div> */}
 
         </div>
 
