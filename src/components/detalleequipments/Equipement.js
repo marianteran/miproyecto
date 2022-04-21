@@ -31,7 +31,6 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ClearIcon from '@mui/icons-material/Clear';
 import PersonIcon from '@mui/icons-material/Person';
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 
 const ExpandMore = styled((props) => {
@@ -58,7 +57,7 @@ const Equipment = () => {
     };
     const { id } = useParams()
     const [equipment, setEquipment] = useState()
-    const [{ user, favorites }, dispatch] = useStateValue()
+    const [{ user, favorites, carro }, dispatch] = useStateValue()
     const [reload, setReload] = useState(false)
     const [edit, setEdit] = useState(true)
     const [questions, setQuestions] = useState()
@@ -122,12 +121,33 @@ const Equipment = () => {
     const inputText = (event) => {
         setChangeQuestions(event.target.value)
     }
-   
 
-    const addCart = () =>{
-        setSelectionRange()
+
+    let temporal = []
+    const addCart = (equipment) => {
+        if (localStorage.getItem("cart") === null) {
+            temporal = [equipment]
+            console.log("entre al if");
+            localStorage.setItem("cart", JSON.stringify(temporal))
+            dispatch({
+                type: accionType.CARRO,
+                carro: temporal.length
+            })
+        }
+        else {
+            let localCart = localStorage.getItem("cart")
+            let imprimir = JSON.parse(localCart)        
+            imprimir.push(equipment)
+            console.log(imprimir);
+            localStorage.removeItem("cart")
+            localStorage.setItem("cart", JSON.stringify(imprimir))
+            dispatch({
+                type: accionType.CARRO,
+                carro: imprimir.length
+            })
+        }
+        
     }
-
 
     function fecha() {
         var registro = new Date()
@@ -172,7 +192,7 @@ const Equipment = () => {
 
                                             {/* <div className="equipments-likes">{item.likes}♥</div> */}
 
-                                            <button onClick={addCart(item._id)} className="equipments-AddToCart">Add to cart</button>
+                                            <button onClick={() => addCart(item)} className="equipments-AddToCart">Add to cart</button>
 
                                         </div>
 
@@ -185,23 +205,23 @@ const Equipment = () => {
 
 
                                     <div className="equipments-image">
-                                    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
-                                        </SwiperSlide>
+                                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[0]}`} alt="images"></img>
+                                            </SwiperSlide>
 
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
-                                        </SwiperSlide>
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[1]}`} alt="images"></img>
+                                            </SwiperSlide>
 
-                                        <SwiperSlide className="swiperSlidedetalle">
-                                            <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
-                                        </SwiperSlide>
-                                    </Swiper>
-                                </div>
+                                            <SwiperSlide className="swiperSlidedetalle">
+                                                <img src={process.env.PUBLIC_URL + `/img/equipments/${item.image[2]}`} alt="images"></img>
+                                            </SwiperSlide>
+                                        </Swiper>
+                                    </div>
 
 
-                             
+
 
 
 
@@ -220,7 +240,7 @@ const Equipment = () => {
                                                     <form onSubmit={submitQuestions} >
                                                         <div>
                                                             <label for="exampleFormControlTextarea1" className="form-label"></label>
-                                                            <div style={{ display: "flex", justifyContent: "right", margin: 0}}>
+                                                            <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
                                                                 <ExpandMore
                                                                     // expand={expanded}
                                                                     onClick={handleExpandClick}

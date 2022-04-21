@@ -6,7 +6,8 @@ const questionsControllers = {
         let { equipment, message, user, date } = req.body.dataQuestions;
         let newEquipment = await Equipments.findOne({_id:equipment})  
         console.log(newEquipment)           
-        new Questions({       
+        new Questions({ 
+            idEquipment:equipment,      
             equipment:newEquipment,
             user: user,
             questions: message,
