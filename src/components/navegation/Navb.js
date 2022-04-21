@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link as LinkRouter } from "react-router-dom";
 import { accionType } from '../../context/reducer';
 import { useStateValue } from '../../context/Stateprovider';
@@ -16,6 +16,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import logo from './logo.png'
 
 const StyledMenu = styled((props) => (
+
+    
+
     <Menu
         elevation={0}
         anchorOrigin={{
@@ -113,7 +116,7 @@ console.log(carro);
                         {user?  
                                                 <div className='nav-Cart'>
                                                 <LinkRouter to='/cart' className="btn btn-outline-light ms-2">
-                                                    <i className="fa fa-shopping-cart me-1"></i> Cart(0)
+                                                    <i className="fa fa-shopping-cart me-1"></i> Cart
                                                 </LinkRouter>
                                             </div>
                         :

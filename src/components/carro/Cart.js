@@ -20,6 +20,7 @@ const Cart = () => {
 	const [priceTotal, setPriceTotal] = useState(0)
 
 
+	
 	useEffect(() => {
 		let cont = 0
 		console.log(localStorage.getItem("cart"));
@@ -77,6 +78,8 @@ const Cart = () => {
 		<div id="cart">
 			<div className="cartContenedor">
 				{/* CONTACT */}
+
+				
 				<div className="cartInfo">
 					<h3 className="cartTitle" >Contact information</h3>
 					<Box className="cartBox">
@@ -92,7 +95,7 @@ const Cart = () => {
 						<TextField fullWidth label="Phone Number" id="Phone Number" />
 					</Box>
 				</div>
-
+				
 				{/* SHOPPING CART */}
 				<div className='shopping-cart'>
 					<h3 className="cartTitle">
