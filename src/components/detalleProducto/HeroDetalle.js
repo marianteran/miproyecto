@@ -13,7 +13,6 @@ const HeroDetalle = () => {
 
 
 
-
                 </div>
 
             </div>
