@@ -5,7 +5,7 @@
 .encabezadoDetalle{
     width: 100%;
     height: 500px;
-    background:url('./img/website1.jpeg');
+    background:url('./img/detalle1.jpg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -19,7 +19,7 @@
 
 .encabezadoDetalle h1{
     padding-top: 2%;
-    color: whitesmoke;
+    color: white;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
     font-size: 10vmin;
     margin: 20px 0px;

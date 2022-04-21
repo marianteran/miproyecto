@@ -6,45 +6,37 @@ import axios from "axios";
 import Notificaciones from "./Notificaciones";
 import NuevoProducto from "./NuevoProducto";
 
-
 const Home = () => {
-	const [{ user, equipments, notifica }, dispatch] = useStateValue();
-	const [reload, setReload] = useState(false);
+  const [{ user, equipments, notifica }, dispatch] = useStateValue();
+  const [reload, setReload] = useState(false);
+
+  let idFavorite = [];
+  let myFavorite = [];
+
+  equipments.map((item) => {
+    if (user.datosUser.favorite.includes(item._id)) {
+      myFavorite.push(item);
+    }
+  });
+
+  return (
+    <>
+      <section className="section2">
+        <div className="banner-admin">
 
 
-	let idFavorite = [];
-	let myFavorite = [];
+        </div>
+      </section>
 
-	equipments.map((item) => {
-		if (user.datosUser.favorite.includes(item._id)) {
-			myFavorite.push(item);
-		}
-	});
+	  <div className='subtitle-principal-web mt-5 '>
+											<h3><strong>Notifications account manage</strong></h3>
+										</div>
 
-	return (
-		<>
+      {/*          <Notificaciones />
+       */}
 
-
-
-
-
-			{/*          <Notificaciones />
- */}
-
-
-			<div style={{marginTop:"10vh", display:"flex", flexDirection:"row"}}>
-
-
- 
-
-
-
-
-
-
-
-
-				{/* <div className="btn-group-vertical" >
+      <div style={{ marginTop: "10vh", display: "flex", flexDirection: "row" }}>
+        {/* <div className="btn-group-vertical" >
 					<div class="dropdown">
 						<button
 							class="btn btn-light dropdown-toggle"
@@ -89,18 +81,12 @@ const Home = () => {
 					</button>
 				</div> */}
 
+        <div className="administrador">
+          <Notificaciones />
+        </div>
+      </div>
 
-
-				<div className="administrador">
-
-					<Notificaciones />
-				</div>
-
-			</div>
-
-
-
-			{/* 
+      {/* 
 			</div>
 
 
@@ -147,8 +133,8 @@ const Home = () => {
 			</div>
 
  */}
-		</>
-	);
+    </>
+  );
 };
 
 export default Home;
