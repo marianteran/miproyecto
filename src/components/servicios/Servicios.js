@@ -15,11 +15,11 @@ const Servicios = () => {
   return (
     <>
       <section className="section2">
-        <div className="banner">
-          <div className="tittlebanner">
+        <div className="banner-service">
+        
             <h1>We can help you</h1>
             <p>ARE YOU GETTING THE BEST OUT OF YOUR IT INFRASTRUCTURE?</p>
-          </div>
+        
         </div>
       </section>
 

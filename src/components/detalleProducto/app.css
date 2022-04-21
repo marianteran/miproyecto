@@ -1,8 +1,6 @@
 /* hero product */
 
-#encabezado{
-    margin-top: 10vh;
-}
+
   
 .encabezadoDetalle{
     width: 100%;
@@ -19,6 +17,23 @@
     
 }
 
+.encabezadoDetalle h1{
+    padding-top: 2%;
+    color: whitesmoke;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
+    font-size: 10vmin;
+    margin: 20px 0px;
+    text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
 /* checkbox */
 .checkboxstatic{
     display: flex;
@@ -33,10 +48,12 @@
 .detalleAppWebContainer{
     padding: 20px;
     margin: 5% 0% 5% 0%;
+   
+
 }
 
 .detalleProductImg{
-    width: 800px ;
+    width: 700px ;
     padding: 0 !important;
     margin: 0 !important;
     display: flex;
@@ -48,13 +65,27 @@
 
 .detalleProductImgMobile{
    
-    width: 400px;
+    width: 350px;
+    
 }
 
-.detalleProductImg img, .detalleProductImgMobile img{
+.detalleProductImgMobileStatic{
+    width: 350px;
+    
+}
+
+
+.detalleProductImgSmedia{
+    width: 350px;
+
+}
+
+.detalleProductImg img, .detalleProductImgMobile img,
+ .detalleProductImgMobileStatic img, .detalleProductImgSmedia img{
 
     width: 100%;
 }
+
 
 
 /* presupuesto  */
@@ -142,6 +173,43 @@
 }
 
 
+/* contenedor statico */
+
+.detalleProductContainerStatic{
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+
+    margin-left: 50px;
+}
+
+
+.subtitle-principal-web h3{
+    font-size: 4vmin;
+    color: var(--color-bg-variant);
+    text-align: center;
+    
+  }
+
+ .subtitle-total h3{
+     margin: 10px 0 10px 0;
+    font-size: 3vmin;
+    color: var(--color-bg-variant);
+    text-align: center;
+ }
+
+  td{
+
+    padding: 10px;
+
+  }
+
+  .boton-consulta{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
 
   /********************************************** M E D I A -Q U E R Y************************ */
 
@@ -183,6 +251,17 @@
         width: 300px;
     }
 
+    .detalleProductImgSmedia{
+        width: 200px;
+        
+
+    }
+
+    .socialmediamobile{
+        margin: 0!important;
+        justify-content: center !important;
+    }
+
   
   }
   
@@ -196,6 +275,23 @@
     .presupuestoContenedor{
         margin-top: 20px;
         width: 500px;
+    }
+
+    .detalleProductImgSmedia{
+        width: 200px;
+        
+
+    }
+
+    .socialmediamobile{
+        margin: 0!important;
+        justify-content: center !important;
+    }
+
+    .detalleProductImgMobile{
+   
+        width: 200px;
+        
     }
 
     
@@ -213,6 +309,23 @@
         margin-top: 20px;
         width: 300px;
     }
+
+    .detalleProductImgSmedia{
+        width: 150px;
+        
+
+    }
+
+    .socialmediamobile{
+        margin: 0!important;
+        display: flex;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .listSMmobile{
+        margin: 0 !important;
+    }
     
   
   }
@@ -226,6 +339,24 @@
     .presupuestoContenedor{
         margin-top: 20px;
         width: 300px;
+    }
+
+
+    .detalleProductImgSmedia{
+        width: 200px;
+        
+
+    }
+
+    .socialmediamobile{
+        margin: 0!important;
+        display: flex;
+        flex-wrap: wrap !important;
+        justify-content: center !important;;
+    }
+
+    .listSMmobile{
+        margin: 0 !important;
     }
 
   }
