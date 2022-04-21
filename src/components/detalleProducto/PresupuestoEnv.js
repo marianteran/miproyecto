@@ -122,7 +122,7 @@ const PresupuestoEnv = (props) => {
         : 
         
         <div>
-            <p>You must sign in. If you don't have a user yet, please sign up <LinkRouter to="/signup">here</LinkRouter></p>
+            <p>You must sign in. If you don't have a user yet, please sign up <LinkRouter to="/signup" style={{textDecoration:"none", color:"var(--color-bg-variant)", fontWeight:"bold"}}>here</LinkRouter></p>
             
         </div>
         
