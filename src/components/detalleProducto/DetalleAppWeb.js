@@ -232,6 +232,10 @@ const DetalleAppWeb = () => {
 								<p><strong>Time:</strong> 15 days</p>
 								<p><strong>Price</strong> 300 U$D</p>
 
+								
+									<p>For more info send an email to <a  href="mailto:seomadesign@gmail.com" target="_blank" style={{textDecoration:"none", color:"var(--color-bg-variant)", fontWeight:"bold"}} >Seoma Design Department</a> </p>
+								
+
 
 							</div>
 
