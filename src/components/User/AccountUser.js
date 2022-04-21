@@ -201,7 +201,7 @@ const AccountUser = () => {
                                 marginTop: "2vh",
                             }}> */}
 
-                        <div className="account-FavNotGeneral">
+                        <div className="account-FavNotGeneral mb-5">
 
                             {/* Card favorites */}
                             {/* <div
@@ -215,12 +215,12 @@ const AccountUser = () => {
                             > */}
 
                             {/* <div className="card custom-card text-center card text-center col-lg-8 col-sm-5 col-md-5"> */}
-                            <div className="card custom-card text-center card text-center col-lg-10 col-sm-8 col-md-6">
-                                <div className="card-header background-card">
-                                    <ul className="nav nav-tabs card-header-tabs">
-                                        <li className="nav-item">
+                            <div className="card custom-card text-center card text-center col-lg-10 col-sm-8 col-md-6 my-5">
+                                <div className="card-header background-card ">
+                                    <ul className="nav nav-tabs card-header-tabs ">
+                                        <li className="nav-item ">
                                             <a
-                                                className="nav-link custom-nav-link custom-link active background-card-click"
+                                                className="nav-link custom-nav-link custom-link active background-card-click "
                                                 aria-current="true"
                                                 href="#"
                                                 onClick={() => actNoti("favorite")}
@@ -243,10 +243,10 @@ const AccountUser = () => {
                                     </ul>
                                 </div>
                                 {notificaciones ? (
-                                    <div>
+                                    <div className="pruebaUser" >
                                         {respuesta?.map((item) => {
                                             return (
-                                                <div className="card">
+                                                <div className="card ">
                                                     <h4> {item.answer}</h4>
                                                     <div
                                                         className="d-flex"
@@ -271,10 +271,8 @@ const AccountUser = () => {
                                     </div>
                                 ) : (
                                     <div className="card-body custom-card-body ">
-                                        <h5 className="card-title">Your favorite items</h5>
-                                        <p className="card-text">
-                                            Find a list of your favorite items
-                                        </p>
+                                
+                                    
                                         {/* cards de favoritos */}
                                         <div style={{ display: "flex" }}>
                                             {myFavorite?.map((item) => {
@@ -282,7 +280,7 @@ const AccountUser = () => {
                                                     <Card
                                                         sx={{
                                                             width: 340,
-                                                            margin: "20px",
+                                                            margin: "10px",
                                                             boxShadow: "1px 0px 5px 3px rgba(0,0,0,0.1)",
                                                         }}
                                                     >

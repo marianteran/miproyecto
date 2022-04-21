@@ -30,17 +30,20 @@
 }
 
 .background-card {
-    background-color: rgb(218, 218, 218);
+    background-color: #078d9c;
+    color: white;
 }
 
 .background-card-click:hover {
-    background-color: rgb(111, 108, 108);
+    background-color:#078d9c;
 }
 
 
 .custom-card-body {
     margin-top: 2rem;
-    height: 12rem;
+    height: 100%;
+    margin-bottom: 5%;
+   
 }
 
 .favourite-button {
@@ -58,6 +61,8 @@
     font-weight: bold;
     color: rgba(48, 47, 47, 0.6) !important;
 }
+
+
 
 .custom-image {
     margin-bottom: 4rem;
