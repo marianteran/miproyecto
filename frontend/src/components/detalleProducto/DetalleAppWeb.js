@@ -134,7 +134,7 @@ const DetalleAppWeb = () => {
 
 						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 							<div className="detalleProductImg">
-								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
+								<img src={process.env.PUBLIC_URL+`/img/AppWeb/${imgenPc}`} alt="images"></img>
 							</div>
 
 							<div>

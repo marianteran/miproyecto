@@ -132,7 +132,7 @@ const DetalleAppMobile = () => {
 
 					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", alignItems: "center", }}>
 
-						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
+						<div style={{display: "flex",flexDirection: "row",justifyContent: "space-around" }}>
 							<div className="detalleProductImgMobile">
 								<img src={process.env.PUBLIC_URL + `/img/apps/appMobile/${imgenPc}`} alt="images"></img>
 							</div>
