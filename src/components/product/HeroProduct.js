@@ -4,13 +4,13 @@ const HeroProduct = () => {
     return (
         <div>
             <section className='hero-tres'>
-                <div class='heroimage'>
-                    <div class="captioncontainer">
-                        <h1 class="captiontitle">
-                            IMAGINALO
+                <div className='heroimage'>
+                    <div className="captioncontainer">
+                        <h1 className="captiontitle">
+                        IMAGINE IT
                         </h1>
-                        <h2 class="captiontitle">
-                            HAZLO REALIDAD
+                        <h2 className="captiontitle">
+                        MAKE IT REAL
                         </h2>
                     </div>
                 </div>

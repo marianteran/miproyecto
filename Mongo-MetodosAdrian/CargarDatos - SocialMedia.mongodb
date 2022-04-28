@@ -1,0 +1,266 @@
+// MongoDB Playground
+//https://docs.mongodb.com/manual/crud/
+const database = 'SeomaDB';
+
+
+use(database);
+
+// The drop() command destroys all data from a collection.
+db.smedias.drop();
+// Inserta los documentos que nosotros le indiquemos.
+db.smedias.insertMany([ 
+{"name":"Facebook", 
+  "description":"Customize your facebook to the fullest. Get new clients!",
+  "image":"smartphone.png",
+	"functions":
+	[{
+	"title":"Profile picture (Logo)",
+	"description":"The logo is a symbol used to represent an institution, brand, person or company.",
+	"price":150,
+	"time":"4 days",
+  	"image":"",
+	},
+	
+	{
+	"title":"Monthly publications",
+	"description":"Leave all the design of your monthly publications in our hands.",
+	"price":220,
+	"time":"7 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Entrepreneur Templates Kit",
+	"description":"We design your templates and you decide when to publish them.",
+	"price":100,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Community Manager",
+	"description":"Leave all your social networks in the hands of professionals.",
+	"price":200,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Product Photography Session",
+	"description":"Personalized photo sessions for all your products.",
+	"price":370,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Advertising campaign",
+	"description":"We schedule all your posts. We take care of analyzing your metrics and reaching your client.",
+	"price":70,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Rebranding",
+	"description":"We update your brand so that it is in line with the new trends.",
+	"price":70,
+	"time":"2 days",
+  	"image":"",
+	},
+	
+	]}, 
+
+
+	{"name":"Instagram", 
+  "description":"Customize your facebook to the fullest. Get new clients!",
+  "image":"smartphone.png",
+	"functions":
+	[{
+	"title":"Profile picture (Logo)",
+	"description":"The logo is a symbol used to represent an institution, brand, person or company.",
+	"price":150,
+	"time":"4 days",
+  	"image":"",
+	},
+	
+	{
+	"title":"12 Monthly publications",
+	"description":"Leave all the design of your monthly publications in our hands.",
+	"price":140,
+	"time":"7 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Entrepreneur Templates Kit",
+	"description":"We design your templates and you decide when to publish them.",
+	"price":180,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Community Manager",
+	"description":"Leave all your social networks in the hands of professionals.",
+	"price":300,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Product Photography Session (10)",
+	"description":"Personalized photo sessions for all your products.",
+	"price":370,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Advertising campaign",
+	"description":"We schedule all your posts. We take care of analyzing your metrics and reaching your client.",
+	"price":70,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Rebranding",
+	"description":"We update your brand so that it is in line with the new trends.",
+	"price":270,
+	"time":"2 days",
+  	"image":"",
+	},
+	
+	]},
+
+
+	{"name":"Linkedin", 
+  "description":"Customize your facebook to the fullest. Get new clients!",
+  "image":"smartphone.png",
+	"functions":
+	[{
+	"title":"Profile picture (Logo)",
+	"description":"The logo is a symbol used to represent an institution, brand, person or company.",
+	"price":150,
+	"time":"4 days",
+  	"image":"",
+	},
+	
+	{
+	"title":"8 Monthly publications",
+	"description":"Leave all the design of your monthly publications in our hands.",
+	"price":180,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Entrepreneur Templates Kit",
+	"description":"We design your templates and you decide when to publish them.",
+	"price":100,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Community Manager",
+	"description":"Leave all your social networks in the hands of professionals.",
+	"price":200,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Product Photography Session (20)",
+	"description":"Personalized photo sessions for all your products.",
+	"price":570,
+	"time":"3 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Advertising campaign",
+	"description":"We schedule all your posts. We take care of analyzing your metrics and reaching your client.",
+	"price":70,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Rebranding",
+	"description":"We update your brand so that it is in line with the new trends.",
+	"price":300,
+	"time":"15 days",
+  	"image":"",
+	},
+	
+	]},
+
+
+	{"name":"Twitter", 
+  "description":"Customize your facebook to the fullest. Get new clients!",
+  "image":"smartphone.png",
+	"functions":
+	[{
+	"title":"Profile picture (Logo)",
+	"description":"The logo is a symbol used to represent an institution, brand, person or company.",
+	"price":150,
+	"time":"4 days",
+  	"image":"",
+	},
+	
+	{
+	"title":"30 Monthly publications",
+	"description":"Leave all the design of your monthly publications in our hands.",
+	"price":500,
+	"time":"7 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Entrepreneur Templates Kit",
+	"description":"We design your templates and you decide when to publish them.",
+	"price":100,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Community Manager",
+	"description":"Leave all your social networks in the hands of professionals.",
+	"price":200,
+	"time":"4 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Product Photography Session (20)",
+	"description":"Personalized photo sessions for all your products.",
+	"price":270,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Advertising campaign",
+	"description":"We schedule all your posts. We take care of analyzing your metrics and reaching your client.",
+	"price":100,
+	"time":"2 days",
+  	"image":"",
+	},
+
+	{
+	"title":"Rebranding",
+	"description":"We update your brand so that it is in line with the new trends.",
+	"price":180,
+	"time":"2 days",
+  	"image":"",
+	},
+	
+	]},
+
+
+	
+  ]);
+

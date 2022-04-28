@@ -3,11 +3,11 @@ import ReactDOM from "react-dom"
 import './prueba.css'
 
 const stub=[
-{image:'https://picsum.photos/900/700', text:'Title 1'}, 
-{image:'https://picsum.photos/900/800', text:'Title 2'},
-{image:'https://picsum.photos/900/600', text:'Title 3'},
-{image:'https://picsum.photos/900/600', text:'Title 4'},
-{image:'https://picsum.photos/900/600', text:'Title 5'}
+{image:'https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/2659/posts/37331/image-upload/Porto%20-%20Multipurpose%20Responsive%20HTML%20Template-intro.jpg'}, 
+{image:'https://s.tmimgcdn.com/scr/800x500/51500/plantilla-web-pro-gratis-sitio-web-pro_51576-0-original.jpg'},
+{image:'https://nestrategia.com/wp-content/uploads/2019/01/diseno-paginas-web-madrid-profesionales-1.jpg'},
+{image:'https://wwwhatsnew.com/wp-content/uploads/2017/08/Mashup-Template-730x416.jpg'},
+{image:'https://i.pinimg.com/originals/1d/e4/ad/1de4ad2669f3e3c085089b05703129e5.jpg'}
 ]
 
 
@@ -55,7 +55,7 @@ const HeroGothic = () => {
       { 
         stub.map((i,index) => {
           return (
-          <a 
+          <div 
             key={index} 
             data-slide={index} 
             onClick={(e)=>handleSetActive(e)} 
@@ -63,8 +63,8 @@ const HeroGothic = () => {
             className={`hero-gothic__slide ${ parseInt(active) === parseInt(index) ? 'active' : ''}`}
             >
             <img src={i.image} />
-              <div className="text">{i.text}<p>And room for more text</p></div>
-          </a>
+             
+          </div>
           )
         })
       }
