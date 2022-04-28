@@ -11,7 +11,7 @@ export default function Carousel() {
                 <div className="slide-track">
                    
                     <div className="slide">
-                        <img src="https://www.damos.co/mediateca/files/planes_responsive.jpg"></img>
+                        <img src="https://www.damos.co/mediateca/files/planes_responsive.jpg" ></img>
                     </div>
                     <div className="slide">
                         <img src="https://www.arpynet.com/wp-content/uploads/2018/07/desarrollo-web-ciencia-activa.png"></img>
