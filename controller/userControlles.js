@@ -26,7 +26,7 @@ async function sendEmail(email, uniqueString) {
                   <h2 style="font-size: 30px;text-align: center;  color: #ff4b4b; font-weight: 800;">EMAIL VALIDATION</h2>
                   <h2 style="font-size: 20px;text-align: center;  color: rgb(99, 99, 99); font-weight: 100;">Let's travel The World</h2>
                   <a href=https://seoma-design.herokuapp.com/api/verify/${uniqueString} style=" color: rgb(255, 85, 0); font-size: 20px;text-align: center; text-decoration: none;margin-left: 35%; font-weight: 700;">Click Here</a>
-                 <h1 style="font-size: 10px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">My Tinerary</h1>
+                 <h1 style="font-size: 10px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">Seoma</h1>
             </div>
             </div>`  
     }
