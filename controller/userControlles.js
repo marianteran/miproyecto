@@ -12,11 +12,11 @@ async function sendEmail(email, uniqueString) {
         port: 465,
         secure: true,
         auth: {
-            user: "seomaadm2022@gmail.com",
-            pass: process.env.NODEMAILER
+            user:"seomaadm2022@gmail.com",
+            pass:process.env.NODEMAILER
         }
     })
-    const sender = "seomaadm2022@gmail.com"
+    const sender ="seomaadm2022@gmail.com"
     const mailOptions = {
         from: sender,
         to: email,
@@ -29,15 +29,14 @@ async function sendEmail(email, uniqueString) {
                  <h1 style="font-size: 10px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">Seoma</h1>
             </div>
             </div>`  
-    }
+    };
     await transporter.sendMail(mailOptions, function (error, response) {
         if (error) {
-            console.log(error)
-        }
-        else {
+            console.log(error);
+        } else {
             console.log("Message sent");
         }
-    })
+    });
 
 }
 
