@@ -133,6 +133,11 @@ const Equipment = () => {
                 type: accionType.CARRO,
                 carro: temporal.length
             })
+            swal({
+                title: "article add to cart",
+                icon: "success",
+                buttons: "ok"
+            })
         }
         else {
             let localCart = localStorage.getItem("cart")
