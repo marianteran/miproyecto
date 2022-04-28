@@ -106,7 +106,7 @@ const Notificaciones = () => {
                   <button
                     type="submit"
                     className="btn btn-dark"
-                    style={{ marginTop: "3vh", marginBottom: "2vh" }}
+                    style={{marginTop: "3vh", marginBottom: "2vh" }}
                   >
                     Submit
                   </button>
