@@ -47,7 +47,7 @@ const AccountUser = () => {
                 }
             });
             setRespuesta(temporal);
-    
+
             dispatch({
                 type: accionType.NOTIFICA,
                 notifica: respuesta.length,
@@ -77,12 +77,12 @@ const AccountUser = () => {
                     }
                 });
                 setRespuesta(temporal);
-          
+
                 dispatch({
                     type: accionType.NOTIFICA,
                     notifica: respuesta.length,
                 });
-         
+
                 setReload(!reload);
             });
     };
@@ -149,20 +149,19 @@ const AccountUser = () => {
                                     </div>
 
                                 </div>
-
                                 <div>
                                     <div className="account-Img">
-                                        <img src={user.datosUser.img ? user.datosUser.img : userImage}
-                                            // className="custom-image d-block w-100 col-sm-12 col-md-6 col-lg-6 col-lg-5" alt="User Image" />
-                                            className="custom-image d-block w-100 col-sm-12 col-md-6 col-lg-6 col-lg-5 " alt="User Image" />
+                                    {user.datosUser.from !== "Seoma" ?
+                                        <img src={user.datosUser.img} className="nav-ImgUser" alt="login" />
+                                        :
+
+                                        <div className='imagen-logo-user'>
+                                            {user.datosUser.img}
+                                        </div>
+                                    }
                                     </div>
                                 </div>
-
                             </div>
-
-
-
-
                             <div className="card  col-lg-4 col-sm-5 col-md-5 mb-4 account-Det">
                                 <h5 className="card-header background-card">Account details</h5>
                                 <div className="card-body data">
@@ -271,8 +270,8 @@ const AccountUser = () => {
                                     </div>
                                 ) : (
                                     <div className="card-body custom-card-body ">
-                                
-                                    
+
+
                                         {/* cards de favoritos */}
                                         <div style={{ display: "flex" }}>
                                             {myFavorite?.map((item) => {

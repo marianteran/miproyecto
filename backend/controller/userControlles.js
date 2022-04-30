@@ -22,11 +22,11 @@ async function sendEmail(email, uniqueString) {
         to: email,
         subject: "User verification",
         html:`<div  style="width: 400px; height: 200px; margin-left: 20%;">
-            <div style="width: 100%; height:100%; background-color: #fff5ee;">
-                  <h2 style="font-size: 30px;text-align: center;  color: #ff4b4b; font-weight: 800;">EMAIL VALIDATION</h2>
-                  <h2 style="font-size: 20px;text-align: center;  color: rgb(99, 99, 99); font-weight: 100;">Let's travel The World</h2>
+            <div style="width: 100%; height:100%; background-color: "white";">
+                  <h2 style="font-size: 30px;text-align: center; font-weight: 800;">EMAIL VALIDATION</h2>
+                  <h2 style="font-size: 20px;text-align: center;  color: rgb(99, 99, 99); font-weight: 100;">The leader in web page design</h2>
                   <a href=http://localhost:4000/api/verify/${uniqueString} style=" color: rgb(255, 85, 0); font-size: 20px;text-align: center; text-decoration: none;margin-left: 35%; font-weight: 700;">Click Here</a>
-                 <h1 style="font-size: 10px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">My Tinerary</h1>
+                 <h1 style="font-size: 10px ; text-align: center;font-weight: 800">Seoma</h1>
             </div>
             </div>`  
     }
@@ -49,7 +49,7 @@ const userControllers = {
         if (user) {
             user.emailVerified = true
             await user.save()
-            res.redirect("http://localhost:4000/api/signin")
+            res.redirect("http://localhost:3000/signin")
         }
         else {
             res.json({ success: false, response: "your email couldn't be verified" })
