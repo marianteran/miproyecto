@@ -63,25 +63,30 @@ function Signin() {
                 
             })
     }
+
+
     return (
         <>
       {!user?
                 <div className="desespero">
                     <form className="formSign row signInUp-Input" onSubmit={signinUser}>
+                        
                         <div className="mb-3 col-12">
                             <label for="exampleInputEmail1" className="form-label">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                             <div id="emailHelp" className="form-text">Please enter a username.</div>
                         </div>
+
                         <div className="mb-3 col-12" >
                             <label for="exampleInputPassword1" className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword1" />
                             <div id="emailHelp" className="form-text">Please enter a password.</div>
                         </div>
-                        <div className="mb-3 form-check col-12 signInUp-CheckLabel">
+
+                       {/*  <div className="mb-3 form-check col-12 signInUp-CheckLabel">
                             <input type="checkbox" className="form-check-input signInUp-Check" id="exampleCheck1" />
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
-                        </div>
+                        </div> */}
 
                         <div className="signInUp-btnInUp" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <input type="submit" className="btn d-flex btn-signin btn btn-primary" value="Sign In" />
