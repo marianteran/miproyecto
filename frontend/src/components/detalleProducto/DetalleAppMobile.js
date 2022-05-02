@@ -38,7 +38,7 @@ const DetalleAppMobile = () => {
 
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
-	const [imgenPc, setImagenPc] = useState('pmstatic.PNG')
+	const [imgenPc, setImagenPc] = useState('pmStatic.PNG')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
