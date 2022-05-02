@@ -38,7 +38,7 @@ const DetalleAppWeb = () => {
 
 	// funciones materia UI
 	const [checked, setChecked] = React.useState([]);
-	const [imgenPc, setImagenPc] = useState('pStatic.png')
+	const [imgenPc, setImagenPc] = useState('pStatic.PNG')
 	const [expanded, setExpanded] = React.useState(false);
 	const [price, setPrice] = useState()
 	const [priceTotal, setPriceTotal] = useState(0)
@@ -56,8 +56,8 @@ const DetalleAppWeb = () => {
 	const handleToggle = (value, price) => () => {
 		const currentIndex = checked.indexOf(value);
 
-		console.log(price);
-		console.log(priceTotal)
+		//console.log(price);
+		//console.log(priceTotal)
 		const newChecked = [...checked];
 		const newPrice = priceTotal + price
 		setPriceTotal(newPrice)
@@ -135,6 +135,7 @@ const DetalleAppWeb = () => {
 						<div className="detalleAppWebContent" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 							<div className="detalleProductImg">
 								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
+								
 							</div>
 
 							<div>
