@@ -187,9 +187,9 @@ const DetalleEquipments = () => {
          
         </Box>
 
-        <div style={{ display: "flex" }}>
+        <div className="contenedorProductosC" >
           {/* CHECK DE MARCAS DE BUSQUEDA */}
-          <div style={{ display: "flex", justifyContent: "left", flexDirection: "column", padding: 20, marginTop: 30 }}>
+          <div className="checkresponsive" style={{ display: "flex", justifyContent: "left", flexDirection: "column", padding: 20, marginTop: 30 }}>
             {brands.length > 1 ?
               brands?.map((brand) => {
                 return (

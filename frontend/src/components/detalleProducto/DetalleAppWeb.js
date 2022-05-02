@@ -130,16 +130,14 @@ const DetalleAppWeb = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap: "wrap", alignItems: "center" }}>
+					<div  style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap:"wrap" }}  >
 
-						<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
+						<div className="detalleAppWebContent" style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
 							<div className="detalleProductImg">
-								<img src={process.env.PUBLIC_URL+`/img/AppWeb/${imgenPc}`} alt="images"></img>
+								<img src={process.env.PUBLIC_URL + `/img/AppWeb/${imgenPc}`} alt="images"></img>
 							</div>
 
 							<div>
-
-
 								{!presuSend ?
 									<List
 										sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
@@ -178,7 +176,7 @@ const DetalleAppWeb = () => {
 											<button onClick={() => presupuesto()} type="button" className="myButton">Consult</button>
 										</div>
 
-									</List> : " "}
+								</List> : " "}
 
 							</div>
 						</div>
@@ -196,12 +194,11 @@ const DetalleAppWeb = () => {
 
 					<div className="detalleProductContainerStatic">
 						<div className="detalleProductImg">
-
 							<img src={StaticPC} alt="" />
 						</div>
 
 
-						<div className="presupuestoContenedor">
+						<div className="presupuestoContenedorstatic">
 							<div className="container">
 
 
@@ -232,9 +229,9 @@ const DetalleAppWeb = () => {
 								<p><strong>Time:</strong> 15 days</p>
 								<p><strong>Price</strong> 300 U$D</p>
 
-								
-									<p>For more info send an email to <a  href="mailto:seomadesign@gmail.com" target="_blank" style={{textDecoration:"none", color:"var(--color-bg-variant)", fontWeight:"bold"}} >Seoma Design Department</a> </p>
-								
+
+								<p>For more info send an email to <a href="mailto:seomadesign@gmail.com" target="_blank" style={{ textDecoration: "none", color: "var(--color-bg-variant)", fontWeight: "bold" }} >Seoma Design Department</a> </p>
+
 
 
 							</div>

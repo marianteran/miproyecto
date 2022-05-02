@@ -62,71 +62,71 @@ const PresupuestoEnv = (props) => {
 
     return (
         <>
-        {user?  
-        
-        <div className="presupuestoContenedor" >
+            {user ?
 
-        <div className="mb-3 row">
-            <label for="staticEmail" className="col-sm-2 col-form-label"><strong> Email</strong> </label>
-            <div className="col-sm-10">
-                <input type="text" readonly className="form-control-plaintext" id="staticEmail" value={user ? user.datosUser.email : ""} />
-            </div>
-        </div>
+                <div className="presupuestoContenedor" >
 
-        <div className="mb-3 row">
-            <label for="staticName" className="col-sm-2 col-form-label"><strong> Name</strong> </label>
-            <div className="col-sm-10">
-                <input type="text" readonly className="form-control-plaintext" id="staticName" value={user ? user.datosUser.name : ""} />
-            </div>
-        </div>
-
-        <div className="mb-3 row">
-            <label for="staticUser" className="col-sm-2 col-form-label"><strong> User</strong> </label>
-            <div className="col-sm-10">
-                <input type="text" readonly className="form-control-plaintext" id="staticUser" value={user ? user.datosUser.id : ""} />
-            </div>
-        </div>
-
-
-
-        <div className="mb-3">
-            <p><strong>Product</strong> </p>
-            <div className="pruebadecheckcon">
-
-                {props.checked?.map((item) => {
-                    return (
-                        <div>
-                            {item} -
+                    <div className="mb-3 row">
+                        <label for="staticEmail" className="col-sm-2 col-form-label"><strong> Email</strong> </label>
+                        <div className="col-sm-10">
+                            <input type="text" readonly className="form-control-plaintext" id="staticEmail" value={user ? user.datosUser.email : ""} />
                         </div>
+                    </div>
 
-                    )
-                })}
+                    <div className="mb-3 row">
+                        <label for="staticName" className="col-sm-2 col-form-label"><strong> Name</strong> </label>
+                        <div className="col-sm-10">
+                            <input type="text" readonly className="form-control-plaintext" id="staticName" value={user ? user.datosUser.name : ""} />
+                        </div>
+                    </div>
 
-            </div>
-            <label for="exampleFormControlTextarea1" className="form-label"></label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" value={"  I want to consult for a web page that includes these functions"} rows="3">
+                    <div className="mb-3 row">
+                        <label for="staticUser" className="col-sm-2 col-form-label"><strong> User</strong> </label>
+                        <div className="col-sm-10">
+                            <input type="text" readonly className="form-control-plaintext" id="staticUser" value={user ? user.datosUser.id : ""} />
+                        </div>
+                    </div>
 
-            </textarea>
 
 
-            <div className="btnPresupuestoContenedor">
-                <button onClick={() => submitQuestions(props.checked)} type="button"  >
-                    <LinkRouter to="/respuesta" className="btnPresupuesto"> SEND </LinkRouter>
-                </button>
+                    <div className="mb-3">
+                        <p><strong>Product</strong> </p>
+                        <div className="pruebadecheckcon">
 
-            </div>
-        </div>
-        
-    </div>
-        
-        : 
-        
-        <div>
-            <p>You must sign in. If you don't have a user yet, please sign up <LinkRouter to="/signup" style={{textDecoration:"none", color:"var(--color-bg-variant)", fontWeight:"bold"}}>here</LinkRouter></p>
-            
-        </div>
-        
-        }
+                            {props.checked?.map((item) => {
+                                return (
+                                    <div>
+                                        {item} -
+                                    </div>
+
+                                )
+                            })}
+
+                        </div>
+                        <label for="exampleFormControlTextarea1" className="form-label"></label>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" value={"  I want to consult for a web page that includes these functions"} rows="3">
+
+                        </textarea>
+
+
+                        <div className="btnPresupuestoContenedor">
+                            <button onClick={() => submitQuestions(props.checked)} type="button"  >
+                                <LinkRouter to="/respuesta" className="btnPresupuesto"> SEND </LinkRouter>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                :
+
+                <div>
+                    <p>You must sign in. If you don't have a user yet, please sign up <LinkRouter to="/signup" style={{ textDecoration: "none", color: "var(--color-bg-variant)", fontWeight: "bold" }}>here</LinkRouter></p>
+
+                </div>
+
+            }
 
         </>
     )

@@ -1,4 +1,7 @@
+.contenedorProductosC{
+  display: flex;
 
+}
 
 .swiper-slide {
   height: 250px !important;
@@ -418,6 +421,14 @@
     
     }
 
+    .contenedorProductosC{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    
+    }
+
+    
 
 
   }

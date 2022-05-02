@@ -49,7 +49,19 @@
     padding: 20px;
     margin: 5% 0% 5% 0%;
    
+   
 
+}
+
+.detalleAppWebContent{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+   
 }
 
 .detalleProductImg{
@@ -95,6 +107,13 @@
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     border-radius: 0.5rem;
 
+}
+
+.presupuestoContenedorstatic{
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
 }
 
 .btnPresupuestoContenedor{
@@ -179,7 +198,6 @@
     display: flex;
     justify-content: center !important;
     align-items: center !important;
-
     margin-left: 50px;
 }
 
@@ -262,6 +280,14 @@
         justify-content: center !important;
     }
 
+    .detalleAppWebContent{
+       display: flex;
+        flex-direction: column !important;
+        justify-content: center !important;
+       
+        
+    }
+
   
   }
   
@@ -327,18 +353,33 @@
         margin: 0 !important;
     }
     
+
+    .detalleProductContainerStatic{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        margin: 0;
+        padding: 0;
+       
+    }
+
+    .presupuestoContenedorstatic{
+
+        width: 100%;
+
+    }
   
   }
   
   
   @media screen and (max-width: 420px) {
     .detalleProductImg{
-        width: 350px ;
+        width: 300px !important ;
     }
     
     .presupuestoContenedor{
         margin-top: 20px;
-        width: 300px;
+        width: 200px;
     }
 
 
@@ -358,6 +399,26 @@
     .listSMmobile{
         margin: 0 !important;
     }
+
+    .detalleProductContainerStatic{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        margin: 0;
+        padding: 0;
+       
+    }
+
+    .presupuestoContenedorstatic{
+
+        width: 100%;
+
+    }
+
+
+
+
+
 
   }
 

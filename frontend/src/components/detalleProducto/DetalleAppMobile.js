@@ -130,9 +130,9 @@ const DetalleAppMobile = () => {
 				</div>
 				{personal && appPulsada === "Personalized" ?
 
-					<div className="" style={{ display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap", alignItems: "center", }}>
+					<div  style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", flexWrap: "wrap", alignItems: "center", }}>
 
-						<div style={{display: "flex",flexDirection: "row",justifyContent: "space-around" }}>
+						<div className="detalleAppWebContent" >
 							<div className="detalleProductImgMobile">
 								<img src={process.env.PUBLIC_URL + `/img/apps/appMobile/${imgenPc}`} alt="images"></img>
 							</div>
@@ -199,7 +199,7 @@ const DetalleAppMobile = () => {
 							<img src={StaticMobile} alt="" />
 						</div>
 
-						<div className="presupuestoContenedor">
+						<div className="presupuestoContenedorstatic">
 							<div className="container">
 
 
