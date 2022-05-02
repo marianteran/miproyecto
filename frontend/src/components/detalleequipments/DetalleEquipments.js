@@ -234,15 +234,15 @@ const DetalleEquipments = () => {
                     />
                     <Swiper navigation={true} modules={[Navigation]} >
                       <SwiperSlide className="swiper-slide">
-                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="images"></img>
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[0]}`} alt="image"></img>
                       </SwiperSlide>
 
                       <SwiperSlide className="swiper-slide">
-                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="images"></img>
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[1]}`} alt="image"></img>
                       </SwiperSlide>
 
                       <SwiperSlide className="swiper-slide">
-                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="images"></img>
+                        <img src={process.env.PUBLIC_URL + `/img/equipments/${equipment.image[2]}`} alt="image"></img>
                       </SwiperSlide>
                     </Swiper>
 
