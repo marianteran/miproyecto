@@ -196,7 +196,7 @@ const DetalleAppMobile = () => {
 
 
 						<div className="detalleProductImgMobileStatic">
-							<img src={StaticMobile} alt="" />
+							<img src={StaticMobile} alt="imagen" />
 						</div>
 
 						<div className="presupuestoContenedorstatic">
