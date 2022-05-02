@@ -48,7 +48,7 @@ const DetalleAppMobile = () => {
 
 
 
-	const handleChange = (panel) => (event, isExpanded) => {
+	const handleChange = (panel) => (event,isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
 	};
 
