@@ -176,7 +176,6 @@ const DetalleEquipments = () => {
           sx={{ '& > :not(style)': { m: 1, width: '60ch' }, display: "flex", justifyContent: "center" }}
           noValidate
           autoComplete="off"
-
         >
           <TextField label="Find your Equipment"
             onChange={filterEquipments}
